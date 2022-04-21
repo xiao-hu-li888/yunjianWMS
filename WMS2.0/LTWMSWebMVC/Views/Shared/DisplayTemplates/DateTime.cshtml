@@ -1,0 +1,9 @@
+﻿@if (Model == null)
+{
+    <span class="none">暂无</span>
+}
+else
+{
+    <span>@Model.ToString("yyyy/MM/dd HH:mm:ss.fff")</span> 
+    @*<span>@Model</span>*@
+}

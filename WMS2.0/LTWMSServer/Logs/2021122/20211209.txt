@@ -1,0 +1,8 @@
+20211209 11:17:20.574----->>>WMS服务：监视线程已启动
+20211209 11:17:20.575----->>>正在重启关闭的线程 ==>>WCS服务
+20211209 11:17:20.598----->>>启动线程：【WCS服务】 socket 客户端>> ip：192.168.0.250，端口：20001
+20211209 11:17:20.672----->>>正在连接wcs... ...
+20211209 11:17:41.726----->>>wmservice1 loghandler13555543>>【连接超时：System.Net.Sockets.SocketException (0x80004005): 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.0.250:20001
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 108】

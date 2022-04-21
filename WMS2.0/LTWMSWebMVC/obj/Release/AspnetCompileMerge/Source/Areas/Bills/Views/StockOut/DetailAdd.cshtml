@@ -1,0 +1,130 @@
+﻿@model LTWMSWebMVC.Areas.Bills.Data.StockOutDetailModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>登录用户</legend>
+        @Html.HiddenFor(model => model.stockout_guid)
+        @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+        {
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+        }
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  <span class="necessary">*</span> @Html.LabelFor(model => model.matter_guid)</label>
+            <div class="col-sm-9">
+                @Html.EditorFor(model => model.matter_guid)
+                @Html.HiddenFor(model => model.matter_guid)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.lot_number)</label>
+            <div class="col-sm-9">
+                @*@Html.EditorFor(model => model.lot_number)
+                    @Html.ValidationMessageFor(model => model.lot_number)*@
+                <select id="lot_number" name="lot_number">
+                </select>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">库存</label>
+            <div class="col-sm-9">
+                <span id="stock_number"></span>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  <span class="necessary">*</span> @Html.LabelFor(model => model.out_number)</label>
+            <div class="col-sm-9">
+                @Html.EditorFor(model => model.out_number)
+                @Html.HiddenFor(model => model.out_number)
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.memo)</label>
+            <div class="col-sm-9">
+                @Html.TextAreaFor(model => model.memo)
+                @Html.ValidationMessageFor(model => model.memo)
+            </div>
+            <div class="clear"></div>
+        </div>
+        @*<div class="form-group form-border">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.total_matter)</label>
+                <div class="col-sm-9">
+                    @Html.EditorFor(model => model.total_matter)
+                    @Html.ValidationMessageFor(model => model.total_matter)
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="form-group form-border">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.total_get)</label>
+                <div class="col-sm-9">
+                    @Html.DisplayFor(model => model.total_get)
+                </div>
+                <div class="clear"></div>
+            </div>*@
+        <p>
+            <button class="btn btn-sm btn-info" type="submit">
+                <i class="ace-icon fa fa-check bigger-110"></i>
+                @ViewBag.SubmitText
+            </button>
+        </p>
+    </fieldset>
+}
+<script type="text/javascript">
+
+    $("#matter_guid").change(function () {
+        $("#stock_number").html("");
+        getLotNumberList($(this).val());
+    });
+    var selMatterGuid = $("#matter_guid").val();
+    getLotNumberList(selMatterGuid);
+    function getLotNumberList(m_guid)
+    {
+        $("#lot_number").empty();
+        var d = $.post("@Url.Action("getLotNumberList")?r=" + Math.random(), { matter_guid: m_guid }, function success(data, text, j) {
+            if (data.success) {
+                for (var i = 0; i < data.data.length; i++)
+                {
+                    $("#lot_number").append("<option value='" + data.data[i]+"'>" + data.data[i]+"</option>");
+                   // $("#lot_number").add(data.data[i]);
+                    if (i == 0) {
+                        getStockNumByLotNumberMatterGuid(data.data[i]);
+                    }
+                }
+            } else {
+                alert(data);
+            }
+
+        }).fail(function () {
+            //加载失败，10秒后再试
+        });
+    }
+    $("#lot_number").change(function () {
+        getStockNumByLotNumberMatterGuid($(this).val());
+    });
+    function getStockNumByLotNumberMatterGuid(lotnumber) {
+        $("#stock_number").html("");
+        var d = $.post("@Url.Action("getStockNumByLotNumberMatterGuid")?r=" + Math.random(), { matter_guid: $("#matter_guid").val(), lot_number: lotnumber}, function success(data, text, j) {
+            if (data.success) {
+                $("#stock_number").html(data.data);
+            } else {
+                alert(data);
+            }
+
+        }).fail(function () {
+            //加载失败，10秒后再试
+        });
+    }
+</script>
+

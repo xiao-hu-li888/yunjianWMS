@@ -1,0 +1,108 @@
+﻿@model LTWMSWebMVC.Areas.BasicData.Data.ShelvesModel
+@if (Model != null)
+{
+    int columns = Model.columns_specs;
+    int rows = Model.rows_specs;
+    if (Model.ShelfUnits != null && Model.ShelfUnits.Count() > 0)
+    {
+        <table class="stc-table">
+            <thead>
+                <tr>
+                    <th class="c-first">@*第 @Model.rack 排货架*@</th>
+                    @for (int i = 1; i <= columns; i++)
+                    {
+                        <th class="c-tit">
+                            @i 列
+                        </th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = rows; i > 0; i--)
+                {
+                    <tr>
+                        <td class="c-first">@i@*层*@</td>
+                        @for (int j = 1; j <= columns; j++)
+                        {
+                            var _unit = Model.ShelfUnits.Where(w => w.columns == j && w.rows == i).FirstOrDefault();
+                            if (_unit != null && _unit.guid != Guid.Empty)
+                            {
+                                string _ccClass = "6";//不可用
+                                if (_unit.state == LTWMSEFModel.EntityStatus.Normal)
+                                {
+                                    if (_unit.locktype == LTWMSEFModel.Warehouse.ShelfLockType.ManLock)
+                                    {//人工锁
+                                        _ccClass = "7";
+                                    }
+                                    else
+                                    {
+                                        switch (_unit.cellstate)
+                                        {
+                                            case LTWMSEFModel.Warehouse.ShelfCellState.CanIn:
+                                                //可入库
+                                                _ccClass = "1";
+                                                if (_unit.locktype == LTWMSEFModel.Warehouse.ShelfLockType.SysLock)
+                                                {//系统锁
+                                                    _ccClass = "9";
+                                                }
+                                                break;
+                                            case LTWMSEFModel.Warehouse.ShelfCellState.TrayIn:
+                                                //入库中
+                                                _ccClass = "2";
+                                                break;
+                                            case LTWMSEFModel.Warehouse.ShelfCellState.Stored:
+                                                //存储中
+                                                //  _ccClass = "3";
+                                                if (_unit.matterType == LTWMSEFModel.MatterTypeEnum.Matter)
+                                                {//电池
+                                                    _ccClass = "3";
+                                                }
+                                                else if (_unit.matterType == LTWMSEFModel.MatterTypeEnum.Empty)
+                                                {
+                                                    //空托盘
+                                                    _ccClass = "8";
+                                                }
+                                                //else
+                                                //{//其它物料
+                                                //    _ccClass = "9";
+                                                //}
+                                                break;
+                                            case LTWMSEFModel.Warehouse.ShelfCellState.WaitOut:
+                                                //等待出库
+                                                _ccClass = "4";
+                                                break;
+                                            case LTWMSEFModel.Warehouse.ShelfCellState.TrayOut:
+                                                //出库中
+                                                _ccClass = "5";
+                                                break;
+                                        }
+                                    }
+                                }
+                                <td class="lt-cell-c-@_ccClass" title="@_unit.shelfunits_pos" ondblclick="$(this).find('>a').click();" style="text-align:left;position:relative;vertical-align:bottom;padding-top:10px;">
+                                    <a href="@Url.Action("Update")/@_unit.guid" data-open="true" data-dialog-title="库位详细信息" style="display:none;"></a>
+                                    <span style="color:#fff;font-weight:bold;">@_unit.shelfunits_pos</span>
+                                    @if (_unit.special_lock_type == LTWMSEFModel.Warehouse.SpecialLockTypeEnum.StockOutLock)
+                                    {
+                                        <img src="/Content/ico/lock.png" title="出库锁定" style="position:absolute;right:0px;top:0px;width:12px;height:12px;" />
+                                    }
+                                    else if (_unit.special_lock_type == LTWMSEFModel.Warehouse.SpecialLockTypeEnum.DispatchLock)
+                                    {
+                                        <img src="/Content/ico/lock.png" title="指定入库锁定" style="position:absolute;right:0px;top:0px;width:12px;height:12px;" />
+                                    }
+                                </td>
+                            }
+                            else
+                            {
+                                <td class="lt-cell-c-xxx" style="text-align:center;">
+                                </td>
+                            }
+                        }
+                    </tr>
+
+                }
+            </tbody>
+
+        </table>
+
+    }
+}

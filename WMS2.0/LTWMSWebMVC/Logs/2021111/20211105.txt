@@ -1,0 +1,57 @@
+20211105 11:32:24.282----->>>System.InvalidOperationException: The model backing the 'LTModel' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+   在 System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.AsNoTracking()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.AsNoTracking()
+   在 LTWMSEFModel.ComDao`1.GetAny(Expression`1 WhereLambda) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSEFModel\ComDao.cs:行号 346
+   在 LTWMSWebMVC.App_Start.AppCode.MenuHelper.HasPermission(sys_loginBLL bll_login, Guid currloginguid, String _controller, String _action) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\App_Start\AppCode\MenuHelper.cs:行号 16
+   在 LTWMSWebMVC.Filters.MyAuthorizeAttribute.AuthorizeCore(HttpContextBase httpContext) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Filters\MyAuthorizeAttribute.cs:行号 40
+   在 System.Web.Mvc.AuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext)
+   在 LTWMSWebMVC.Filters.MyAuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Filters\MyAuthorizeAttribute.cs:行号 17
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__0(AsyncCallback asyncCallback, Object asyncState)
+20211105 23:24:45.065----->>>System.InvalidOperationException: 未找到视图“ImportMatterInfo”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/BasicData/Views/Matter/ImportMatterInfo.aspx
+~/Areas/BasicData/Views/Matter/ImportMatterInfo.ascx
+~/Areas/BasicData/Views/Shared/ImportMatterInfo.aspx
+~/Areas/BasicData/Views/Shared/ImportMatterInfo.ascx
+~/Views/Matter/ImportMatterInfo.aspx
+~/Views/Matter/ImportMatterInfo.ascx
+~/Views/Shared/ImportMatterInfo.aspx
+~/Views/Shared/ImportMatterInfo.ascx
+~/Areas/BasicData/Views/Matter/ImportMatterInfo.cshtml
+~/Areas/BasicData/Views/Matter/ImportMatterInfo.vbhtml
+~/Areas/BasicData/Views/Shared/ImportMatterInfo.cshtml
+~/Areas/BasicData/Views/Shared/ImportMatterInfo.vbhtml
+~/Views/Matter/ImportMatterInfo.cshtml
+~/Views/Matter/ImportMatterInfo.vbhtml
+~/Views/Shared/ImportMatterInfo.cshtml
+~/Views/Shared/ImportMatterInfo.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+20211105 23:26:34.755----->>>System.IO.DirectoryNotFoundException: 未能找到路径“C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\FileExcel\202111\”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode)
+   在 System.Web.HttpPostedFile.SaveAs(String filename)
+   在 LTWMSWebMVC.Areas.BasicData.Controllers.MatterController.ImportMatterInfo() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Areas\BasicData\Controllers\MatterController.cs:行号 344
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)

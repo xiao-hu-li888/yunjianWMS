@@ -1,0 +1,17 @@
+﻿@using LTERPWebMVC.App_Start.WebMvCEx; 
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+        });
+    </script>
+}
+<section class="btn_div">
+    <a href="@Url.Action("DataImports")" data-dialog-title="从sqlserver中导入数据" class="icos ico_add">物料信息/物料类型数据导入</a> 
+</section>
+ 

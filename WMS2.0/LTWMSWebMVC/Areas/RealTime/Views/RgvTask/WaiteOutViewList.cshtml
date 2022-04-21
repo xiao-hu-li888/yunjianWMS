@@ -1,0 +1,121 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.RealTime.Data.StackerTaskQueueModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th  style="width:80px;">
+                <input type="checkbox" id="checkAll" data-chkid="checkAll1" />&nbsp;<label for="checkAll">全选</label>
+            </th>
+            <th>
+                任务ID
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tasktype)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tray1_barcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.src_shelfunits_pos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dest_shelfunits_pos)
+            </th>
+            <th>
+            @Html.DisplayNameFor(model => model.order)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.taskstatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sort)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+            <tr class="@_cname" style="cursor:pointer;">
+                <td>
+                    <input type="checkbox" name="chk_guids" value="@item.guid" data-chk="checkAll1" />
+                </td>
+                <td class="tr-sps_tit">
+                    <input class="current_Data" value="@item.guid" type="hidden" />
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tasktype)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tray1_barcode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.src_shelfunits_pos)
+                    @if (item.tasktype == LTWMSEFModel.Hardware.WcsTaskType.StockIn)
+                    {
+                        
+                        <span>站台 @{WriteLiteral(item.src_station);}</span>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dest_shelfunits_pos)
+                    @if (item.tasktype == LTWMSEFModel.Hardware.WcsTaskType.StockOut)
+                    {
+                       
+                        <span>
+                            站台 @{
+                                if (item.dest_station == 0)
+                                {
+                                    WriteLiteral("<span class='label label-sm label-danger'>待分配</span>");
+                                }
+                                else
+                                {
+                                    WriteLiteral(item.dest_station);
+                                }
+                            }
+                        </span>
+                    }
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.order)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.taskstatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sort)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.createdate)
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.matterbarcode_list)：
+                </td>
+                <td colspan="10">
+                    @Html.DisplayTextFor(modelItem => item.matterbarcode_list)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.memo)：
+                </td>
+                <td colspan="10">
+                    @Html.DisplayTextFor(modelItem => item.memo)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,176 @@
+20210507 11:23:29.856----->>>WCS服务：监视线程已启动
+20210507 11:23:29.858----->>>正在重启关闭的线程 ==>>WCS tcp Socket 客户端线程
+20210507 11:23:29.876----->>>正在重启关闭的线程 ==>>PLC连接线程
+20210507 11:23:29.886----->>>启动线程：PLC连接线程
+20210507 11:23:29.887----->>>启动线程：WCS tcp Socket 客户端线程
+20210507 11:23:29.892----->>>Wcs 服务已启动...
+20210507 11:23:29.893----->>>与wms断开连接...
+20210507 11:23:29.895----->>>正在连接wms... ...
+20210507 11:23:29.967----->>>与wms连接成功...
+20210507 11:23:29.967----->>>与wms已建立连接
+20210507 11:23:30.034----->>>StackerSrv Logs>>>PLC[192.168.1.111]:连接成功
+20210507 11:25:47.178----->>>wcs接收wms的json数据>>>>:10003{"cmd":102,"seq":1,"task_id":1152,"src_station":0,"dest_station":200,"src_rack":1,"src_col":6,"src_row":1,"dest_rack":0,"dest_col":0,"dest_row":0,"weight":0.0,"barcode":null}
+20210507 11:25:48.129----->>>读取到状态：2
+20210507 11:25:57.587----->>>读取到状态：3
+20210507 11:26:02.017----->>>读取到状态：4
+20210507 11:26:03.139----->>>读取到状态：5
+20210507 11:26:07.028----->>>读取到状态：6
+20210507 11:28:15.364----->>>线程WCS tcp Socket 客户端线程超过设定时间120(秒)没有响应，重新启动线程... ==>>
+20210507 11:28:15.365----->>>正在重启关闭的线程 ==>>WCS tcp Socket 客户端线程
+20210507 11:28:15.366----->>>正在终止意外关闭的线程:WCS tcp Socket 客户端线程
+20210507 11:39:29.495----->>>正在停止WCS服务...
+20210507 11:39:31.059----->>>Wcs 服务已停止...
+20210507 11:39:31.061----->>>与wms断开连接...
+20210507 11:39:31.062----->>>正在关闭所有线程...
+20210507 11:39:31.065----->>>StackerSrv Logs>>>PLC[192.168.1.111]:连接已关闭
+20210507 11:39:31.108----->>>Error code:1010121 终止意外关闭的线程[WCS tcp Socket 客户端线程]异常：正在中止线程。
+20210507 11:39:31.123----->>>Error code:10010System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.MonitorHandler() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 458
+20210507 11:39:31.127----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.MonitorHandler() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 481
+20210507 11:39:31.129----->>>StackerSrv Logs>>>获取堆垛机执行结果异常>>>S7.Net.PlcException: 无法从传输连接中读取数据: 一个封锁操作被对 WSACancelBlockingCall 的调用中断。。 ---> System.IO.IOException: 无法从传输连接中读取数据: 一个封锁操作被对 WSACancelBlockingCall 的调用中断。。 ---> System.Net.Sockets.SocketException: 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   在 System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   在 S7.Net.StreamExtensions.ReadExact(Stream stream, Byte[] buffer, Int32 offset, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\StreamExtensions.cs:行号 27
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 36
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 61
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 124
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] buffer, Int32 offset, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 314
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] buffer, Int32 offset, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 321
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 49
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 70
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 84
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetTaskExecuteResult() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 152
+20210507 11:39:31.131----->>>读取到状态：0
+20210507 11:39:31.136----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: 正在中止线程。 ---> System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Net.UnsafeNclNativeMethods.OSSOCK.recv(IntPtr socketHandle, Byte* pinnedBuffer, Int32 len, SocketFlags socketFlags)
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, SocketError& errorCode)
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   在 System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   在 S7.Net.StreamExtensions.ReadExact(Stream stream, Byte[] buffer, Int32 offset, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\StreamExtensions.cs:行号 27
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 43
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 61
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 111
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] buffer, Int32 offset, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 314
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] buffer, Int32 offset, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 321
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 49
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 70
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 84
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210507 11:39:31.143----->>>异常:304131System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 117
+   在 LTWCSModule.Services.WCSDealSendService.SendDeviceStatus(Socket_Client SocketClient, StackerService stackerSrv) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\Services\WCSDealSendService.cs:行号 58
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 164
+20210507 11:39:31.148----->>>[WCS tcp Socket 客户端线程]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 206
+20210507 11:39:31.151----->>>[WCS tcp Socket 客户端线程]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 240
+20210507 11:39:31.154----->>>WCS服务已停止...
+20210507 11:39:31.856----->>>WCS服务：监视线程已启动
+20210507 11:39:31.857----->>>正在重启关闭的线程 ==>>WCS tcp Socket 客户端线程
+20210507 11:39:31.873----->>>正在重启关闭的线程 ==>>PLC连接线程
+20210507 11:39:31.888----->>>启动线程：PLC连接线程
+20210507 11:39:31.889----->>>启动线程：WCS tcp Socket 客户端线程
+20210507 11:39:31.893----->>>Wcs 服务已启动...
+20210507 11:39:31.896----->>>与wms断开连接...
+20210507 11:39:31.897----->>>正在连接wms... ...
+20210507 11:39:31.972----->>>与wms连接成功...
+20210507 11:39:31.973----->>>与wms已建立连接
+20210507 11:39:32.013----->>>StackerSrv Logs>>>PLC[192.168.1.111]:连接成功
+20210507 11:39:35.750----->>>wcs接收wms的json数据>>>>:10003{"cmd":101,"seq":2,"task_id":1153,"src_station":100,"dest_station":0,"src_rack":0,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":6,"dest_row":1,"weight":0.0,"barcode":null}
+20210507 11:39:36.653----->>>读取到状态：2
+20210507 11:39:41.082----->>>读取到状态：3
+20210507 11:39:45.531----->>>读取到状态：4
+20210507 11:39:46.087----->>>读取到状态：5
+20210507 11:39:50.548----->>>读取到状态：6
+20210507 11:41:57.114----->>>线程WCS tcp Socket 客户端线程超过设定时间120(秒)没有响应，重新启动线程... ==>>
+20210507 11:41:57.114----->>>正在重启关闭的线程 ==>>WCS tcp Socket 客户端线程
+20210507 11:41:57.115----->>>正在终止意外关闭的线程:WCS tcp Socket 客户端线程
+20210507 11:43:07.110----->>>正在停止WCS服务...
+20210507 11:43:07.111----->>>Wcs 服务已停止...
+20210507 11:43:07.112----->>>与wms断开连接...
+20210507 11:43:07.113----->>>正在关闭所有线程...
+20210507 11:43:07.115----->>>StackerSrv Logs>>>PLC[192.168.1.111]:连接已关闭
+20210507 11:43:07.389----->>>Error code:1010121 终止意外关闭的线程[WCS tcp Socket 客户端线程]异常：正在中止线程。
+20210507 11:43:07.713----->>>Error code:10010System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.MonitorHandler() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 458
+20210507 11:43:07.732----->>>StackerSrv Logs>>>获取堆垛机执行结果异常>>>S7.Net.PlcException: 无法从传输连接中读取数据: 一个封锁操作被对 WSACancelBlockingCall 的调用中断。。 ---> System.IO.IOException: 无法从传输连接中读取数据: 一个封锁操作被对 WSACancelBlockingCall 的调用中断。。 ---> System.Net.Sockets.SocketException: 一个封锁操作被对 WSACancelBlockingCall 的调用中断。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   在 System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   在 S7.Net.StreamExtensions.ReadExact(Stream stream, Byte[] buffer, Int32 offset, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\StreamExtensions.cs:行号 27
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 36
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 61
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 124
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] buffer, Int32 offset, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 314
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] buffer, Int32 offset, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 321
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 49
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 70
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 84
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetTaskExecuteResult() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 139
+20210507 11:43:07.746----->>>读取到状态：0
+20210507 11:43:17.185----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: 正在中止线程。 ---> System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Net.UnsafeNclNativeMethods.OSSOCK.recv(IntPtr socketHandle, Byte* pinnedBuffer, Int32 len, SocketFlags socketFlags)
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, SocketError& errorCode)
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   在 System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   在 S7.Net.StreamExtensions.ReadExact(Stream stream, Byte[] buffer, Int32 offset, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\StreamExtensions.cs:行号 27
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 43
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 61
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 111
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] buffer, Int32 offset, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 314
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] buffer, Int32 offset, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 321
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 49
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 70
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 84
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210507 11:43:33.242----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.MonitorHandler() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 481
+20210507 11:43:35.943----->>>异常:304131System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 117
+   在 LTWCSModule.Services.WCSDealSendService.SendDeviceStatus(Socket_Client SocketClient, StackerService stackerSrv) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\Services\WCSDealSendService.cs:行号 58
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 164
+20210507 11:43:37.034----->>>[WCS tcp Socket 客户端线程]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 206
+20210507 11:43:37.061----->>>[WCS tcp Socket 客户端线程]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 240
+20210507 11:43:37.088----->>>WCS服务已停止...
+20210507 17:28:18.998----->>>WCS服务：监视线程已启动
+20210507 17:28:19.000----->>>正在重启关闭的线程 ==>>WCS tcp Socket 客户端线程
+20210507 17:28:19.005----->>>正在重启关闭的线程 ==>>PLC连接线程
+20210507 17:28:19.016----->>>启动线程：PLC连接线程
+20210507 17:28:19.017----->>>启动线程：WCS tcp Socket 客户端线程
+20210507 17:28:19.018----->>>Wcs 服务已启动...
+20210507 17:28:19.018----->>>与wms断开连接...
+20210507 17:28:19.018----->>>正在连接wms... ...
+20210507 17:28:40.096----->>>StackerSrv Logs>>>PLC[192.168.1.111]连接失败:5532071-->>>S7.Net.PlcException: Couldn't establish the connection to 192.168.1.111.
+Message: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.1.111:102 ---> System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.1.111:102
+   在 System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   在 System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   在 System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   在 System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.GetResult()
+   在 S7.Net.Plc.<ConnectAsync>d__47.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   在 S7.Net.Plc.<OpenAsync>d__46.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   在 S7.Net.Plc.Open()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.Open()
+   在 LTWCSService.ApplicationService.WcsServer.S7BaseService.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\S7BaseService.cs:行号 68

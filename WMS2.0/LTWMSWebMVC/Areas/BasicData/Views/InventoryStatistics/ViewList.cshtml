@@ -1,0 +1,117 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.BasicData.Data.MatterModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lot_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ok_lot_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ok_total_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.waited_lot_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.waited_total_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bad_lot_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bad_total_number)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.near_lot_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.near_total_number)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;
+            int empty_count = 0;
+            int tray_count = 0;
+        }
+        @if (Model != null && Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                if (_index == 0)
+                {
+                    empty_count = item.empty_count;
+                    tray_count = item.tray_count;
+                }
+
+                string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+                _index++;
+
+                <tr class="@_cname">
+                    <td class="tr-sps_tit">
+                        <input class="current_Data" value="@item.guid" type="hidden" />
+                        @Html.DisplayFor(modelItem => item.code)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td class="tr-sps_tit">
+                        @Html.DisplayFor(modelItem => item.lot_number)
+                    </td>
+                    <td class="tr-sps_tit">
+                        @Html.DisplayFor(modelItem => item.total_number)
+                    </td>
+                    <td class="tr-sps_tit" style="color: #B74635;">
+                        @Html.DisplayFor(modelItem => item.ok_lot_number)
+                    </td>
+                    <td class="tr-sps_tit" style="color: #B74635;">
+                        @Html.DisplayFor(modelItem => item.ok_total_number)
+                    </td>
+                    <td class="tr-sps_tit">
+                        @Html.DisplayFor(modelItem => item.waited_lot_number)
+                    </td>
+                    <td class="tr-sps_tit">
+                        @Html.DisplayFor(modelItem => item.waited_total_number)
+                    </td>
+                    <td class="tr-sps_tit" style="color: #B74635;">
+                        @Html.DisplayFor(modelItem => item.bad_lot_number)
+                    </td>
+                    <td class="tr-sps_tit" style="color: #B74635;">
+                        @Html.DisplayFor(modelItem => item.bad_total_number)
+                    </td>
+
+                    <td class="tr-sps_tit">
+                        @Html.DisplayFor(modelItem => item.near_lot_number)
+                    </td>
+                    <td class="tr-sps_tit">
+                        @Html.DisplayFor(modelItem => item.near_total_number)
+                    </td>
+
+                </tr>
+
+            }
+            <tr>
+                <td style="font-weight:bold;font-size:14px;">空托盘总数</td>
+                <td style="color: #B74635;font-size:14px;">@empty_count</td>
+                <td style="font-weight:bold;font-size:14px;">物料托盘总数</td>
+                <td style="color: #B74635;font-size:14px;">@tray_count</td>
+                <td colspan="8"></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

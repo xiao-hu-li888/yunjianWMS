@@ -1,0 +1,85 @@
+20211130 09:07:53.515----->>>WMS服务：监视线程已启动
+20211130 09:07:53.516----->>>正在重启关闭的线程 ==>>WCS服务
+20211130 09:07:53.538----->>>启动线程：【WCS服务】 socket 客户端>> ip：127.0.0.1，端口：6001
+20211130 09:07:53.607----->>>正在连接wcs... ...
+20211130 09:07:56.007----->>>wmservice1 loghandler13555543>>【连接超时：System.Net.Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6001
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 108】
+20211130 09:57:18.116----->>>wmservice1 loghandler13555543>>成功连接到:127.0.0.1:6001
+20211130 09:57:18.204----->>>与wcs已建立连接
+20211130 09:58:45.217----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":203,"seq":1,station:4,"x_1_barcode":"T1001","x_2_barcode":""}】
+20211130 09:58:45.222----->>>wms接收wcs的json数据>>>>:10003{"cmd":203,"seq":1,station:4,"x_1_barcode":"T1001","x_2_barcode":""}
+20211130 09:58:46.202----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"cmd":101,"seq":1,"task_id":1020,"src_station":4,"dest_station":0,"src_rack":4,"src_col":0,"src_row":0,"dest_rack":4,"dest_col":1,"dest_row":11,"weight":0.0,"barcode":null}
+20211130 09:58:50.279----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":32,"task_id":1020,"task_status":1,"task_info":"successful"}】
+20211130 09:58:50.280----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":32,"task_id":1020,"task_status":1,"task_info":"successful"}
+20211130 09:58:55.281----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":35,"task_id":1020,"task_status":3,"task_info":"successful"}】
+20211130 09:58:55.281----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":35,"task_id":1020,"task_status":3,"task_info":"successful"}
+20211130 10:04:50.200----->>>wmservice1 loghandler13555543>>onErrorRestart[133101]：RecMsg接收数据出现未知异常，终止连接：远程主机强迫关闭了一个现有的连接。
+20211130 10:04:50.216----->>>RecMsg接收数据出现未知异常，终止连接：远程主机强迫关闭了一个现有的连接。
+20211130 10:04:50.216----->>>与wcs断开连接，修改堆垛机的状态！ 
+20211130 10:04:52.075----->>>正在连接wcs... ...
+20211130 10:04:52.106----->>>wmservice1 loghandler13555543>>心跳包发送失败22：==>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTProtocol.Tcp.Socket_Client_New.HeatBeating() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 369
+20211130 10:04:54.153----->>>wmservice1 loghandler13555543>>【连接超时：System.Net.Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6001
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 108】
+20211130 10:25:51.216----->>>正在停止WMS服务...
+20211130 10:25:51.324----->>>正在关闭所有线程...
+20211130 10:25:51.360----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.WMSServiceServer.MonitorHandler() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\WMSServiceServer.cs:行号 315
+20211130 10:25:51.361----->>>[WCS服务]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 119
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 97
+20211130 10:25:51.363----->>>[WCS服务]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 49
+20211130 10:25:51.365----->>>WMS服务已停止...
+20211130 12:08:57.115----->>>WMS服务：监视线程已启动
+20211130 12:08:57.116----->>>正在重启关闭的线程 ==>>WCS服务
+20211130 12:08:57.133----->>>启动线程：【WCS服务】 socket 客户端>> ip：127.0.0.1，端口：6001
+20211130 12:08:57.187----->>>正在连接wcs... ...
+20211130 12:08:59.235----->>>wmservice1 loghandler13555543>>【连接超时：System.Net.Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6001
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 108】
+20211130 15:12:54.500----->>>正在停止WMS服务...
+20211130 15:12:54.650----->>>正在关闭所有线程...
+20211130 15:12:54.664----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.WMSServiceServer.MonitorHandler() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\WMSServiceServer.cs:行号 315
+20211130 15:12:54.672----->>>[WCS服务]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 119
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 97
+20211130 15:12:54.673----->>>[WCS服务]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 49
+20211130 15:12:54.685----->>>WMS服务已停止...
+20211130 15:31:00.846----->>>WMS服务：监视线程已启动
+20211130 15:31:00.850----->>>正在重启关闭的线程 ==>>WCS服务
+20211130 15:31:00.874----->>>启动线程：【WCS服务】 socket 客户端>> ip：127.0.0.1，端口：6001
+20211130 15:31:00.965----->>>正在连接wcs... ...
+20211130 15:31:03.022----->>>wmservice1 loghandler13555543>>【连接超时：System.Net.Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6001
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 108】
+20211130 20:43:05.800----->>>正在停止WMS服务...
+20211130 20:43:05.913----->>>正在关闭所有线程...
+20211130 20:43:05.934----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.WMSServiceServer.MonitorHandler() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\WMSServiceServer.cs:行号 315
+20211130 20:43:07.261----->>>[WCS服务]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 109
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 97
+20211130 20:43:07.262----->>>[WCS服务]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 49
+20211130 20:43:07.263----->>>WMS服务已停止...

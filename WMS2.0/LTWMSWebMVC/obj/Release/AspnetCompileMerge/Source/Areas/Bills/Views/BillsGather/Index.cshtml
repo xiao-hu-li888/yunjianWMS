@@ -1,0 +1,44 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.Bills.Data.BillsGatherSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+        var speech = new LT_Speech();
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+            speech.speek("查询成功");
+        });
+        function ExportPDFFunction(t,tp) {
+            t.href = "@Url.Action("ExportPDF","BillsGather")?kwd=" + $("#s_keywords").val() + "&begin=" +
+                $("#s_date_begin").val() + "&end=" + $("#s_date_end").val() + "&bills_type=" + $("#bills_type").val()
+                + "&ex_type=" + tp + "&exp_date=";
+        }
+    </script>
+}
+<section class="btn_div"> 
+    <a href="#" class="icos ico_refresh">刷新</a>
+</section> 
+<section class="searchbg">
+    @using (Html.BeginForm("Index", "BillsGather", FormMethod.Post, new { name = "paging_search_form" }))
+    {
+    <div>
+        @Html.LabelFor(a => a.s_keywords)：@Html.TextBoxFor(a => a.s_keywords, new { @class = "ac_input", placeholder = "请输入" + Html.DisplayNameFor(a => a.s_keywords) })
+        @Html.LabelFor(a => a.s_date_begin)：@Html.EditorFor(a => a.s_date_begin)
+        @Html.LabelFor(a => a.s_date_end)：@Html.EditorFor(a => a.s_date_end)
+        @Html.LabelFor(a => a.bills_type)：@Html.EditorFor(a => a.bills_type)
+        <input type="submit" value="搜索" />
+
+        <a onclick="ExportPDFFunction(this,0);" class="icos ico_download2" target="_blank" style="margin-left:20px;cursor:pointer;">导出入库数据</a>
+        <a onclick="ExportPDFFunction(this,1);" class="icos ico_download2" target="_blank" style="margin-left:10px;cursor:pointer;">导出出库数据</a>
+    </div>
+
+    }
+</section>
+<section id="LTContent">
+    @Html.Partial("ViewList", Model.PageCont)
+</section>
+@Html.Partial("Paging", @Model.Paging)

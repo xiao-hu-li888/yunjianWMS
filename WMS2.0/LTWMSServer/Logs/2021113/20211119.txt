@@ -1,0 +1,247 @@
+20211119 11:07:51.005----->>>WMS服务：监视线程已启动
+20211119 11:08:17.863----->>>正在停止WMS服务...
+20211119 11:08:18.124----->>>正在关闭所有线程...
+20211119 11:08:18.146----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.WMSServiceServer.MonitorHandler() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\WMSServiceServer.cs:行号 315
+20211119 11:08:18.148----->>>WMS服务已停止...
+20211119 11:08:23.364----->>>WMS服务：监视线程已启动
+20211119 11:08:31.185----->>>正在停止WMS服务...
+20211119 11:08:31.197----->>>正在关闭所有线程...
+20211119 11:08:31.199----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.WMSServiceServer.MonitorHandler() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\WMSServiceServer.cs:行号 315
+20211119 11:08:31.221----->>>WMS服务已停止...
+20211119 11:08:34.747----->>>WMS服务：监视线程已启动
+20211119 11:08:34.747----->>>正在重启关闭的线程 ==>>WCS服务
+20211119 11:08:34.752----->>>启动线程：【WCS服务】 socket 客户端>> ip：127.0.0.1，端口：6001
+20211119 11:08:34.847----->>>正在连接wcs... ...
+20211119 11:08:36.896----->>>wmservice1 loghandler13555543>>【连接超时：System.Net.Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6001
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 108】
+20211119 11:26:31.148----->>>wmservice1 loghandler13555543>>成功连接到:127.0.0.1:6001
+20211119 11:26:31.514----->>>与wcs已建立连接
+20211119 11:28:13.458----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":203,"seq":1,station:2,"x_1_barcode":"T1001","x_2_barcode":""}】
+20211119 11:28:13.469----->>>wms接收wcs的json数据>>>>:10003{"cmd":203,"seq":1,station:2,"x_1_barcode":"T1001","x_2_barcode":""}
+20211119 12:12:32.694----->>>线程WCS服务超过设定时间180(秒)没有响应，重新启动线程... ==>>
+20211119 12:12:33.140----->>>正在重启关闭的线程 ==>>WCS服务
+20211119 12:12:33.141----->>>正在终止意外关闭的线程:WCS服务
+20211119 12:12:34.178----->>>启动线程：【WCS服务】 socket 客户端>> ip：127.0.0.1，端口：6001
+20211119 12:12:34.637----->>>正在连接wcs... ...
+20211119 12:12:34.641----->>>wmservice1 loghandler13555543>>成功连接到:127.0.0.1:6001
+20211119 12:12:35.222----->>>与wcs已建立连接
+20211119 12:33:14.880----->>>正在停止WMS服务...
+20211119 12:33:15.021----->>>正在关闭所有线程...
+20211119 12:33:15.063----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.WMSServiceServer.MonitorHandler() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\WMSServiceServer.cs:行号 315
+20211119 12:33:15.068----->>>WMS服务已停止...
+20211119 12:33:49.535----->>>WMS服务：监视线程已启动
+20211119 12:33:49.537----->>>正在重启关闭的线程 ==>>WCS服务
+20211119 12:33:49.545----->>>启动线程：【WCS服务】 socket 客户端>> ip：127.0.0.1，端口：6001
+20211119 12:33:49.752----->>>正在连接wcs... ...
+20211119 12:33:49.757----->>>wmservice1 loghandler13555543>>成功连接到:127.0.0.1:6001
+20211119 12:33:49.790----->>>与wcs已建立连接
+20211119 13:06:58.936----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":202,"seq":1,"dev_count":1,"dev_info":[{ "dev_id":1101,"status":1,"error_code":0,"error_msg":"no error"},{ "dev_id":1102,"status":1,"error_code":0,"error_msg":"no error"}]}】
+20211119 13:06:58.978----->>>wms接收wcs的json数据>>>>:10003{"cmd":202,"seq":1,"dev_count":1,"dev_info":[{ "dev_id":1101,"status":1,"error_code":0,"error_msg":"no error"},{ "dev_id":1102,"status":1,"error_code":0,"error_msg":"no error"}]}
+20211119 13:07:31.754----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":202,"seq":1,"dev_count":1,"dev_info":[{ "dev_id":1,"status":1,"error_code":0,"error_msg":"no error"},{ "dev_id":3,"status":1,"error_code":0,"error_msg":"no error"}]}】
+20211119 13:07:31.755----->>>wms接收wcs的json数据>>>>:10003{"cmd":202,"seq":1,"dev_count":1,"dev_info":[{ "dev_id":1,"status":1,"error_code":0,"error_msg":"no error"},{ "dev_id":3,"status":1,"error_code":0,"error_msg":"no error"}]}
+20211119 13:07:31.999----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":202,"seq":1,"dev_count":1,"dev_info":[{ "dev_id":1,"status":1,"error_code":0,"error_msg":"no error"},{ "dev_id":3,"status":1,"error_code":0,"error_msg":"no error"}]}】
+20211119 13:07:32.000----->>>wms接收wcs的json数据>>>>:10003{"cmd":202,"seq":1,"dev_count":1,"dev_info":[{ "dev_id":1,"status":1,"error_code":0,"error_msg":"no error"},{ "dev_id":3,"status":1,"error_code":0,"error_msg":"no error"}]}
+20211119 13:09:25.275----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":203,"seq":1,station:4,"x_1_barcode":"T1001","x_2_barcode":""}】
+20211119 13:09:25.275----->>>wms接收wcs的json数据>>>>:10003{"cmd":203,"seq":1,station:4,"x_1_barcode":"T1001","x_2_barcode":""}
+20211119 13:09:49.046----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"cmd":101,"seq":1,"task_id":1001,"src_station":4,"dest_station":0,"src_rack":4,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":1,"dest_row":14,"weight":0.0,"barcode":null}
+20211119 13:09:53.350----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":1979,"task_id":1001,"task_status":1,"task_info":"successful"}】
+20211119 13:09:53.351----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":1979,"task_id":1001,"task_status":1,"task_info":"successful"}
+20211119 13:09:58.358----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":1983,"task_id":1001,"task_status":3,"task_info":"successful"}】
+20211119 13:09:58.359----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":1983,"task_id":1001,"task_status":3,"task_info":"successful"}
+20211119 13:14:33.611----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":203,"seq":1,station:1,"x_1_barcode":"T1002","x_2_barcode":""}】
+20211119 13:14:33.618----->>>wms接收wcs的json数据>>>>:10003{"cmd":203,"seq":1,station:1,"x_1_barcode":"T1002","x_2_barcode":""}
+20211119 13:15:02.782----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"cmd":101,"seq":2,"task_id":1002,"src_station":1,"dest_station":0,"src_rack":1,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":1,"dest_row":12,"weight":0.0,"barcode":null}
+20211119 13:15:06.802----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":2189,"task_id":1002,"task_status":1,"task_info":"successful"}】
+20211119 13:15:06.802----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":2189,"task_id":1002,"task_status":1,"task_info":"successful"}
+20211119 13:15:11.816----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":2194,"task_id":1002,"task_status":3,"task_info":"successful"}】
+20211119 13:15:11.816----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":2194,"task_id":1002,"task_status":3,"task_info":"successful"}
+20211119 13:21:03.972----->>>正在停止WMS服务...
+20211119 13:21:04.065----->>>正在关闭所有线程...
+20211119 13:21:04.093----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.WMSServiceServer.MonitorHandler()
+20211119 13:21:04.096----->>>[WCS服务]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler)
+20211119 13:21:04.097----->>>[WCS服务]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler)
+20211119 13:21:04.100----->>>WMS服务已停止...
+20211119 13:21:17.163----->>>WMS服务：监视线程已启动
+20211119 13:21:17.164----->>>正在重启关闭的线程 ==>>WCS服务
+20211119 13:21:17.210----->>>启动线程：【WCS服务】 socket 客户端>> ip：127.0.0.1，端口：6001
+20211119 13:21:17.317----->>>正在连接wcs... ...
+20211119 13:21:17.322----->>>wmservice1 loghandler13555543>>成功连接到:127.0.0.1:6001
+20211119 13:21:17.339----->>>与wcs已建立连接
+20211119 13:21:20.647----->>>正在停止WMS服务...
+20211119 13:21:20.701----->>>正在关闭所有线程...
+20211119 13:21:20.714----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.WMSServiceServer.MonitorHandler() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\WMSServiceServer.cs:行号 315
+20211119 13:21:20.725----->>>[WCS服务]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 219
+20211119 13:21:20.727----->>>[WCS服务]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 49
+20211119 13:21:20.739----->>>WMS服务已停止...
+20211119 13:21:29.221----->>>WMS服务：监视线程已启动
+20211119 13:21:29.222----->>>正在重启关闭的线程 ==>>WCS服务
+20211119 13:21:29.227----->>>启动线程：【WCS服务】 socket 客户端>> ip：127.0.0.1，端口：6001
+20211119 13:21:29.323----->>>正在连接wcs... ...
+20211119 13:21:29.325----->>>wmservice1 loghandler13555543>>成功连接到:127.0.0.1:6001
+20211119 13:21:29.346----->>>与wcs已建立连接
+20211119 13:24:12.301----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":203,"seq":1,station:2,"x_1_barcode":"T1002","x_2_barcode":""}】
+20211119 13:24:12.304----->>>wms接收wcs的json数据>>>>:10003{"cmd":203,"seq":1,station:2,"x_1_barcode":"T1002","x_2_barcode":""}
+20211119 13:24:35.530----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":203,"seq":1,station:2,"x_1_barcode":"T1003","x_2_barcode":""}】
+20211119 13:24:35.530----->>>wms接收wcs的json数据>>>>:10003{"cmd":203,"seq":1,station:2,"x_1_barcode":"T1003","x_2_barcode":""}
+20211119 13:24:56.698----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"cmd":101,"seq":1,"task_id":1003,"src_station":2,"dest_station":0,"src_rack":2,"src_col":0,"src_row":0,"dest_rack":5,"dest_col":1,"dest_row":11,"weight":0.0,"barcode":null}
+20211119 13:25:00.726----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":2586,"task_id":1003,"task_status":1,"task_info":"successful"}】
+20211119 13:25:00.726----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":2586,"task_id":1003,"task_status":1,"task_info":"successful"}
+20211119 13:25:05.734----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":2590,"task_id":1003,"task_status":3,"task_info":"successful"}】
+20211119 13:25:05.735----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":2590,"task_id":1003,"task_status":3,"task_info":"successful"}
+20211119 14:09:43.654----->>>正在停止WMS服务...
+20211119 14:09:43.806----->>>Error code:9110421 线程意外跳出...
+20211119 14:09:43.936----->>>正在关闭所有线程...
+20211119 14:09:43.950----->>>[WCS服务]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 219
+20211119 14:09:43.953----->>>[WCS服务]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 49
+20211119 14:09:43.961----->>>WMS服务已停止...
+20211119 14:09:56.225----->>>WMS服务：监视线程已启动
+20211119 14:09:56.225----->>>正在重启关闭的线程 ==>>WCS服务
+20211119 14:09:56.228----->>>启动线程：【WCS服务】 socket 客户端>> ip：127.0.0.1，端口：6001
+20211119 14:09:56.306----->>>正在连接wcs... ...
+20211119 14:09:56.309----->>>wmservice1 loghandler13555543>>成功连接到:127.0.0.1:6001
+20211119 14:09:56.327----->>>与wcs已建立连接
+20211119 14:20:12.508----->>>正在停止WMS服务...
+20211119 14:20:12.572----->>>正在关闭所有线程...
+20211119 14:20:12.582----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.WMSServiceServer.MonitorHandler()
+20211119 14:20:12.589----->>>WMS服务已停止...
+20211119 14:20:23.471----->>>WMS服务：监视线程已启动
+20211119 14:20:23.472----->>>正在重启关闭的线程 ==>>WCS服务
+20211119 14:20:23.475----->>>启动线程：【WCS服务】 socket 客户端>> ip：127.0.0.1，端口：6001
+20211119 14:20:23.555----->>>正在连接wcs... ...
+20211119 14:20:23.558----->>>wmservice1 loghandler13555543>>成功连接到:127.0.0.1:6001
+20211119 14:20:23.581----->>>与wcs已建立连接
+20211119 14:25:55.466----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":203,"seq":1,station:2,"x_1_barcode":"T1004","x_2_barcode":""}】
+20211119 14:25:55.469----->>>wms接收wcs的json数据>>>>:10003{"cmd":203,"seq":1,station:2,"x_1_barcode":"T1004","x_2_barcode":""}
+20211119 14:26:14.242----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"cmd":101,"seq":1,"task_id":1004,"src_station":2,"dest_station":0,"src_rack":2,"src_col":0,"src_row":0,"dest_rack":8,"dest_col":1,"dest_row":11,"weight":0.0,"barcode":null}
+20211119 14:26:18.263----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":5033,"task_id":1004,"task_status":1,"task_info":"successful"}】
+20211119 14:26:18.263----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":5033,"task_id":1004,"task_status":1,"task_info":"successful"}
+20211119 14:26:23.276----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":5038,"task_id":1004,"task_status":3,"task_info":"successful"}】
+20211119 14:26:23.277----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":5038,"task_id":1004,"task_status":3,"task_info":"successful"}
+20211119 14:29:33.123----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":""}】
+20211119 14:29:33.123----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":""}
+20211119 14:29:43.969----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1001"}】
+20211119 14:29:43.969----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1001"}
+20211119 14:30:18.591----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:30:18.591----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:30:19.308----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":2}
+20211119 14:30:23.432----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:30:23.432----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:30:23.623----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":3}
+20211119 14:30:24.095----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:30:24.096----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:30:24.255----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:30:24.256----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:30:24.420----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:30:24.420----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:30:24.586----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:30:24.586----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:30:24.718----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":4}
+20211119 14:30:24.760----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:30:24.761----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:30:25.790----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":5}
+20211119 14:30:37.155----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:30:37.155----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:30:37.415----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":6}
+20211119 14:30:38.044----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:30:38.044----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:30:38.475----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":7}
+20211119 14:31:55.782----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":202,"seq":1,"dev_count":1,"dev_info":[{ "dev_id":1101,"status":0,"error_code":0,"error_msg":"no error"},{ "dev_id":1102,"status":0,"error_code":0,"error_msg":"no error"}]}】
+20211119 14:31:55.782----->>>wms接收wcs的json数据>>>>:10003{"cmd":202,"seq":1,"dev_count":1,"dev_info":[{ "dev_id":1101,"status":0,"error_code":0,"error_msg":"no error"},{ "dev_id":1102,"status":0,"error_code":0,"error_msg":"no error"}]}
+20211119 14:32:17.410----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:32:17.410----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:32:17.757----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":8}
+20211119 14:32:18.563----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:32:18.563----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:32:18.818----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":9}
+20211119 14:32:19.264----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:32:19.264----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:32:19.876----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":10}
+20211119 14:32:20.516----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:32:20.516----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:32:20.952----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":11}
+20211119 14:32:21.680----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:32:21.680----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:32:22.003----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":12}
+20211119 14:35:56.605----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":202,"seq":1,"dev_count":1,"dev_info":[{ "dev_id":1101,"status":0,"error_code":0,"error_msg":"no error"},{ "dev_id":1102,"status":1,"error_code":0,"error_msg":"no error"}]}】
+20211119 14:35:56.606----->>>wms接收wcs的json数据>>>>:10003{"cmd":202,"seq":1,"dev_count":1,"dev_info":[{ "dev_id":1101,"status":0,"error_code":0,"error_msg":"no error"},{ "dev_id":1102,"status":1,"error_code":0,"error_msg":"no error"}]}
+20211119 14:36:22.218----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:36:22.218----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:36:23.237----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":13}
+20211119 14:36:23.879----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:36:23.879----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:36:24.329----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":14}
+20211119 14:36:24.789----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}】
+20211119 14:36:24.789----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1005"}
+20211119 14:36:25.428----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1005","station":4,"num":1,"cmd":107,"seq":15}
+20211119 14:36:58.074----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":203,"seq":1,station:4,"x_1_barcode":"T1005","x_2_barcode":""}】
+20211119 14:36:58.075----->>>wms接收wcs的json数据>>>>:10003{"cmd":203,"seq":1,station:4,"x_1_barcode":"T1005","x_2_barcode":""}
+20211119 14:38:00.348----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":202,"seq":1,"dev_count":1,"dev_info":[{ "dev_id":1101,"status":1,"error_code":0,"error_msg":"no error"}]}】
+20211119 14:38:00.349----->>>wms接收wcs的json数据>>>>:10003{"cmd":202,"seq":1,"dev_count":1,"dev_info":[{ "dev_id":1101,"status":1,"error_code":0,"error_msg":"no error"}]}
+20211119 14:38:00.690----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"cmd":101,"seq":16,"task_id":1005,"src_station":4,"dest_station":0,"src_rack":4,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":1,"dest_row":15,"weight":0.0,"barcode":null}
+20211119 14:38:04.713----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":5505,"task_id":1005,"task_status":1,"task_info":"successful"}】
+20211119 14:38:04.713----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":5505,"task_id":1005,"task_status":1,"task_info":"successful"}
+20211119 14:38:09.762----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":5509,"task_id":1005,"task_status":3,"task_info":"successful"}】
+20211119 14:38:09.763----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":5509,"task_id":1005,"task_status":3,"task_info":"successful"}
+20211119 14:38:22.096----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"cmd":102,"seq":17,"task_id":1006,"src_station":0,"dest_station":3,"src_rack":1,"src_col":1,"src_row":12,"dest_rack":3,"dest_col":0,"dest_row":0,"weight":0.0,"barcode":null}
+20211119 14:38:26.120----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":5521,"task_id":1006,"task_status":1,"task_info":"successful"}】
+20211119 14:38:26.120----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":5521,"task_id":1006,"task_status":1,"task_info":"successful"}
+20211119 14:38:31.137----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":5525,"task_id":1006,"task_status":3,"task_info":"successful"}】
+20211119 14:38:31.138----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":5525,"task_id":1006,"task_status":3,"task_info":"successful"}
+20211119 14:40:21.479----->>>wmservice1 loghandler13555543>>onErrorRestart[133101]：RecMsg接收数据出现未知异常，终止连接：远程主机强迫关闭了一个现有的连接。
+20211119 14:40:21.488----->>>RecMsg接收数据出现未知异常，终止连接：远程主机强迫关闭了一个现有的连接。
+20211119 14:40:21.488----->>>与wcs断开连接，修改堆垛机的状态！ 
+20211119 14:40:23.302----->>>正在连接wcs... ...
+20211119 14:40:23.331----->>>wmservice1 loghandler13555543>>心跳包发送失败22：==>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTProtocol.Tcp.Socket_Client_New.HeatBeating() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 369
+20211119 14:40:25.376----->>>wmservice1 loghandler13555543>>【连接超时：System.Net.Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。 127.0.0.1:6001
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 108】
+20211119 15:14:53.939----->>>正在停止WMS服务...
+20211119 15:14:53.992----->>>正在关闭所有线程...
+20211119 15:14:54.007----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.WMSServiceServer.MonitorHandler() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\WMSServiceServer.cs:行号 315
+20211119 15:14:54.017----->>>[WCS服务]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 119
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 97
+20211119 15:14:54.019----->>>[WCS服务]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 49
+20211119 15:14:54.029----->>>WMS服务已停止...

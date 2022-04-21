@@ -1,0 +1,24 @@
+20210609 10:20:15.256----->>>System.InvalidOperationException: The model backing the 'LTModel' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+   在 System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.AsNoTracking()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.AsNoTracking()
+   在 LTERPEFModel.ComDao`1.GetAllQuery(Expression`1 WhereLambda) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\ERPWeb\LTERPEFModel\ComDao.cs:行号 440
+   在 LTERPWebMVC.Controllers.MatterApi.MatterController.GetAllMatter() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\ERPWeb\LTERPWebMVC\Controllers\MatterApi\MatterController.cs:行号 28
+20210609 10:21:36.604----->>>System.InvalidOperationException: The model backing the 'LTModel' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+   在 System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.AsNoTracking()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.AsNoTracking()
+   在 LTERPEFModel.ComDao`1.GetAllQuery(Expression`1 WhereLambda) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\ERPWeb\LTERPEFModel\ComDao.cs:行号 440
+   在 LTERPWebMVC.Controllers.MatterApi.MatterController.GetAllMatter() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\ERPWeb\LTERPWebMVC\Controllers\MatterApi\MatterController.cs:行号 28

@@ -1,0 +1,101 @@
+20210522 09:12:45.086----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":748,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:12:48.132----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":749,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:12:51.145----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":750,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:12:54.185----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":751,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:12:57.209----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":752,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:00.255----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":753,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:03.287----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":754,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:06.333----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":755,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:09.365----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":756,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:12.396----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":757,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:15.434----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":758,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:18.469----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":759,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:21.494----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":760,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:24.525----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":761,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:27.572----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":762,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:30.621----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":763,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:33.644----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":764,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:36.691----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":765,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:39.727----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":766,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:42.762----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":767,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:45.848----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":768,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:48.895----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":769,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:51.941----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":770,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:55.000----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":771,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:13:58.047----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":772,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:01.086----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":773,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:04.113----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":774,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:07.139----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":775,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:10.145----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":776,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:13.178----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":777,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:16.193----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":778,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:19.213----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":779,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:22.230----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":780,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:25.247----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":781,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:28.282----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":782,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:31.317----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":783,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:34.346----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":784,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:37.354----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":785,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:40.375----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":786,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:43.393----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":787,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:46.410----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":788,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:49.430----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":789,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:52.450----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":790,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 09:14:53.348----->>>正在停止WCS服务...
+20210522 09:14:53.349----->>>Wcs 服务已停止...
+20210522 09:14:53.350----->>>与wms断开连接...
+20210522 09:14:53.350----->>>正在关闭所有线程...
+20210522 09:14:53.351----->>>StackerSrv Logs>>>PLC[192.168.0.100]:连接已关闭
+20210522 09:14:53.404----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWCSModule.WCSServiceClient.MonitorHandler() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 486
+20210522 09:14:53.408----->>>[WCS tcp Socket 客户端线程]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 218
+20210522 09:14:53.410----->>>[WCS tcp Socket 客户端线程]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 240
+20210522 09:14:53.437----->>>WCS服务已停止...
+20210522 19:26:01.018----->>>WCS服务：监视线程已启动
+20210522 19:26:01.021----->>>正在重启关闭的线程 ==>>WCS tcp Socket 客户端线程
+20210522 19:26:01.027----->>>正在重启关闭的线程 ==>>PLC连接线程
+20210522 19:26:01.038----->>>启动线程：PLC连接线程
+20210522 19:26:01.042----->>>启动线程：WCS tcp Socket 客户端线程
+20210522 19:26:01.043----->>>Wcs 服务已启动...
+20210522 19:26:01.043----->>>与wms断开连接...
+20210522 19:26:01.043----->>>正在连接wms... ...
+20210522 19:26:01.045----->>>wcservice1 log handler 695511235>>成功连接到:127.0.0.1:6001
+20210522 19:26:01.050----->>>与wms连接成功...
+20210522 19:26:01.050----->>>与wms已建立连接
+20210522 19:26:01.145----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":1,"dev_count":0,"dev_info":[{"dev_id":2001,"status":-1,"error_code":0,"error_msg":""}],"cmd":202}
+20210522 19:26:03.977----->>>正在停止WCS服务...
+20210522 19:26:03.977----->>>Wcs 服务已停止...
+20210522 19:26:03.978----->>>与wms断开连接...
+20210522 19:26:03.978----->>>正在关闭所有线程...
+20210522 19:26:03.979----->>>StackerSrv Logs>>>PLC[192.168.0.100]:连接已关闭
+20210522 19:26:04.044----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWCSModule.WCSServiceClient.MonitorHandler() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 486
+20210522 19:26:04.045----->>>[WCS tcp Socket 客户端线程]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 218
+20210522 19:26:04.046----->>>[WCS tcp Socket 客户端线程]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 240
+20210522 19:26:04.055----->>>StackerSrv Logs>>>PLC[192.168.0.100]连接失败:5532071-->>>S7.Net.PlcException: Couldn't establish the connection to 192.168.0.100.
+Message: 正在中止线程。 ---> System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Monitor.ObjWait(Boolean exitContext, Int32 millisecondsTimeout, Object obj)
+   在 System.Threading.Monitor.Wait(Object obj, Int32 millisecondsTimeout, Boolean exitContext)
+   在 System.Threading.Monitor.Wait(Object obj, Int32 millisecondsTimeout)
+   在 System.Threading.ManualResetEventSlim.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   在 System.Threading.Tasks.Task.SpinThenBlockingWait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   在 System.Threading.Tasks.Task.InternalWait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   在 S7.Net.Plc.Open()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.Open()
+   在 LTWCSService.ApplicationService.WcsServer.S7BaseService.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\S7BaseService.cs:行号 74
+20210522 19:26:04.056----->>>WCS服务已停止...

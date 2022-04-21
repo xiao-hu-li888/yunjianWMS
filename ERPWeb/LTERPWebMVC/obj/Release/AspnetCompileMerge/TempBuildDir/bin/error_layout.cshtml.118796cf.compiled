@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/ErrorPage/Views/Shared/Error_Layout.cshtml" hash="e291beb" filehash="ffffe35e819a41de" flags="110000" assembly="App_Web_kitqo10u" type="ASP._Page_Areas_ErrorPage_Views_Shared_Error_Layout_cshtml">
+    <filedeps>
+        <filedep name="/Areas/ErrorPage/Views/Shared/Error_Layout.cshtml" />
+    </filedeps>
+</preserve>

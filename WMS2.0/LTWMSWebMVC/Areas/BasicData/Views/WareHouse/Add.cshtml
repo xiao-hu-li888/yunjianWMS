@@ -1,0 +1,93 @@
+﻿@model LTWMSWebMVC.Areas.BasicData.Data.WareHouseModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend></legend>
+    @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+    {
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+    }
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"><span class="necessary">*</span> @Html.LabelFor(model => model.code)</label>
+        <div class="col-sm-9">
+            @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+            {
+
+                @Html.DisplayFor(model => model.code)
+                @Html.HiddenFor(model => model.code)
+            }
+            else
+            {
+                @Html.EditorFor(model => model.code)
+                @Html.ValidationMessageFor(model => model.code)
+            }
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span class="necessary">*</span>   @Html.LabelFor(model => model.name)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.warehouse_type_guid)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.warehouse_type_guid)
+            @Html.ValidationMessageFor(model => model.warehouse_type_guid)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.category)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.category)
+            @Html.ValidationMessageFor(model => model.category)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.distribute_way)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.distribute_way)
+            @Html.ValidationMessageFor(model => model.distribute_way)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.address)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.address)
+            @Html.ValidationMessageFor(model => model.address)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.remark)</label>
+        <div class="col-sm-9">
+            @Html.TextAreaFor(model => model.remark)
+            @Html.ValidationMessageFor(model => model.remark)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <p>
+
+        <button class="btn btn-sm btn-info" type="submit" onclick="return sethiddenv(1);">
+            <i class="ace-icon fa fa-check bigger-110"></i>
+            @ViewBag.SubmitText
+        </button>
+    </p>
+</fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,90 @@
+﻿@model LTWMSWebMVC.Areas.BasicData.Data.TrayModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend></legend>
+    @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+    {
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+    }
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">@Html.LabelFor(model => model.traybarcode)</label>
+        <div class="col-sm-9">
+            @Html.DisplayFor(model => model.traybarcode)
+            @Html.HiddenFor(model => model.traybarcode)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.TrayMatter.name_list)  </label>
+        <div class="col-sm-9">
+            @Html.DisplayFor(model => model.TrayMatter.x_barcode)/@Html.DisplayFor(model => model.TrayMatter.name_list)
+            @Html.HiddenFor(model => model.TrayMatter.x_barcode)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.TrayMatter.lot_number)  </label>
+        <div class="col-sm-9">
+            @Html.DisplayFor(model => model.TrayMatter.lot_number)
+            @Html.HiddenFor(model => model.TrayMatter.lot_number)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.shelfunits_pos)  </label>
+        <div class="col-sm-9">
+            @Html.DisplayFor(model => model.shelfunits_pos)
+            @Html.HiddenFor(model => model.shelfunits_pos)
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.TrayMatter.number)  </label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.TrayMatter.number)
+            @Html.ValidationMessageFor(model => model.TrayMatter.number)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    @*<div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.matter_barcode2)  </label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.matter_barcode2)
+            @Html.ValidationMessageFor(model => model.matter_barcode2)
+        </div>
+        <div class="clear"></div>
+    </div>*@
+
+    @*<div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.memo)  </label>
+        <div class="col-sm-9">
+            @Html.TextAreaFor(model => model.memo)
+            @Html.ValidationMessageFor(model => model.memo)
+        </div>
+        <div class="clear"></div>
+    </div>*@
+    <p>
+        <button class="btn btn-sm btn-info" type="submit">
+            <i class="ace-icon fa fa-check bigger-110"></i>
+            @ViewBag.SubmitText
+        </button>
+    </p>
+</fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

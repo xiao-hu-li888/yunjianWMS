@@ -1,0 +1,56 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.Bills.Data.StockInDetailSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+        var speech = new LT_Speech();
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+            speech.speek("查询成功");
+        });
+        $(".action-buttons").click(function () {
+            //alert($(this).data("guid"));
+            var faObj = $(this).find(">a >.fa");
+            if (faObj.hasClass("fa-angle-double-down")) {
+                faObj.removeClass("fa-angle-double-down");
+                faObj.addClass("fa-angle-double-up");
+            } else {
+                faObj.removeClass("fa-angle-double-up");
+                faObj.addClass("fa-angle-double-down");
+            }
+            var btnObj = $(".border tr[data-guid=" + $(this).data("guid") + "]");
+            if (btnObj.hasClass("open")) {
+                btnObj.removeClass("open");
+            } else {
+                btnObj.addClass("open");
+            }
+        });
+    </script>
+}
+<section class="btn_div">
+    <a href="@Url.Action("Index")" class="icos ico_back">返回列表</a>
+    <a href="@Url.Action("DetailAdd")/?billstk_guid=@Model.billstockin_guid" data-dialog-title="添加入库明细" class="icos ico_add">添加入库明细</a>
+    <a href="#" class="icos ico_refresh">刷新</a>
+</section>
+<section class="btn_div btn_div2">
+    <a href="@Url.Action("DetailUpdate")/{0}" data-dialog-title="修改" class="icos ico_edit needsele">编辑</a>
+    <a href="@Url.Action("DetailDeletePost")/{0}" data-ltext-ajax-delete="true" data-ajax-confirm="确认删除？" class="icos ico_dele needsele">删除</a>
+</section>
+<section class="searchbg">
+    @using (Html.BeginForm("DetailIndex", "StockIn", FormMethod.Post, new { name = "paging_search_form" }))
+    {
+        <div>
+            @Html.HiddenFor(model => model.billstockin_guid)
+            @Html.LabelFor(a => a.s_keywords)：@Html.TextBoxFor(a => a.s_keywords, new { @class = "ac_input", placeholder = "请输入" + Html.DisplayNameFor(a => a.s_keywords) })
+            <input type="submit" value="搜索" />
+        </div>
+    }
+</section>
+<section id="LTContent">
+    @Html.Partial("DetailViewList", Model.PageCont)
+</section>
+@Html.Partial("Paging", @Model.Paging)

@@ -1,0 +1,56 @@
+﻿ @{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+       // var speech = new LT_Speech();
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+           // speech.speek("查询成功");
+        });
+
+        function BackUpSettingDB() {
+            $.post("@Url.Action("BackUpSettingDB")?r=" + Math.random(), {}, function (data) {
+                if (data.success) {
+                    alert("备份配置信息成功！");
+                } else {
+                    alert(data.errors);
+                }
+            }).fail(function () {
+                alert("备份配置信息失败");
+            });
+        }
+        function ReInitBackUpSettingDB() {
+            $.post("@Url.Action("ReInitBackUpSettingDB")?r=" + Math.random(), {}, function (data) {
+                if (data.success) {
+                    alert("还原配置信息成功！");
+                } else {
+                    alert(data.errors);
+                }
+            }).fail(function () {
+                alert("还原配置信息失败");
+            });
+        }
+        function BackUpDataBase() {
+             $.post("@Url.Action("BackUpDataBase")?r=" + Math.random(), {}, function (data) {
+                if (data.success) {
+                    alert("完整备份数据库成功！");
+                } else {
+                    alert(data.errors);
+                }
+            }).fail(function () {
+                alert("完整备份数据库失败");
+            });
+        }
+    </script>
+}
+<section class="btn_div">
+    <a href="#" class="icos ico_refresh">刷新</a>
+    <br />
+    <a href="###" class="icos ico_add" onclick="if (confirm('备份配置信息？')) { BackUpSettingDB(); }">备份配置信息</a>
+    <a href="###" class="icos ico_add" onclick="if (confirm('还原配置信息？')) { ReInitBackUpSettingDB(); }">还原配置信息</a>
+    <br /><br /><br /><br />
+    <a href="###" class="icos ico_add" onclick="if (confirm('备份数据库？')) { BackUpDataBase(); }">完整备份数据</a>
+</section>
+ 

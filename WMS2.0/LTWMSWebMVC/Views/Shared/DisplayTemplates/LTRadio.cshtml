@@ -1,0 +1,6 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model object
+@{ 
+    string listname = (string)ViewData.ModelMetadata.AdditionalValues["listname"];
+    @Html.ListValue( listname, Model);
+}

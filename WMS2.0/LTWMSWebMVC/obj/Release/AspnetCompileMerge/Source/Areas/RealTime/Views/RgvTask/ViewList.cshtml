@@ -1,0 +1,163 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.RealTime.Data.StackerTaskQueueModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                任务ID
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tasktype)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tray1_barcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.src_shelfunits_pos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dest_shelfunits_pos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.startup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.taskstatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stacker_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.task_time_length)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+        <tr class="@_cname" style="cursor:pointer;">
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tasktype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tray1_barcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.src_shelfunits_pos)
+                @if (item.tasktype == LTWMSEFModel.Hardware.WcsTaskType.StockIn)
+                {
+
+                    <span>站台 @{WriteLiteral(item.src_station);}</span>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dest_shelfunits_pos)
+                @if (item.tasktype == LTWMSEFModel.Hardware.WcsTaskType.StockOut)
+                {
+
+                    <span>
+                        站台 @{
+                            if (item.dest_station == 0)
+                            {
+                                WriteLiteral("<span class='label label-sm label-danger'>待分配</span>");
+                            }
+                            else
+                            {
+                                WriteLiteral(item.dest_station);
+                            }
+                        }
+                    </span>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.startup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.taskstatus)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.stacker_number)*@
+                @switch (item.stacker_number)
+                {
+                    case "1":
+                        WriteLiteral("1货叉归中");
+                        break;
+                    case "2":
+                        WriteLiteral("2去取货点");
+                        break;
+                    case "3":
+                        WriteLiteral("3取货伸叉");
+                        break;
+                    case "4":
+                        WriteLiteral("4取货抬起");
+                        break;
+                    case "5":
+                        WriteLiteral("5取货缩回");
+                        break;
+                    case "6":
+                        WriteLiteral("6去放货点");
+                        break;
+                    case "7":
+                        WriteLiteral("7放货伸叉");
+                        break;
+                    case "8":
+                        WriteLiteral("8放货下降");
+                        break;
+                    case "9":
+                        WriteLiteral("9放货缩回");
+                        break;
+                    case "0":
+                    default:
+                        WriteLiteral(item.stacker_number);
+                        break;
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.task_time_length)
+            </td>
+            <td>
+            </td>
+        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.order)：
+                </td>
+                <td>
+                    @Html.DisplayTextFor(modelItem => item.order)
+                </td>
+                <td>
+                    物料：
+                </td>
+                <td colspan="9">
+                    @Html.DisplayTextFor(modelItem => item.matterbarcode_list)
+                </td>
+            </tr>
+
+
+    <tr>
+        <td>
+            备注：
+        </td>
+        <td colspan="9">
+            @Html.DisplayTextFor(modelItem => item.memo)
+        </td>
+    </tr>
+}
+    </tbody>
+</table>
+

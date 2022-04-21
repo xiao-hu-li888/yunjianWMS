@@ -1,0 +1,108 @@
+﻿@model LTWMSWebMVC.Areas.BasicData.Data.ShelvesModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend></legend>
+    @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+    {
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+    }
+    <div class="form-group form-border">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">   @Html.LabelFor(model => model.warehouse_guid)</label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.warehouse_guid)
+            @Html.HiddenFor(model => model.warehouse_guid)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">   @Html.LabelFor(model => model.rack)  </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.rack)
+            @Html.HiddenFor(model => model.rack)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.category)  </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.category)
+            @Html.HiddenFor(model => model.category)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">    @Html.LabelFor(model => model.rack_of_wcs)  </label>
+        <div class="col-sm-8">
+            @Html.EditorFor(model => model.rack_of_wcs)
+            @Html.ValidationMessageFor(model => model.rack_of_wcs)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.columns_reversal_wcs)  </label>
+        <div class="col-sm-8">
+            @Html.EditorFor(model => model.columns_reversal_wcs)
+            @Html.ValidationMessageFor(model => model.columns_reversal_wcs)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.columns_offset_wcs)  </label>
+        <div class="col-sm-8">
+            @Html.EditorFor(model => model.columns_offset_wcs)
+            @Html.ValidationMessageFor(model => model.columns_offset_wcs)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.rows_offset_wcs)  </label>
+        <div class="col-sm-8">
+            @Html.EditorFor(model => model.rows_offset_wcs)
+            @Html.ValidationMessageFor(model => model.rows_offset_wcs)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">   @Html.LabelFor(model => model.out_logic)  </label>
+        <div class="col-sm-8">
+            @Html.EditorFor(model => model.out_logic)
+            @Html.ValidationMessageFor(model => model.out_logic)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">   @Html.LabelFor(model => model.wcs_srv_guid)  </label>
+        <div class="col-sm-8">
+            @Html.EditorFor(model => model.wcs_srv_guid)
+            @Html.ValidationMessageFor(model => model.wcs_srv_guid)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.stock_distribute)  </label>
+        <div class="col-sm-8">
+            @Html.EditorFor(model => model.stock_distribute)
+            @Html.ValidationMessageFor(model => model.stock_distribute)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <p>
+        <button class="btn btn-sm btn-info" type="submit">
+            <i class="ace-icon fa fa-check bigger-110"></i>
+            保存配置
+        </button>
+    </p>
+</fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

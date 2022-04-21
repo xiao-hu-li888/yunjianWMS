@@ -1,0 +1,78 @@
+﻿@model LTWMSWebMVC.PagingModel
+@{
+    Layout = null;
+}
+@if (Model != null)
+{
+    <div class="common-paging">
+        <div class="common-paging-lft">
+            总@{@Model.TotalSize}条 &nbsp;
+            第@{@Model.CurrPage}页/总@{@Model.TotalPages}页
+        </div>
+        <div class="paging-div">
+            @{
+                var prvcount = 0;
+                for (int prd = (@Model.CurrPage - 5); prd < @Model.CurrPage; prd++)
+                {
+                    if (prd > 0)
+                    {
+                        prvcount++;
+                        WriteLiteral("<a class='page-sel' onclick='goto_page(" + prd + ");'>");
+                        WriteLiteral(prd);
+                        WriteLiteral("</a>");
+                    }
+                }
+                for (int p = @Model.CurrPage; p < (@Model.CurrPage + (10 - prvcount)); p++)
+                {
+                    if (p > @Model.TotalPages)
+                    {
+                        break;
+                    }
+                    if (p == Model.CurrPage)
+                    {
+                        WriteLiteral("<span class='page-sel curr-page'>");
+                        WriteLiteral(p);
+                        WriteLiteral("</span>");
+                    }
+                    else
+                    {
+                        WriteLiteral("<a class='page-sel' onclick='goto_page(" + p + ");'>");
+                        WriteLiteral(p);
+                        WriteLiteral("</a>");
+                    }
+                }
+            }
+            <input type="text" class="goto-page" value="@Model.CurrPage" name="gotoPage" id="gotoPage" />
+            <input type="button" class="greenbutton goto-page-button" value="跳转" onclick="goto_page($('#gotoPage').val());" />
+            <script type="text/javascript">
+                function goto_page(pageindex) {
+                    if (pageindex == -1) {
+                        //值为-1，删除后重新加载当前页
+                        pageindex = $('#gotoPage').val();
+                    }
+                    if (document.forms.length > 0) {
+                        var subform = $(document.forms[0]);
+                        if ($("form[name='paging_search_form']").length > 0) {
+                            subform = $("form[name='paging_search_form']");
+                        }
+                        subform.append($("<input type='hidden' name='paging_curr_page' value='" + pageindex + "'/>"));
+                        subform.submit();
+                    } else {
+                        var url = location.href;
+                        if (url.indexOf("?") > 0) {
+                            if (url.indexOf("paging_curr_page") > 0) {
+                                url = url.substr(0, url.indexOf("paging_curr_page"));
+                            } else
+                                url = url += "&";
+                        } else {
+                            url = url + "?";
+                        }
+                        url = url + "paging_curr_page=" + pageindex;
+                        location.href = url; 
+                    }
+                }
+            </script>
+        </div>
+        <div class="clear"></div>
+    </div>
+}

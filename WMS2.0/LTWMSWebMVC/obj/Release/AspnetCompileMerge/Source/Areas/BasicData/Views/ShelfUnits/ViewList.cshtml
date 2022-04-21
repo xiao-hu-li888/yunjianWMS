@@ -1,0 +1,80 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.RealTime.Data.ShelfUnitsModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.shelfunits_pos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.columns)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rows)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.depth1_traybarcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cellstate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.locktype)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.state)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.special_lock_type)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.shelfunits_pos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.columns)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rows)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.depth1_traybarcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cellstate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.locktype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.special_lock_type)
+            </td>
+            <td>
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>
+

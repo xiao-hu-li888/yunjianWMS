@@ -1,0 +1,164 @@
+﻿@model LTWMSWebMVC.Areas.History.Data.StackerTaskQueueHisModel
+
+@{
+    ViewBag.Title = "Add";
+}
+<fieldset>
+   
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.taskqueue_id)
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.taskqueue_id)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.tasktype)
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.tasktype)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.src_shelfunits_pos)
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.src_shelfunits_pos)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.dest_shelfunits_pos)
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.dest_shelfunits_pos)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.tray1_barcode)
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.tray1_barcode)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.order)
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.order)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.is_emptypallet)
+        </label>
+        <div class="col-sm-8">
+           
+            @if (Model.is_emptypallet == true)
+            {
+                <span class="label label-sm label-success">空托盘</span>
+            }
+            else
+            {
+                <span class="label label-sm label-danger">否</span>
+            }
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            电池条码
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.tray1_matter_barcode1)/@Html.DisplayFor(model => model.tray1_matter_barcode2)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.startup)
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.startup)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.endup)
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.endup)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border  col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            执行时间
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.time_long) (秒)
+        </div>
+        <div class="clear"></div>
+    </div>
+     
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.taskstatus)
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.taskstatus)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.createdate)
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.createdate)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border col-sm-6">
+        <label class="col-sm-4 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.updatedate)
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.updatedate)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border">
+        <label class="col-sm-2 control-label no-padding-right" for="form-field-1">
+            @Html.LabelFor(model => model.memo)
+        </label>
+        <div class="col-sm-8">
+            @Html.DisplayFor(model => model.memo)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+</fieldset>

@@ -1,0 +1,33 @@
+﻿@model  LTWMSWebMVC.App_Start.AppCode.MenuData
+
+@if (Model != null && Model.ShowOnMenu)
+{
+    if (Model.Code.ToLower() != "none")
+    {
+        WriteLiteral("<dl class=\"lt_prem\">  <dt>");
+        if (@Model.Checked)
+        {
+            <input name="permissiontext" type="checkbox" checked="checked" value="@Model.Code" id="@Model.Code" />
+        }
+        else
+        {
+            <input name="permissiontext" type="checkbox" value="@Model.Code" id="@Model.Code" />
+        }
+        <label for="@Model.Code">@Model.Name</label>  
+        WriteLiteral("</dt>");
+        if (@Model.ChildItem.Count > 0)
+        {
+            WriteLiteral("<dd>");
+            foreach (var d in Model.ChildItem)
+            {
+                if (Model.Code.ToLower() == "none")
+                {
+                    continue;
+                }
+                @Html.Partial("PremValue", d)
+            }
+            WriteLiteral("</dd>");
+        }
+        WriteLiteral("</dl>");
+    }
+}

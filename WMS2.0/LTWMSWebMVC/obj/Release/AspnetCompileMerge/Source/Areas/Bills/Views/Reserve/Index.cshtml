@@ -1,0 +1,38 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.Bills.Data.ReservedOrderSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+        var speech = new LT_Speech();
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+            speech.speek("查询成功");
+        });
+    </script>
+}
+<section class="btn_div">
+    <a href="#" class="icos ico_refresh">刷新</a>
+</section>
+<section class="btn_div btn_div2">
+    <a href="@Url.Action("Update")/{0}" data-dialog-title="编辑预留单" class="icos ico_edit needsele">编辑</a>
+</section>
+<section class="searchbg">
+    @using (Html.BeginForm("Index", "Reserve", FormMethod.Post, new { name = "paging_search_form" }))
+    {
+        <div>
+            @Html.LabelFor(a => a.s_keywords)：@Html.TextBoxFor(a => a.s_keywords, new { @class = "ac_input", placeholder = "请输入" + Html.DisplayNameFor(a => a.s_keywords) })
+            @Html.LabelFor(a => a.s_status)：@Html.EditorFor(a => a.s_status)
+            <input type="submit" value="搜索" />
+        </div>
+
+    }
+</section>
+
+<section id="LTContent">
+    @Html.Partial("ViewList", Model.PageCont)
+</section>
+@Html.Partial("Paging", @Model.Paging)

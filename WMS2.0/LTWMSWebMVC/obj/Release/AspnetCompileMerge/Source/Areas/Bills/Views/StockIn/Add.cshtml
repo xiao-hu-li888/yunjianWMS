@@ -1,0 +1,95 @@
+﻿@model LTWMSWebMVC.Areas.Bills.Data.StockInModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend>登录用户</legend>
+    @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+    {
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+    }
+
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  <span class="necessary">*</span> @Html.LabelFor(model => model.odd_numbers)</label>
+        <div class="col-sm-9">
+            @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+            {
+
+                @Html.DisplayFor(model => model.odd_numbers)
+                @Html.HiddenFor(model => model.odd_numbers)
+            }
+            else
+            {
+                <span>自动生成</span>
+                @*@Html.TextBoxFor(a => a.odd_numbers, new { @class = "ac_input", placeholder = Html.DisplayNameFor(a => a.odd_numbers) + "格式如：T01" })
+                @Html.ValidationMessageFor(model => model.odd_numbers)*@
+            }
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.bill_status)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.bill_status)
+            @Html.ValidationMessageFor(model => model.bill_status)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"><span class="necessary">*</span>   @Html.LabelFor(model => model.in_date)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.in_date)
+            @Html.ValidationMessageFor(model => model.in_date)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"><span class="necessary">*</span>   @Html.LabelFor(model => model.stockin_type)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.stockin_type)
+            @Html.ValidationMessageFor(model => model.stockin_type)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.memo)</label>
+        <div class="col-sm-9">
+            @Html.TextAreaFor(model => model.memo)
+            @Html.ValidationMessageFor(model => model.memo)
+        </div>
+        <div class="clear"></div>
+    </div>
+    @*<div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.total_matter)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.total_matter)
+            @Html.ValidationMessageFor(model => model.total_matter)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.total_get)</label>
+        <div class="col-sm-9">
+            @Html.DisplayFor(model => model.total_get)
+        </div>
+        <div class="clear"></div>
+    </div>*@
+    <p>
+        <button class="btn btn-sm btn-info" type="submit">
+            <i class="ace-icon fa fa-check bigger-110"></i>
+            @ViewBag.SubmitText
+        </button>
+    </p>
+</fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

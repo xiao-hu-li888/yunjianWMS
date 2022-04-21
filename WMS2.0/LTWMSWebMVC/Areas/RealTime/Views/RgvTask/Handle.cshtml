@@ -1,0 +1,214 @@
+﻿@model LTWMSWebMVC.Areas.RealTime.Data.StackerTaskQueueModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>登录用户</legend>
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">任务ID</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.id)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.tasktype)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.tasktype)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.taskstatus)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.taskstatus)
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.stacker_number)</label>
+            <div class="col-sm-9">
+                @*@Html.DisplayFor(model => model.stacker_number)*@
+                @switch (Model.stacker_number)
+                {
+                    case "1":
+                        WriteLiteral("1货叉归中");
+                        break;
+                    case "2":
+                        WriteLiteral("2去取货点");
+                        break;
+                    case "3":
+                        WriteLiteral("3取货伸叉");
+                        break;
+                    case "4":
+                        WriteLiteral("4取货抬起");
+                        break;
+                    case "5":
+                        WriteLiteral("5取货缩回");
+                        break;
+                    case "6":
+                        WriteLiteral("6去放货点");
+                        break;
+                    case "7":
+                        WriteLiteral("7放货伸叉");
+                        break;
+                    case "8":
+                        WriteLiteral("8放货下降");
+                        break;
+                    case "9":
+                        WriteLiteral("9放货缩回");
+                        break;
+                    case "0":
+                    default:
+                        WriteLiteral(Model.stacker_number);
+                        break;
+                }
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.src_shelfunits_pos)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.src_shelfunits_pos)
+                @if (Model != null && Model.tasktype == LTWMSEFModel.Hardware.WcsTaskType.StockIn)
+                {
+                    <span>站台 @Model.src_station</span>
+                }
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.dest_shelfunits_pos)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.dest_shelfunits_pos)
+                @if (Model.tasktype == LTWMSEFModel.Hardware.WcsTaskType.StockOut)
+                {
+
+                    <span>
+                        站台 @{
+                            if (Model.dest_station == 0)
+                            {
+                                WriteLiteral("<span class='label label-sm label-danger'>待分配</span>");
+                            }
+                            else
+                            {
+                                WriteLiteral(Model.dest_station);
+                            }
+                        }
+                    </span>
+                }
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.tray1_barcode)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.tray1_barcode)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.matterbarcode_list)</label>
+            <div class="col-sm-9">
+
+                @Html.DisplayTextFor(model => model.matterbarcode_list)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">  @Html.LabelFor(model => model.memo)</label>
+            <div class="col-sm-9">
+                @Html.DisplayTextFor(model => model.memo)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <p style="display:none;">
+            @Html.HiddenFor(model => model.submit_type)
+            <button class="btn btn-sm btn-info" type="submit" onclick="return sethiddenv(1);" style="display:none;">
+                <i class="ace-icon fa fa-check bigger-110"></i>
+                取消任务
+            </button>
+            <button class="btn btn-sm btn-info" type="submit" onclick="return sethiddenv(2);" style="display:none;">
+                <i class="ace-icon fa fa-check bigger-110"></i>
+                强制完成
+            </button>
+
+            <script type="text/javascript">
+                function sethiddenv(vt) {
+                    var _txt = "";
+                    if (vt == 1) {
+                        _txt = "取消任务";
+                    }
+                    else if (vt == 2) {
+                        _txt = "强制完成";
+                    }
+                    if (confirm("确定要" + _txt + "？")) {
+                        $("#submit_type").val(vt);
+                        return true;
+                    }
+                    return false;
+                }
+            </script>
+        </p>
+    </fieldset>
+}
+
+<div class="form-nowidth">
+    <span class="tit"><i class="ace-icon fa fa-hand-o-right bigger-110 red"></i>&nbsp;其它操作:</span>
+    @using (Html.BeginForm("ReSendToWCS", "RgvTask"))
+    {
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+        <button class="btn btn-sm btn-warning" type="submit" onclick="return confirm('确定要重发任务至WCS？');">
+            <i class="ace-icon fa fa-repeat bigger-110"></i>
+            重发任务至WCS
+        </button>
+    }
+    @using (Html.BeginForm("ForceComplete", "RgvTask"))
+    {
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+        <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('确定要强制完成？');">
+            <i class="ace-icon fa fa-repeat bigger-110"></i>
+            强制完成
+        </button>
+    }
+    @using (Html.BeginForm("TaskCancel", "RgvTask"))
+    {
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+        <button class="btn btn-sm" type="submit" onclick="return confirm('确定要取消任务？');">
+            <i class="ace-icon fa fa-repeat bigger-110"></i>
+            任务取消
+        </button>
+    }
+    @if (Model.tasktype == LTWMSEFModel.Hardware.WcsTaskType.MoveTo)
+    {
+        using (Html.BeginForm("TaskMoveTrayOut", "RgvTask"))
+        {
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+            <button class="btn btn-sm" type="submit" onclick="return confirm('确定要执行移库异常出库？请确保物料已搬至出库口');">
+                <i class="ace-icon fa fa-repeat bigger-110"></i>
+                移库异常出库
+            </button>
+        }
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

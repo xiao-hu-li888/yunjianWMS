@@ -1,0 +1,13 @@
+﻿正在安装程序集“C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWinService\bin\Debug\LTWMSWinService.exe”。
+受影响的参数是:
+   logtoconsole = 
+   logfile = C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWinService\bin\Debug\LTWMSWinService.InstallLog
+   assemblypath = C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWinService\bin\Debug\LTWMSWinService.exe
+正在安装服务 WMS_ShangShengSuo...
+已成功安装服务 WMS_ShangShengSuo。
+正在日志 Application 中创建 EventLog 源 WMS_ShangShengSuo...
+正在提交程序集“C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWinService\bin\Debug\LTWMSWinService.exe”。
+受影响的参数是:
+   logtoconsole = 
+   logfile = C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWinService\bin\Debug\LTWMSWinService.InstallLog
+   assemblypath = C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWinService\bin\Debug\LTWMSWinService.exe

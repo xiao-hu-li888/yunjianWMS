@@ -1,0 +1,85 @@
+20211127 23:04:44.736----->>>System.InvalidOperationException: The model backing the 'LTModel' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+   在 System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.AsNoTracking()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.AsNoTracking()
+   在 LTWMSEFModel.ComDao`1.GetAny(Expression`1 WhereLambda) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSEFModel\ComDao.cs:行号 346
+   在 LTWMSWebMVC.App_Start.AppCode.MenuHelper.HasPermission(sys_loginBLL bll_login, Guid currloginguid, String _controller, String _action) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\App_Start\AppCode\MenuHelper.cs:行号 16
+   在 LTWMSWebMVC.Filters.MyAuthorizeAttribute.AuthorizeCore(HttpContextBase httpContext) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Filters\MyAuthorizeAttribute.cs:行号 40
+   在 System.Web.Mvc.AuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext)
+   在 LTWMSWebMVC.Filters.MyAuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Filters\MyAuthorizeAttribute.cs:行号 17
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__0(AsyncCallback asyncCallback, Object asyncState)
+20211127 23:04:55.846----->>>System.InvalidOperationException: The model backing the 'LTModel' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+   在 System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.AsNoTracking()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.AsNoTracking()
+   在 LTWMSEFModel.ComDao`1.GetAny(Expression`1 WhereLambda) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSEFModel\ComDao.cs:行号 346
+   在 LTWMSWebMVC.App_Start.AppCode.MenuHelper.HasPermission(sys_loginBLL bll_login, Guid currloginguid, String _controller, String _action) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\App_Start\AppCode\MenuHelper.cs:行号 16
+   在 LTWMSWebMVC.Filters.MyAuthorizeAttribute.AuthorizeCore(HttpContextBase httpContext) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Filters\MyAuthorizeAttribute.cs:行号 40
+   在 System.Web.Mvc.AuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext)
+   在 LTWMSWebMVC.Filters.MyAuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Filters\MyAuthorizeAttribute.cs:行号 17
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__0(AsyncCallback asyncCallback, Object asyncState)
+20211127 23:05:07.166----->>>System.InvalidOperationException: The model backing the 'LTModel' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+   在 System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.AsNoTracking()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.AsNoTracking()
+   在 LTWMSEFModel.ComDao`1.GetAny(Expression`1 WhereLambda) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSEFModel\ComDao.cs:行号 346
+   在 LTWMSWebMVC.App_Start.AppCode.MenuHelper.HasPermission(sys_loginBLL bll_login, Guid currloginguid, String _controller, String _action) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\App_Start\AppCode\MenuHelper.cs:行号 16
+   在 LTWMSWebMVC.Filters.MyAuthorizeAttribute.AuthorizeCore(HttpContextBase httpContext) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Filters\MyAuthorizeAttribute.cs:行号 40
+   在 System.Web.Mvc.AuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext)
+   在 LTWMSWebMVC.Filters.MyAuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Filters\MyAuthorizeAttribute.cs:行号 17
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__0(AsyncCallback asyncCallback, Object asyncState)
+20211127 23:05:44.318----->>>System.InvalidOperationException: The model backing the 'LTModel' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+   在 System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.AsNoTracking()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.AsNoTracking()
+   在 LTWMSEFModel.ComDao`1.GetAny(Expression`1 WhereLambda) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSEFModel\ComDao.cs:行号 346
+   在 LTWMSWebMVC.App_Start.AppCode.MenuHelper.HasPermission(sys_loginBLL bll_login, Guid currloginguid, String _controller, String _action) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\App_Start\AppCode\MenuHelper.cs:行号 16
+   在 LTWMSWebMVC.Filters.MyAuthorizeAttribute.AuthorizeCore(HttpContextBase httpContext) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Filters\MyAuthorizeAttribute.cs:行号 40
+   在 System.Web.Mvc.AuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext)
+   在 LTWMSWebMVC.Filters.MyAuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Filters\MyAuthorizeAttribute.cs:行号 17
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__0(AsyncCallback asyncCallback, Object asyncState)
+20211127 23:05:48.148----->>>System.InvalidOperationException: The model backing the 'LTModel' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+   在 System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.AsNoTracking()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.AsNoTracking()
+   在 LTWMSEFModel.ComDao`1.GetAny(Expression`1 WhereLambda) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSEFModel\ComDao.cs:行号 346
+   在 LTWMSWebMVC.App_Start.AppCode.MenuHelper.HasPermission(sys_loginBLL bll_login, Guid currloginguid, String _controller, String _action) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\App_Start\AppCode\MenuHelper.cs:行号 16
+   在 LTWMSWebMVC.Filters.MyAuthorizeAttribute.AuthorizeCore(HttpContextBase httpContext) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Filters\MyAuthorizeAttribute.cs:行号 40
+   在 System.Web.Mvc.AuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext)
+   在 LTWMSWebMVC.Filters.MyAuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSWebMVC\Filters\MyAuthorizeAttribute.cs:行号 17
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__0(AsyncCallback asyncCallback, Object asyncState)

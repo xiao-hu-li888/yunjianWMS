@@ -1,0 +1,162 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.BasicData.Data.TrayMatterModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th style="width:60px;">
+                <input type="checkbox" id="checkAll" data-chkid="checkAll1" />&nbsp;<label for="checkAll">全选</label>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trayModel.traybarcode)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.lot_number)
+        </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.x_barcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatterModel.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lot_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdate)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.warehouse_guid)
+        </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.MatterModel.mattertype_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.producedate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.effective_date)
+            </th>
+            <th>
+               有效期(天)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.test_status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatterModel.specs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatterModel.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trayModel.shelfunits_pos)
+            </th>
+            <th>  @Html.DisplayNameFor(model => model.trayModel.cell_state)</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            <td>
+                <input type="checkbox" name="chk_guids" value="@item.guid" data-chk="checkAll1" />
+            </td>
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.trayModel.traybarcode)
+            </td>
+            @*<td class="tr-sps_tit" style="color: #B74635;">
+            @Html.DisplayFor(modelItem => item.lot_number)
+        </td>*@
+            <td class="tr-sps_tit">
+                @Html.DisplayFor(modelItem => item.x_barcode)
+            </td>
+            <td class="tr-sps_tit">
+                @Html.DisplayFor(modelItem => item.MatterModel.name)
+            </td>
+            <td class="tr-sps_tit">
+                @Html.DisplayFor(modelItem => item.lot_number)
+            </td>
+            <td class="tr-sps_tit">
+                @Html.DisplayFor(modelItem => item.number)
+              @*  / @Html.DisplayFor(modelItem => item.MatterModel.unit_measurement)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createdate)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.warehouse_guid)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.MatterModel.mattertype_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.producedate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.effective_date)
+            </td>
+            <td>
+                @{ WriteLiteral(LTLibrary.ConvertUtility.DiffDays(DateTime.Now,item.effective_date));}
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.test_status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatterModel.specs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatterModel.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trayModel.shelfunits_pos)
+                @if (string.IsNullOrWhiteSpace(item.trayModel.shelfunits_pos))
+                {
+                    WriteLiteral("<span class='label label-sm label-danger'>未上架</span>");
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trayModel.cell_state)
+            </td>
+
+        </tr>
+
+            <tr style="background-color: #F6FAFF;display:none;">
+                <td colspan="11" style="padding:3px;">
+                    <table class="border table" selectedcssclass="sele" style="margin-bottom:0px;background-color: #F6FAFF;color:#23527c;border-top:none;">
+                        <tr>
+                            <td width="8%" style="border-top:none;"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i> @Html.DisplayNameFor(model => model.project_name)</td>
+                            <td width="46%" style="border-top: none;color:#a94442;">
+                                @Html.DisplayFor(modelItem => item.project_name)
+                            </td>
+                            <td width="8%" style="border-top:none;"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i> @Html.DisplayNameFor(model => model.project_no)</td>
+                            <td width="10%" style="border-top: none;color:#a94442;">
+                                @Html.DisplayFor(modelItem => item.project_no)
+                            </td>
+                            <td width="8%" style="border-top:none;"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i> @Html.DisplayNameFor(model => model.customer_name)</td>
+                            <td width="20%" style="border-top: none;color:#a94442;">
+                                @Html.DisplayFor(modelItem => item.customer_name)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="8%" style="border-top:none;"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i> @Html.DisplayNameFor(model => model.memo)</td>
+                            <td width="92%" colspan="5" style="border-top: none;color:#a94442;">
+                                @Html.DisplayFor(modelItem => item.memo)
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

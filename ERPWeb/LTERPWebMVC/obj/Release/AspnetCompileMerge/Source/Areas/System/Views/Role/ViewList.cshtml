@@ -1,0 +1,57 @@
+﻿@model IEnumerable<LTERPWebMVC.Areas.System.Data.sysRoleModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.rolename)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.permissiontext)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.remark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdate)
+            </th>  
+            <th style="width:200px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+            <tr class="@_cname">
+                <td class="tr-sps_tit">
+                    <input class="current_Data" value="@item.guid" type="hidden" />
+                    @Html.DisplayFor(modelItem => item.rolename)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.permissiontext)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.remark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.createdate)
+                </td> 
+                <td> 
+                    @Html.ActionLink("权限分配", "Permission", new { guid = item.guid }, new { @class = "btn btn-mini btn-info" })
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,138 @@
+﻿@model LTWMSWebMVC.Areas.RealTime.Data.ShelfUnitsList
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    string defguid = "";
+}
+
+<div class="stc-top" id="TOPDIV">
+    @Html.Partial("Top", Model.Top)
+</div>
+<div class="stc-cont">
+    @if (Model.Shelves != null)
+    {
+        int _idx = 0;
+        <div class="lt-tab-box">
+            <ul class="lt-tab-nav">
+                @foreach (var item in Model.Shelves)
+                {
+                    string _class = "";
+                    string _outer_class = "";
+                    if(item.depth==1)
+                    {
+                        _outer_class = "li-tab-outer-c";
+                    }
+                    if (_idx == 0)
+                    {
+                        defguid = item.guid.ToString();
+                        _class = " li-tab-act";
+                        _idx++;
+                    }
+                    <li class="li-tab-def @_outer_class @_class" data-id="@{@item.guid}">
+                        <a href="javascript:void(0);" class="tab-tit" onfocus="this.blur();">第@{@item.rack}排货架</a>
+                    </li>
+                }
+            </ul>
+            @{
+                _idx = 0;
+            }
+            @foreach (var item in Model.Shelves)
+            {
+                string _class2 = "display:none;";
+                if (_idx == 0)
+                {
+                    _class2 = "display:block;";
+                    _idx++;
+                }
+                <div data-id="@{@item.guid}" class="lt-tabs-panel" style="@_class2">
+                    @Html.Partial("CellTable", item)
+                </div>
+            }
+        </div>
+    }
+</div>
+<div class="stc-bottom" style="position:fixed;background-color:#fff;">
+    <a href="javascript:RefCurrentPage();" style="background-image: url(/Content/ico/arrow_refresh.png);padding-left: 24px;padding-right: 10px;height: 25px;background-position: 3px 50%;background-repeat: no-repeat;line-height: 25px;display: inline-block;vertical-align: middle;color: #4689bd;border-right:1px solid #dedede;margin-right: 15px;font-size: 14px;font-weight: bold;">刷新</a>
+    <dl class="dl-c-box" style="float:right;">
+        <dd>
+            <div class="cc lt-cell-c-3"></div>
+            <span>物料</span>
+        </dd>
+        <dd style="display:none;">
+            <div class="cc lt-cell-c-8"></div>
+            <span>空托盘</span>
+        </dd>
+        <dd>
+            <div class="cc lt-cell-c-1"></div>
+            <span>可入库</span>
+        </dd>
+        <dd>
+            <div class="cc lt-cell-c-2"></div>
+            <span>入库中</span>
+        </dd>
+        <dd>
+            <div class="cc lt-cell-c-4"></div>
+            <span>等待出库</span>
+        </dd>
+        <dd>
+            <div class="cc lt-cell-c-5"></div>
+            <span>出库中</span>
+        </dd>
+        <dd>
+            <div class="cc lt-cell-c-7"></div>
+            <span>人工锁</span>
+        </dd>
+        <dd>
+            <div class="cc lt-cell-c-6"></div>
+            <span>不可用</span>
+        </dd>
+        <dd>
+            <div class="cc lt-cell-c-9"></div>
+            <span>系统锁</span>
+        </dd>
+    </dl>
+    <div class="clear"></div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        var speech = new LT_Speech();
+        var tabid = "@defguid";
+        $(function () {
+            $(".lt-tab-box .li-tab-def").click(function () { 
+                $(".lt-tab-box .li-tab-def").removeClass("li-tab-act");
+                $(this).addClass("li-tab-act");
+                var _id = $(this).data("id");
+                tabid = _id;
+                $(".lt-tab-box .lt-tabs-panel").hide();
+                $(".lt-tab-box .lt-tabs-panel[data-id=" + _id + "]").show(); 
+            });
+            //RefCurrentPage();
+            RefTopInfo();
+        }); 
+        function RefCurrentPage() {
+            if (tabid != "") {
+                var _temp_tabid = tabid;
+                //  console.log(tabid);
+                var d = $.get("@Url.Action("GetRealTimeShelfStock")?r=" + Math.random(), { guid: tabid }, function success(data, text, j) {
+                    $(".lt-tab-box .lt-tabs-panel[data-id=" + _temp_tabid + "]").html(data);
+                    ltJS.RigesterDataOpen();
+                    speech.speek("刷新成功");
+                   // console.log(_temp_tabid);
+                   // setTimeout("RefCurrentPage();", 5000);
+                }).fail(function () {
+                    //加载失败，10秒后再试
+                   // setTimeout("RefCurrentPage();", 10000);
+                });
+            }
+        }
+        function RefTopInfo() {
+             var d = $.get("@Url.Action("GetTop")?r=" + Math.random(), { }, function success(data, text, j) {
+                    $("#TOPDIV").html(data);
+                   setTimeout("RefTopInfo();", 10000);
+                }).fail(function () {
+                    //加载失败，10秒后再试
+                  //  console.log("加载失败。。。");
+                    setTimeout("RefTopInfo();", 10000);
+                });
+        }
+    </script>
+}

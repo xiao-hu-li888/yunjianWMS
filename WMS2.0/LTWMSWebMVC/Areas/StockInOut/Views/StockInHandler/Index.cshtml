@@ -1,0 +1,551 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.RealTime.Data.StackerTaskQueueSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+<div class="widget-box" style="margin-right:1px;">
+    <div class="widget-header">
+        <h5 class="pink">
+            <i class="ace-icon fa fa-caret-right red"></i>
+            <a href="#modal-table" role="button" class="green" data-toggle="modal">扫码组盘</a>
+        </h5>
+    </div>
+    <div class="widget-body" style="padding: 0 6px;">
+        <fieldset>
+            <section>
+                <div class="stc-top" id="LTTopCheckView" style="border-bottom:1px solid #E5E5E5">
+                    <span class="tc" style="font-size:14px;line-height:14px;">
+                        <i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i>
+                        <span class="task-ops">扫码结果：</span>
+                        <span id="barcodeSpan" class="task-ops"  style="color:red;"></span>
+                    </span>
+                    <div class="btn_div" style="float: right;border:none;padding:0px;top: -6px;position: relative; margin-right: 7px;">
+                        <span style="font-weight:bold;font-size:14px;color:#282424;position:relative;top:2px;">操作：</span>
+                        @*<a href="#" id="id-btn-dialog1" style="font-size: 14px;">
+            <i class="ace-icon fa fa-plus-square-o red" style="padding-left:7px;"></i>
+            添加物料
+        </a>*@
+                        <button class="btn btn-mini btn-success" type="button" id="id-btn-dialog1" style="margin-right:20px;">
+                            <i class="ace-icon fa fa-plus-square-o bigger-110"></i>
+                            添加物料
+                        </button>
+                        <button class="btn btn-mini btn-danger" type="button" onclick="DeleteMatterList();this.blur();">
+                            <i class="ace-icon fa fa-check bigger-110"></i>
+                            清除扫码记录
+                        </button>
+                        <button class="btn btn-sm btn-success" style="display: none;" type="button" onclick="ScanMoni('8100011431|M1800|301118000007 |210703R08-' +parseInt(Math.random()*100000000) + '||RZ21G01'+parseInt(Math.random()*100000000)+'|2021.07.09|216||65|||'); this.blur();">
+                            <i class="ace-icon fa fa-check bigger-110"></i>
+                            模拟扫码
+                        </button>
+                        <button class="btn btn-sm btn-success" style="display: none;" type="button" onclick="SetUpTrayMatterCodes('--C11M100D10--');this.blur();">
+                            <i class="ace-icon fa fa-check bigger-110"></i>
+                            生成入库任务
+                        </button>
+                        <button class="btn btn-sm btn-success" style="display:none;" type="button" onclick="SetStockOutReady();this.blur();">
+                            <i class="ace-icon fa fa-check bigger-110"></i>
+                            出库准备好
+                        </button>
+                        
+                        <button class="btn btn-sm btn-success" style="display:none;" type="button" onclick="RequestEmptyBox();this.blur();">
+                            <i class="ace-icon fa fa-check bigger-110"></i>
+                            请求空托盘
+                        </button>
+
+                    </div>
+                </div>
+                <div class="stc-top" id="LTStatusDiv" style="display:block;">
+                    <span class="tc" style="font-size:24px;line-height:30px;">
+                        <i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i>
+                        <span class="task-ops">料箱条码：</span><span style="color:red;" class="task-ops" id="spanTraybarcode"></span>
+                    </span>
+                </div>
+            </section>
+            <section id="LTContent">
+            </section>
+        </fieldset>
+    </div>
+</div>
+<!--添加物料-->
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable"
+     style="display: none;"
+     tabindex="-1" role="dialog" aria-describedby="dialog-message" aria-labelledby="ui-id-32">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle">
+        <div id="ui-id-32" class="ui-dialog-title">
+            <div class="widget-header widget-header-small">
+                <h4 class="smaller"><i class="ace-icon fa fa-check"></i>查询物料</h4>
+            </div>
+        </div>
+        <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close"
+                role="button" title="Close">
+            <span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span>
+            <span class="ui-button-text">Close</span>
+        </button>
+    </div>
+    <div id="dialog-message" class="ui-dialog-content ui-widget-content">
+        <div class="form-group">
+            <label class="col-sm-2 control-label no-padding-right" for="form-field-2" style="padding-top:5px;">关键字</label>
+            <div class="col-sm-10">
+                <input type="text" id="search_key" name="search_key" placeholder="请输入关键字" class="col-xs-4">
+                <input type="button" value="查询" class="btn btn-mini btn-success" style="margin-left: 15px; line-height: 2.5rem; padding: 0px 10px;" onclick="onChangeSelectMatter();" />
+            </div>
+        </div>
+        <div class="clear" style="margin:8px 0;"></div>
+        <section id="LTSelectMatter" style="height:400px;overflow-y:scroll;">
+        </section>
+    </div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <div class="ui-dialog-buttonset">
+            <button type="button" class="btn btn-minier ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+                <span class="ui-button-text">Cancel</span>
+            </button>
+            <button type="button" class="btn btn-primary btn-minier ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+                <span class="ui-button-text">OK</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!--修改物料信息-->
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable"
+     style="display: none;"
+     tabindex="-1" role="dialog" aria-describedby="dialog-message2" aria-labelledby="ui-id-32">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle">
+        <div id="ui-id-32" class="ui-dialog-title">
+            <div class="widget-header widget-header-small">
+                <h4 class="smaller"><i class="ace-icon fa fa-check"></i>编辑物料信息</h4>
+            </div>
+        </div>
+        <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close"
+                role="button" title="Close">
+            <span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span>
+            <span class="ui-button-text">Close</span>
+        </button>
+    </div>
+    <div id="dialog-message2" class="ui-dialog-content ui-widget-content">
+        <div class="form-group form-border col-sm-4" >
+            <label class="col-sm-4 control-label no-padding-right" for="form-field-1">条码</label>
+            <div class="col-sm-8">
+                <span id="medit_x_barcode"></span>
+            </div>
+        </div>
+        <div class="form-group form-border col-sm-8">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">物料名称</label>
+            <div class="col-sm-9">
+                <span id="medit_matter_name"></span>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="form-group form-border col-sm-4">
+            <label class="col-sm-4 control-label no-padding-right" for="form-field-1">品牌</label>
+            <div class="col-sm-8">
+                <span id="medit_brand_name"></span>
+            </div>
+        </div>
+        <div class="form-group form-border col-sm-8">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">型号</label>
+            <div class="col-sm-9">
+                <span id="medit_description"></span>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div class="form-group form-border col-sm-4" style="padding-bottom: 5px;">
+            <label class="col-sm-4 control-label no-padding-right" for="form-field-1">数量</label>
+            <div class="col-sm-8">
+                <input type="text" id="medit_number" style="width:60px;" /> / <span id="medit_unit_measurement"></span>
+            </div>
+        </div>
+        <div class="form-group form-border col-sm-8" style="padding-bottom: 5px;">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">项目名称</label>
+            <div class="col-sm-9">
+                <input type="text" id="medit_proj_name" style="width:90%;" />
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div class="form-group form-border col-sm-4" style="padding-bottom: 5px;">
+            <label class="col-sm-4 control-label no-padding-right" for="form-field-1">项目号</label>
+            <div class="col-sm-8">
+                <input type="text" id="medit_proj_no" style="width:100%;" />
+            </div>
+        </div>
+        <div class="form-group form-border col-sm-8" style="padding-bottom: 5px;">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">客户名称</label>
+            <div class="col-sm-9">
+                <input type="text" id="medit_cust_name" style="width:90%;" />
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="form-group form-border col-sm-12" style="padding-bottom: 5px;">
+            <label class="col-sm-1 control-label no-padding-right" for="form-field-1">备注</label>
+            <div class="col-sm-11">
+                <textarea id="medit_memo" rows="6" style="width:95%;"></textarea>
+            </div>
+        </div>
+    </div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <div class="ui-dialog-buttonset">
+            <button type="button" class="btn btn-mini ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+                <span class="ui-button-text">Cancel</span>
+            </button>
+            <button type="button" class="btn btn-primary btn-mini ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+                <span class="ui-button-text">OK</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script type="text/javascript">
+        var speech = new LT_Speech();
+        $(document).ready(function ()
+        {
+            alert("请点击页面获取焦点");
+           // document.body.focus(); 无效
+            speech.speek("请扫条码");
+            BindToList("");
+        });
+        var _code = "";
+        var _codestr = "";
+        var _isWindowOpened = false;//是否弹窗
+        $(document).on('keypress', function (event) {
+            if (_isWindowOpened) {
+                return;
+            }
+            if (event.keyCode == 13) {
+                _codestr = _code;
+                _code = "";
+               // console.log(_codestr);
+                $("#barcodeSpan").html(_codestr);
+                CheckBarcodeType(_codestr);
+            } else {
+                _code += String.fromCharCode(event.keyCode);
+            }
+        });
+        function ScanMoni(_codestr) {
+            $("#barcodeSpan").html(_codestr);
+            CheckBarcodeType(_codestr);
+        }
+        function DeleteMatterList() {
+            if (confirm("确定要清除扫码记录？")) {
+                //DeleteSessionMatterList
+                var d = $.post("@Url.Action("DeleteSessionMatterList")?r=" + Math.random(), {}
+                    , function success(data, text, j) {
+                        $("#LTContent").html(data);
+                        //清除托盘
+                        $("#spanTraybarcode").html("");
+                        //清除扫码记录
+                        $("#barcodeSpan").html("");
+                    }).fail(function () {
+                        alert("删除失败3...");
+                    });
+            }
+        }
+        function CheckBarcodeType(barcode) {
+            /*入库指令：
+            --C11M100D10--  C11入库指令/M100站台/D10wcs编号
+            出库准备好：
+            --C12M100D10--  C12出库准备好/M100站台/D10wcs编号
+            请求空托盘：
+            --C13M100D10--  C13请求空托盘/M100站台/D10wcs编号 */
+            if (/^--C11M[\d]+D[\d]+--$/.test(barcode)) {
+                //入库组盘
+                SetUpTrayMatterCodes(barcode);
+                return;
+            } else if (/^--C12M[\d]+D[\d]+--$/.test(barcode)) {
+                //出库准备好
+                SetStockOutReady(barcode);
+                return;
+            } else if (/^--C13M[\d]+D[\d]+--$/.test(barcode)) {
+                //请求空托盘
+                RequestEmptyBox(barcode);
+                return;
+            }
+            //直接将扫码的数据发给艾华处理。。。
+           // $("#spanTraybarcode").html(barcode);          
+            //料箱条码即=批次号
+          //  BindToList(barcode);
+            var d = $.post("@Url.Action("CheckBarcodeType")?r=" + Math.random(), { barcode: barcode }
+                , function success(data, text, j)
+                {
+                    //{ success=true, result=text, data=type }; 
+                    if (data.success) { 
+                        if (data.data == 1) {
+                            //托盘条码
+                            $("#spanTraybarcode").html(barcode);
+                           //如果是料箱条码，（判断session是否已加载数据）无数据，加载对应的关联数据
+                            GetRelateMatters(barcode);
+                            //料箱条码即=批次号
+                           // BindToList(barcode);
+                        } else if (data.data == 2) {
+                            //系统中存在物料条码，即将绑定数据
+                            BindToList(barcode);
+                        } else if (data.data == 3) {
+                            //错误或不存在
+                        }
+                        if (data.result != "") {
+                            speech.speek(data.result);
+                        }
+                    } else {
+                        speech.speek("查询失败");
+                    }
+                }).fail(function () {
+                    alert("查询失败...");
+                });
+        }
+        function GetRelateMatters(barcode) {
+             var d = $.post("@Url.Action("GetRelativeViewList")?r=" + Math.random(), { traybarcode: barcode }
+                , function success(data, text, j)
+                {
+                    $("#LTContent").html(data);
+                }).fail(function () {
+                    alert("查询失败2...");
+                });
+        }
+        function RequestEmptyBox(cmdcode) {
+            //请求空托盘、或最小容量的托盘
+            var d = $.post("@Url.Action("RequestEmptyBoxOut")?r=" + Math.random(), { cmd_code: cmdcode}
+                , function success(data, text, j)
+                {
+                    if (data.success) {
+                        speech.speek("空托盘即将出库");
+                    } else {
+                        //speech.speek(data.errors);
+                        alert(data.errors);
+                    }
+                    //$("#LTContent").html(data);
+                }).fail(function () {
+                    alert("请求失败2...");
+           });
+        }
+        function BindToList(barcode) {
+            var d = $.post("@Url.Action("ViewList")?r=" + Math.random(), { addbarcode: barcode }
+                , function success(data, text, j)
+                {
+                    $("#LTContent").html(data);
+                }).fail(function () {
+                    alert("查询失败2...");
+                });
+        }
+        function SetUpTrayMatterCodes(cmdcode) {
+            //保存组盘信息，并生成一个入库任务
+            var _traybarcode = $("#spanTraybarcode").html();
+            var d = $.post("@Url.Action("SaveBindTrayMatter")?r=" + Math.random(), { traybarcode: _traybarcode, cmd_code: cmdcode }
+            , function success(data, text, j)
+            {
+                if (data.success) {
+                   // speech.speek("物料组盘成功，即将入库");
+                    speech.speek(data.data);
+                    //操作成功
+                    $("#spanTraybarcode").html("");
+                    $("#LTContent").html("");
+                } else {
+                    //操作失败
+                   // alert(data.errors);
+                    if (_traybarcode == "") {
+                        speech.speek("请扫托盘条码");
+                    } else {
+                        speech.speek(data.errors);
+                        alert(data.errors);
+                    }
+                }
+            }).fail(function () {
+                alert("操作失败2...");
+            });
+        }
+        function SetStockOutReady(cmdcode) {
+            //设置出库口为出库准备好
+            var d = $.post("@Url.Action("SetStockOutStationReady")?r=" + Math.random(), {cmd_code: cmdcode}
+            , function success(data, text, j)
+            {
+                if (data.success) {
+                    //操作成功
+                    speech.speek("出库准备好");
+                } else {
+                    //操作失败
+                    alert(data.errors);
+                }
+            }).fail(function () {
+                alert("操作失败2...");
+            });
+        }
+        function OnblurReSetValue(t,bcode) {
+            t.blur();
+            _code = "";
+            var d = $.post("@Url.Action("UpdateMatterNumber")?r=" + Math.random(), { addbarcode: bcode,number:t.value }
+            , function success(data, text, j)
+            {
+                $("#LTContent").html(data);
+            }).fail(function () {
+                alert("查询失败2...");
+            });
+        }
+          //查询物料
+        $("#id-btn-dialog1").on('click', function (e) {
+                $(this).blur();
+                _isWindowOpened = true;
+                //设置高度
+                $("#LTSelectMatter").height($(window).height()*0.8-60);
+                e.preventDefault();
+                var dialog = $("#dialog-message").removeClass('hide').dialog({
+                    modal: true,
+                    width: $(window).width()*0.8,
+                  //  title: "<div class='widget-header widget-header-small'><h4 class='smaller'><i class='ace-icon fa fa-group'></i> 修改密码</h4></div>",
+                    title: "添加物料",
+                    close: function () {
+                        _isWindowOpened = false;
+                      //  console.log("closed000");
+                    },
+                    buttons: [
+                        {
+                            text: "取消",
+                            "class": "btn btn-mini",
+                            click: function () {
+                                $(this).dialog("close");
+                            }
+                        },
+                        {
+                            text: "确定",
+                            "class": "btn btn-primary btn-mini",
+                            click: function () {
+                                var thisObj=$(this);
+                                var _vals = "";
+                                $("#LTSelectMatter input[type=checkbox][name=chk_guids]").each(function () {
+                                    if ($(this).get(0).checked) {
+                                        if (_vals == "") {
+                                            _vals = $(this).val();
+                                        } else {
+                                            _vals += "," + $(this).val();
+                                        }
+                                    }
+                                });
+                                var d = $.post("@Url.Action("ViewList")?r=" + Math.random(), { addbarcode: _vals }
+                                    , function success(data, text, j)
+                                    {
+                                        $("#LTContent").html(data);
+                                        thisObj.dialog("close");
+                                       // $("#LTSelectMatter").html(data);
+                                    }).fail(function () {
+                                        alert("请求失败33...");
+                               });
+                            }
+                        }
+                    ]
+                });
+            });
+        /*********选择物料**********/
+        function onChangeSelectMatter() {
+            var s_key=$("#search_key").val();
+            var d = $.post("@Url.Action("SearchMatterListByKeyWords")?r=" + Math.random(), { keywords: s_key }
+                , function success(data, text, j)
+                {
+                    $("#LTSelectMatter").html(data);
+                }).fail(function () {
+                    alert("请求失败33...");
+           });
+        }
+        /*******修改备注信息********/
+        //编辑
+        function editMatterInfo(barcode,thisObj)
+        {
+                thisObj.blur();
+                _isWindowOpened = true;
+                //设置高度
+               // e.preventDefault();
+             var d = $.post("@Url.Action("GetMatterInfoByBarcode")?r=" + Math.random(), { x_barcode: barcode }
+                , function success(data, text, j)
+                {
+                    if (data.success) {
+                        //赋值
+                        $("#medit_x_barcode").html(data.data.x_barcode);
+                        $("#medit_matter_name").html(data.data.MatterModel.name);
+                        $("#medit_brand_name").html(data.data.MatterModel.brand_name);
+                        $("#medit_description").html(data.data.MatterModel.description);
+                        $("#medit_number").val(data.data.number);
+                        $("#medit_unit_measurement").html(data.data.MatterModel.unit_measurement);
+                        $("#medit_proj_no").val(data.data.project_no);
+                        $("#medit_proj_name").val(data.data.project_name);
+                        $("#medit_cust_name").val(data.data.customer_name);
+                        $("#medit_memo").val(data.data.memo);
+                        var dialog = $("#dialog-message2").removeClass('hide').dialog({
+                            modal: true,
+                            width: $(window).width() * 0.7,
+                            //  title: "<div class='widget-header widget-header-small'><h4 class='smaller'><i class='ace-icon fa fa-group'></i> 修改密码</h4></div>",
+                            title: "编辑物料信息",
+                            close: function () {
+                                _isWindowOpened = false;
+                                //  console.log("closed000");
+                            },
+                            buttons: [
+                                {
+                                    text: "取消",
+                                    "class": "btn btn-mini",
+                                    click: function () {
+                                        $(this).dialog("close");
+                                    }
+                                },
+                                {
+                                    text: "保存",
+                                    "class": "btn btn-primary btn-mini",
+                                    click: function () {
+                                        var _tOj = $(this);
+                                        var _xbarcode=$("#medit_x_barcode").html();
+                                        var  _medit_number=$("#medit_number").val();
+                                        var _medit_proj_no =  $("#medit_proj_no").val();
+                                        var _medit_proj_name =$("#medit_proj_name").val();
+                                        var _medit_cust_name =$("#medit_cust_name").val();
+                                        var _medit_memo =$("#medit_memo").val();
+
+                                        var d = $.post("@Url.Action("SaveMatterInfo")?r=" + Math.random(), {
+                                            xbarcode: _xbarcode, medit_number: _medit_number, medit_proj_no: _medit_proj_no
+                                            , medit_proj_name: _medit_proj_name,medit_cust_name: _medit_cust_name,medit_memo: _medit_memo
+                                           }, function success(data, text, j) {
+                                                $("#LTContent").html(data);
+                                                _tOj.dialog("close");
+                                                // $("#LTSelectMatter").html(data);
+                                            }).fail(function () {
+                                                alert("请求失败33...");
+                                            });
+                                    }
+                                }
+                            ]
+                        });
+                    } else {
+                        //参数错误
+                        alert("参数错误");
+                    }
+                }).fail(function () {
+                    alert("请求失败3344...");
+                });
+        }
+        //删除
+        function delMatterInfo(barcode)
+        {
+            var d = $.post("@Url.Action("DeleteMatterInfoByBarcode")?r=" + Math.random(), { x_barcode: barcode }
+                , function success(data, text, j)
+                {
+                    $("#LTContent").html(data);
+                   // $("#LTSelectMatter").html(data);
+                }).fail(function () {
+                    alert("请求失败33...");
+           });
+        }
+    </script>
+}
+
