@@ -1,0 +1,37 @@
+﻿@using LTERPWebMVC.App_Start.WebMvCEx;
+@model LTERPWebMVC.Areas.System.Data.sysloginSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+        });
+    </script>
+}
+<section class="btn_div">
+    <a href="@Url.Action("Add")" data-dialog-title="添加登录用户" class="icos ico_add">添加</a>
+    <a href="#" class="icos ico_refresh">刷新</a>
+</section>
+<section class="btn_div btn_div2">
+    <a href="@Url.Action("Update")/{0}" data-dialog-title="修改登录用户" class="icos ico_edit needsele">编辑</a>
+    <a href="@Url.Action("DeletePost")/{0}" data-ltext-ajax-delete="true" data-ajax-confirm="确认删除？" class="icos ico_dele needsele">删除</a>
+</section>
+<section class="searchbg">
+    @using (Html.BeginForm("Index", "User", FormMethod.Post, new { name = "paging_search_form" }))
+    {
+    <div>
+        @Html.LabelFor(a => a.s_keywords)：@Html.TextBoxFor(a => a.s_keywords, new { @class = "ac_input", placeholder = "请输入" + Html.DisplayNameFor(a => a.s_keywords) })
+        @Html.LabelFor(a => a.s_state)：@Html.EditorFor(a => a.s_state) 
+        <input type="submit" value="搜索" />
+    </div>
+
+    }
+</section>
+<section id="LTContent">
+    @Html.Partial("ViewList", Model.PageCont)
+</section>
+@Html.Partial("Paging", @Model.Paging)

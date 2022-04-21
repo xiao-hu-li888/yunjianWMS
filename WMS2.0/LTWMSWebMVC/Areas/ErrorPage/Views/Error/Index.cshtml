@@ -1,0 +1,25 @@
+﻿@model LTWMSWebMVC.Areas.ErrorPage.Data.ErrorModel
+@{
+    Layout = "~/Areas/ErrorPage/Views/Shared/Error_Layout.cshtml";
+    ViewBag.Title = "系统异常";
+}
+
+<!-- Content -->
+<div id="da-content">
+    <!-- Container -->
+    <div class="da-container clearfix">
+        <div id="da-error-wrapper">
+            <div id="da-error-pin"></div>
+            <div id="da-error-code"> 
+                系统异常 <span>error</span>
+            </div>
+            <h1 class="da-error-heading">@Model.Message</h1>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<div id="da-footer">
+    <div class="da-container clearfix">
+        <p> WMS管理系统 . All Rights Reserved
+    </div>
+</div>

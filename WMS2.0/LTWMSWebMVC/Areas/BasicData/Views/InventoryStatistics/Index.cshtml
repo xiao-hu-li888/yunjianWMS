@@ -1,0 +1,25 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.BasicData.Data.InventoryStatisticSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+<section class="btn_div">
+    <a href="#" class="icos ico_refresh">刷新</a>
+</section>
+<section class="searchbg">
+    @using (Html.BeginForm("Index", "InventoryStatistics", FormMethod.Post, new { name = "paging_search_form" }))
+    {
+        <div>
+            @Html.LabelFor(a => a.s_keywords)：@Html.TextBoxFor(a => a.s_keywords, new { @class = "ac_input", placeholder = "请输入" + Html.DisplayNameFor(a => a.s_keywords) })
+
+            <input type="submit" value="搜索" />
+        </div> 
+    }
+</section>
+<section id="LTContent"> 
+       @Html.Partial("ViewList", Model.PageCont) 
+</section>
+@Html.Partial("Paging", @Model.Paging)
+

@@ -1,0 +1,56 @@
+﻿@model LTWMSWebMVC.Areas.BasicData.Data.TrayMatterModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+        @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+        {
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+        }
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">@Html.LabelFor(model => model.trayModel.traybarcode)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.trayModel.traybarcode)
+                @Html.HiddenFor(model => model.trayModel.traybarcode)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.matter_barcode)  </label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.matter_barcode)
+                @Html.HiddenFor(model => model.matter_barcode)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.batch)  </label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.batch)
+                @Html.HiddenFor(model => model.batch)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.trayModel.shelfunits_pos)  </label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.trayModel.shelfunits_pos)
+                @Html.HiddenFor(model => model.trayModel.shelfunits_pos) 
+            </div>
+            <div class="clear"></div>
+        </div>  
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

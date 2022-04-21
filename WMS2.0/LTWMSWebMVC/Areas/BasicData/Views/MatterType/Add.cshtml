@@ -1,0 +1,92 @@
+﻿@model LTWMSWebMVC.Areas.BasicData.Data.MatterTypeModel
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<div class="widget-box">
+    <div class="widget-header">
+        <h4 class="widget-title">编辑</h4>
+    </div>
+    <div class="widget-body">
+        <div class="widget-main">
+            @using (Html.BeginForm("Update", "MatterType", FormMethod.Post, new { id = "form1" }))
+            {
+                @Html.ValidationSummary(true)
+            <fieldset>
+                @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+                {
+                    @Html.HiddenFor(model => model.guid)
+                    @Html.HiddenFor(model => model.OldRowVersion)
+                }
+
+                @if (!string.IsNullOrWhiteSpace(Model.parent_code))
+                {
+                    <div class="form-group form-border">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.parent_code)</label>
+                        <div class="col-sm-9">
+                            @Html.DisplayFor(model => model.parent_code)
+                            @Html.HiddenFor(model => model.parent_code)
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                }
+                <div class="form-group form-border">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  <span class="necessary">*</span> @Html.LabelFor(model => model.code)</label>
+                    <div class="col-sm-9">
+                        @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+                        {
+
+                            @Html.DisplayFor(model => model.code)
+                        }
+                        else
+                        {
+                            <span>自动生成</span>
+                        }
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="form-group form-border">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.name)</label>
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.name)
+                        @Html.ValidationMessageFor(model => model.name)
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="form-group form-border">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  <span class="necessary">*</span>   @Html.LabelFor(model => model.sort)</label>
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.sort)
+                        @Html.ValidationMessageFor(model => model.sort)
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="form-group form-border">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.memo)</label>
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.memo)
+                        @Html.ValidationMessageFor(model => model.memo)
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <p>  
+                    <button class="btn btn-sm btn-info" type="button" onclick="LtPostFormData('form1');">
+                        <i class="ace-icon fa fa-check bigger-110"></i>
+                        保存
+                    </button>
+                </p>
+            </fieldset>
+            }
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+        </div>
+    </div>
+</div>
+
+
+

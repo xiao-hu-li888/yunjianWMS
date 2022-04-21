@@ -1,0 +1,44 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.BasicData.Data.ShelfUnitsSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+        var speech = new LT_Speech();
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+            speech.speek("查询成功");
+        });
+    </script>
+}
+<section class="btn_div"> 
+    <a href="#" class="icos ico_refresh">刷新</a>
+</section>
+<section class="btn_div btn_div2">
+    <a href="@Url.Action("Update")/{0}" data-dialog-title="修改仓位信息" class="icos ico_edit needsele">编辑</a> 
+</section>
+<section class="searchbg">
+    @using (Html.BeginForm("Index", "ShelfUnits", FormMethod.Post, new { name = "paging_search_form" }))
+    {
+    <div>
+        @Html.LabelFor(a => a.s_keywords)：@Html.TextBoxFor(a => a.s_keywords, new { @class = "ac_input", placeholder = "请输入" + Html.DisplayNameFor(a => a.s_keywords) })
+
+        @Html.LabelFor(a => a.rack)：@Html.TextBoxFor(a => a.rack, new { style = "width:40px;padding:0 3px;" })
+        @Html.LabelFor(a => a.column)：@Html.TextBoxFor(a => a.column, new { style = "width:40px;padding:0 3px;" })
+        @Html.LabelFor(a => a.row)：@Html.TextBoxFor(a => a.row, new { style = "width:40px;padding:0 3px;" })
+
+        @Html.LabelFor(a => a.cell_state)：@Html.EditorFor(a => a.cell_state)
+        @Html.LabelFor(a => a.lock_type)：@Html.EditorFor(a => a.lock_type)
+        @Html.LabelFor(a => a.special_lock_type)：@Html.EditorFor(a => a.special_lock_type)
+        <input type="submit" value="搜索" />
+    </div>
+
+    }
+</section>
+<section id="LTContent">
+    @Html.Partial("ViewList", Model.PageCont)
+</section>
+@Html.Partial("Paging", @Model.Paging)

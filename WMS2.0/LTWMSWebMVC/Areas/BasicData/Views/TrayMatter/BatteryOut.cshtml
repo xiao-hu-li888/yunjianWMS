@@ -1,0 +1,46 @@
+﻿@model LTWMSWebMVC.Areas.BasicData.Data.BatteryOutModel
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">@Html.LabelFor(model => model.Order)</label>
+            <div class="col-sm-9">
+                @Html.EditorFor(model => model.Order)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.Cluster)  </label>
+            <div class="col-sm-9">
+                @Html.EditorFor(model => model.Cluster)
+                @Html.ValidationMessageFor(model => model.Cluster)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.Number)  </label>
+            <div class="col-sm-9">
+                @Html.EditorFor(model => model.Number)
+                @Html.ValidationMessageFor(model => model.Cluster)
+            </div>
+            <div class="clear"></div>
+        </div>
+        <p>
+            <button class="btn btn-sm btn-info" type="submit" onclick="return confirm('确定要将对应的电池出库？');">
+                <i class="ace-icon fa fa-check bigger-110"></i>
+                电池出库
+            </button>
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

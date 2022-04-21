@@ -1,0 +1,13 @@
+﻿正在安装程序集“C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSClientWinService\bin\Debug\LTWCSClientWinService.exe”。
+受影响的参数是:
+   logtoconsole = 
+   logfile = C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSClientWinService\bin\Debug\LTWCSClientWinService.InstallLog
+   assemblypath = C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSClientWinService\bin\Debug\LTWCSClientWinService.exe
+正在安装服务 wcs_lt1.0...
+已成功安装服务 wcs_lt1.0。
+正在日志 Application 中创建 EventLog 源 wcs_lt1.0...
+正在提交程序集“C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSClientWinService\bin\Debug\LTWCSClientWinService.exe”。
+受影响的参数是:
+   logtoconsole = 
+   logfile = C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSClientWinService\bin\Debug\LTWCSClientWinService.InstallLog
+   assemblypath = C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSClientWinService\bin\Debug\LTWCSClientWinService.exe

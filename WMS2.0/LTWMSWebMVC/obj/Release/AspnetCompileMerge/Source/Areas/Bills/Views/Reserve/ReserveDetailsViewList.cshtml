@@ -1,0 +1,55 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.Bills.Data.ReservedOrderDetailModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.goods_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spec_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.task_status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.memo)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.goods_id)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.spec_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.task_status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.memo)
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>
+

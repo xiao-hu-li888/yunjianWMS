@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/BasicData/Views/InventoryStatistics/ViewList.cshtml" hash="e291beb" filehash="fffff5414bfd639f" flags="110000" assembly="App_Web_zgorqpcd" type="ASP._Page_Areas_BasicData_Views_InventoryStatistics_ViewList_cshtml">
+    <filedeps>
+        <filedep name="/Areas/BasicData/Views/InventoryStatistics/ViewList.cshtml" />
+    </filedeps>
+</preserve>

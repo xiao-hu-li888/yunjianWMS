@@ -1,0 +1,459 @@
+20210507 19:58:31.561----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":8,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:58:34.603----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":9,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:58:37.634----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":10,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:58:40.662----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":11,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:58:43.715----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":12,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:58:46.747----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":13,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:58:49.777----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":14,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:58:52.810----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":15,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:58:55.851----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":16,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:58:58.891----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":17,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:01.933----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":18,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:04.967----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":19,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:07.230----->>>wcs接收wms的json数据>>>>:10003{"seq":1,"task_id":1159,"type":0,"cmd":105}
+20210507 19:59:07.881----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":1,"task_id":1159,"task_status":6,"task_info":null,"cmd":201}
+20210507 19:59:07.990----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":20,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:08.446----->>>wcs接收wms的json数据>>>>:10003{"cmd":101,"seq":2,"task_id":1160,"src_station":100,"dest_station":0,"src_rack":0,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":5,"dest_row":1,"weight":0.0,"barcode":null}
+20210507 19:59:09.155----->>>读取到状态：2
+20210507 19:59:09.156----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":2,"task_id":1160,"task_status":1,"task_info":null,"cmd":201}
+20210507 19:59:11.020----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":21,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:14.063----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":22,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:17.095----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":23,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:20.145----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":24,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:21.631----->>>读取到状态：3
+20210507 19:59:23.184----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":25,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:25.957----->>>读取到状态：4
+20210507 19:59:26.218----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":26,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:27.046----->>>读取到状态：5
+20210507 19:59:29.254----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":27,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:30.830----->>>读取到状态：6
+20210507 19:59:32.284----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":28,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:35.327----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":29,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:38.357----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":30,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:41.153----->>>读取到状态：7
+20210507 19:59:41.394----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":31,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:44.433----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":32,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:46.037----->>>读取到状态：8
+20210507 19:59:47.139----->>>读取到状态：9
+20210507 19:59:47.456----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":33,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:50.499----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":34,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:51.494----->>>读取到状态：999
+20210507 19:59:51.495----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":3,"task_id":1160,"task_status":3,"task_info":null,"cmd":201}
+20210507 19:59:51.496----->>>退出循环1133123
+20210507 19:59:53.535----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":35,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:56.574----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":36,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 19:59:59.608----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":37,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:02.652----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":38,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:05.676----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":39,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:06.231----->>>wcs接收wms的json数据>>>>:10003{"cmd":102,"seq":3,"task_id":1161,"src_station":0,"dest_station":200,"src_rack":1,"src_col":5,"src_row":1,"dest_rack":0,"dest_col":0,"dest_row":0,"weight":0.0,"barcode":null}
+20210507 20:00:06.901----->>>读取到状态：2
+20210507 20:00:06.903----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":4,"task_id":1161,"task_status":1,"task_info":null,"cmd":201}
+20210507 20:00:07.446----->>>读取到状态：3
+20210507 20:00:08.703----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":40,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:11.763----->>>读取到状态：4
+20210507 20:00:11.773----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":41,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:12.320----->>>读取到状态：5
+20210507 20:00:14.802----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":42,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:16.672----->>>读取到状态：6
+20210507 20:00:17.826----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":43,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:20.847----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":44,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:23.866----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":45,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:24.256----->>>读取到状态：7
+20210507 20:00:26.901----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":46,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:28.662----->>>读取到状态：8
+20210507 20:00:29.758----->>>读取到状态：9
+20210507 20:00:29.928----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":47,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:32.996----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":48,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:34.069----->>>读取到状态：999
+20210507 20:00:34.070----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":5,"task_id":1161,"task_status":3,"task_info":null,"cmd":201}
+20210507 20:00:34.070----->>>退出循环1133123
+20210507 20:00:36.036----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":49,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:39.076----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":50,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:42.113----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":51,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:45.155----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":52,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:46.820----->>>wcs接收wms的json数据>>>>:10003{"cmd":101,"seq":4,"task_id":1163,"src_station":100,"dest_station":0,"src_rack":0,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":5,"dest_row":1,"weight":0.0,"barcode":null}
+20210507 20:00:47.493----->>>读取到状态：2
+20210507 20:00:47.494----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":6,"task_id":1163,"task_status":1,"task_info":null,"cmd":201}
+20210507 20:00:48.191----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":53,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:51.214----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":54,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:51.843----->>>读取到状态：3
+20210507 20:00:54.236----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":55,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:56.212----->>>读取到状态：4
+20210507 20:00:57.260----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":56,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:00:57.314----->>>读取到状态：5
+20210507 20:01:00.290----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":57,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:01.668----->>>读取到状态：6
+20210507 20:01:03.337----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":58,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:06.385----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":59,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:09.425----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":60,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:11.450----->>>读取到状态：7
+20210507 20:01:12.457----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":61,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:15.490----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":62,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:16.313----->>>读取到状态：8
+20210507 20:01:17.388----->>>读取到状态：9
+20210507 20:01:18.524----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":63,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:21.547----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":64,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:21.709----->>>读取到状态：999
+20210507 20:01:21.711----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":7,"task_id":1163,"task_status":3,"task_info":null,"cmd":201}
+20210507 20:01:21.712----->>>退出循环1133123
+20210507 20:01:22.083----->>>wcs接收wms的json数据>>>>:10003{"cmd":101,"seq":5,"task_id":1164,"src_station":100,"dest_station":0,"src_rack":0,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":4,"dest_row":1,"weight":0.0,"barcode":null}
+20210507 20:01:22.732----->>>读取到状态：2
+20210507 20:01:22.733----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":8,"task_id":1164,"task_status":1,"task_info":null,"cmd":201}
+20210507 20:01:24.580----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":65,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:27.628----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":66,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:30.664----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":67,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:33.034----->>>读取到状态：3
+20210507 20:01:33.684----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":68,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:36.710----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":69,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:37.398----->>>读取到状态：4
+20210507 20:01:38.484----->>>读取到状态：5
+20210507 20:01:39.753----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":70,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:42.284----->>>读取到状态：6
+20210507 20:01:42.839----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":71,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:45.865----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":72,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:48.906----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":73,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:50.443----->>>读取到状态：7
+20210507 20:01:51.928----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":74,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:54.949----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":75,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:01:55.304----->>>读取到状态：8
+20210507 20:01:56.406----->>>读取到状态：9
+20210507 20:01:57.976----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":76,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:00.745----->>>读取到状态：999
+20210507 20:02:00.746----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":9,"task_id":1164,"task_status":3,"task_info":null,"cmd":201}
+20210507 20:02:00.747----->>>退出循环1133123
+20210507 20:02:01.024----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":77,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:04.061----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":78,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:07.091----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":79,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:10.133----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":80,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:13.175----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":81,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:15.248----->>>wcs接收wms的json数据>>>>:10003{"cmd":102,"seq":6,"task_id":1162,"src_station":0,"dest_station":200,"src_rack":1,"src_col":6,"src_row":1,"dest_rack":0,"dest_col":0,"dest_row":0,"weight":0.0,"barcode":null}
+20210507 20:02:15.879----->>>读取到状态：2
+20210507 20:02:15.880----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":10,"task_id":1162,"task_status":1,"task_info":null,"cmd":201}
+20210507 20:02:16.215----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":82,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:19.237----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":83,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:21.900----->>>读取到状态：3
+20210507 20:02:22.272----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":84,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:25.311----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":85,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:26.256----->>>读取到状态：4
+20210507 20:02:26.804----->>>读取到状态：5
+20210507 20:02:28.352----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":86,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:31.155----->>>读取到状态：6
+20210507 20:02:31.376----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":87,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:34.421----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":88,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:37.450----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":89,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:40.469----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":90,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:40.926----->>>读取到状态：7
+20210507 20:02:43.486----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":91,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:45.263----->>>读取到状态：8
+20210507 20:02:46.344----->>>读取到状态：9
+20210507 20:02:46.520----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":92,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:49.546----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":93,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:50.691----->>>读取到状态：999
+20210507 20:02:50.692----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":11,"task_id":1162,"task_status":3,"task_info":null,"cmd":201}
+20210507 20:02:50.692----->>>退出循环1133123
+20210507 20:02:52.581----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":94,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:53.624----->>>wcs接收wms的json数据>>>>:10003{"cmd":101,"seq":7,"task_id":1165,"src_station":100,"dest_station":0,"src_rack":0,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":3,"dest_row":1,"weight":0.0,"barcode":null}
+20210507 20:02:54.280----->>>读取到状态：2
+20210507 20:02:54.281----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":12,"task_id":1165,"task_status":1,"task_info":null,"cmd":201}
+20210507 20:02:55.607----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":95,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:02:58.595----->>>读取到状态：3
+20210507 20:02:58.637----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":96,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:01.676----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":97,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:02.911----->>>读取到状态：4
+20210507 20:03:04.008----->>>读取到状态：5
+20210507 20:03:04.715----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":98,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:07.746----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":99,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:08.328----->>>读取到状态：6
+20210507 20:03:10.792----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":100,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:13.761----->>>读取到状态：7
+20210507 20:03:13.834----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":101,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:16.858----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":102,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:18.120----->>>读取到状态：8
+20210507 20:03:19.214----->>>读取到状态：9
+20210507 20:03:19.894----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":103,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:22.930----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":104,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:23.560----->>>读取到状态：999
+20210507 20:03:23.561----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":13,"task_id":1165,"task_status":3,"task_info":null,"cmd":201}
+20210507 20:03:23.561----->>>退出循环1133123
+20210507 20:03:25.959----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":105,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:26.696----->>>wcs接收wms的json数据>>>>:10003{"cmd":101,"seq":8,"task_id":1166,"src_station":100,"dest_station":0,"src_rack":0,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":6,"dest_row":1,"weight":0.0,"barcode":null}
+20210507 20:03:27.354----->>>读取到状态：2
+20210507 20:03:27.355----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":14,"task_id":1166,"task_status":1,"task_info":null,"cmd":201}
+20210507 20:03:29.011----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":106,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:32.053----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":107,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:32.776----->>>读取到状态：3
+20210507 20:03:35.087----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":108,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:37.112----->>>读取到状态：4
+20210507 20:03:38.105----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":109,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:38.204----->>>读取到状态：5
+20210507 20:03:41.125----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":110,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:41.992----->>>读取到状态：6
+20210507 20:03:44.162----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":111,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:47.187----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":112,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:50.209----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":113,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:53.257----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":114,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:54.491----->>>读取到状态：7
+20210507 20:03:56.279----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":115,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:59.306----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":116,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:03:59.345----->>>读取到状态：8
+20210507 20:04:00.417----->>>读取到状态：9
+20210507 20:04:02.337----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":117,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:04.745----->>>读取到状态：999
+20210507 20:04:04.746----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":15,"task_id":1166,"task_status":3,"task_info":null,"cmd":201}
+20210507 20:04:04.747----->>>退出循环1133123
+20210507 20:04:05.378----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":118,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:06.074----->>>wcs接收wms的json数据>>>>:10003{"cmd":102,"seq":9,"task_id":1167,"src_station":0,"dest_station":200,"src_rack":1,"src_col":3,"src_row":1,"dest_rack":0,"dest_col":0,"dest_row":0,"weight":0.0,"barcode":null}
+20210507 20:04:06.731----->>>读取到状态：2
+20210507 20:04:06.732----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":16,"task_id":1167,"task_status":1,"task_info":null,"cmd":201}
+20210507 20:04:08.414----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":119,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:11.445----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":120,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:14.483----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":121,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:15.413----->>>读取到状态：3
+20210507 20:04:17.524----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":122,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:19.759----->>>读取到状态：4
+20210507 20:04:20.567----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":123,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:20.842----->>>读取到状态：5
+20210507 20:04:23.599----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":124,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:24.608----->>>读取到状态：6
+20210507 20:04:26.628----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":125,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:27.314----->>>读取到状态：7
+20210507 20:04:29.655----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":126,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:31.640----->>>读取到状态：8
+20210507 20:04:32.718----->>>读取到状态：9
+20210507 20:04:32.729----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":127,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:35.756----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":128,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:37.054----->>>读取到状态：999
+20210507 20:04:37.056----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":17,"task_id":1167,"task_status":3,"task_info":null,"cmd":201}
+20210507 20:04:37.057----->>>退出循环1133123
+20210507 20:04:38.799----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":129,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:39.288----->>>wcs接收wms的json数据>>>>:10003{"cmd":101,"seq":10,"task_id":1168,"src_station":100,"dest_station":0,"src_rack":0,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":2,"dest_row":1,"weight":0.0,"barcode":null}
+20210507 20:04:39.924----->>>读取到状态：2
+20210507 20:04:39.925----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":18,"task_id":1168,"task_status":1,"task_info":null,"cmd":201}
+20210507 20:04:41.822----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":130,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:44.274----->>>读取到状态：3
+20210507 20:04:44.846----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":131,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:47.862----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":132,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:48.559----->>>读取到状态：4
+20210507 20:04:49.643----->>>读取到状态：5
+20210507 20:04:50.899----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":133,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:53.923----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":134,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:53.965----->>>读取到状态：6
+20210507 20:04:56.948----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":135,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:04:57.216----->>>读取到状态：7
+20210507 20:04:59.972----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":136,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:01.575----->>>读取到状态：8
+20210507 20:05:02.665----->>>读取到状态：9
+20210507 20:05:03.003----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":137,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:06.035----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":138,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:06.974----->>>读取到状态：999
+20210507 20:05:06.975----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":19,"task_id":1168,"task_status":3,"task_info":null,"cmd":201}
+20210507 20:05:06.976----->>>退出循环1133123
+20210507 20:05:09.072----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":139,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:09.311----->>>wcs接收wms的json数据>>>>:10003{"cmd":101,"seq":11,"task_id":1169,"src_station":100,"dest_station":0,"src_rack":0,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":3,"dest_row":1,"weight":0.0,"barcode":null}
+20210507 20:05:09.949----->>>读取到状态：2
+20210507 20:05:09.951----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":20,"task_id":1169,"task_status":1,"task_info":null,"cmd":201}
+20210507 20:05:12.132----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":140,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:13.208----->>>读取到状态：3
+20210507 20:05:15.161----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":141,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:17.523----->>>读取到状态：4
+20210507 20:05:18.183----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":142,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:18.611----->>>读取到状态：5
+20210507 20:05:21.214----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":143,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:22.964----->>>读取到状态：6
+20210507 20:05:24.245----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":144,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:27.279----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":145,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:27.796----->>>读取到状态：7
+20210507 20:05:30.313----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":146,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:32.660----->>>读取到状态：8
+20210507 20:05:33.346----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":147,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:33.742----->>>读取到状态：9
+20210507 20:05:36.371----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":148,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:38.099----->>>读取到状态：999
+20210507 20:05:38.101----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":21,"task_id":1169,"task_status":3,"task_info":null,"cmd":201}
+20210507 20:05:38.101----->>>退出循环1133123
+20210507 20:05:39.396----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":149,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:42.414----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":150,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:45.446----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":151,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:48.478----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":152,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:51.518----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":153,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:54.556----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":154,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:05:57.574----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":155,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:00.617----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":156,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:03.672----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":157,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:06.724----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":158,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:09.749----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":159,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:12.769----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":160,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:15.790----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":161,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:18.820----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":162,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:21.837----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":163,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:24.883----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":164,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:27.921----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":165,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:30.952----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":166,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:33.966----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":167,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:36.989----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":168,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:40.025----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":169,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:43.063----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":170,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:46.095----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":171,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:49.121----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":172,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:52.141----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":173,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:55.172----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":174,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:06:58.212----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":175,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:01.242----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":176,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:04.266----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":177,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:07.291----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":178,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:10.306----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":179,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:13.341----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":180,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:16.383----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":181,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:19.418----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":182,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:22.461----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":183,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:25.494----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":184,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:28.533----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":185,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:31.572----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":186,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:34.609----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":187,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:37.646----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":188,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:40.672----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":189,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:43.708----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":190,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:46.738----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":191,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:49.781----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":192,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:52.804----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":193,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:55.837----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":194,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:07:58.870----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":195,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:01.908----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":196,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:04.934----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":197,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:07.963----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":198,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:10.993----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":199,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:14.007----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":200,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:17.061----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":201,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:20.081----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":202,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:23.112----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":203,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:26.137----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":204,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:29.171----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":205,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:32.213----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":206,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:35.238----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":207,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:38.268----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":208,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:41.302----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":209,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:44.326----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":210,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:47.373----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":211,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:50.391----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":212,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:53.422----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":213,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:56.453----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":214,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:08:59.492----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":215,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:02.508----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":216,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:05.546----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":217,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:08.589----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":218,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:11.623----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":219,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:14.652----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":220,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:17.687----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":221,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:20.709----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":222,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:23.746----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":223,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:26.773----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":224,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:29.794----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":225,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:32.821----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":226,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:35.861----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":227,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:38.886----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":228,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:41.919----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":229,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:44.965----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":230,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:48.000----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":231,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:51.024----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":232,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:54.041----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":233,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:09:57.067----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":234,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:00.097----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":235,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:03.132----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":236,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:06.169----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":237,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:09.204----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":238,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:12.231----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":239,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:15.267----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":240,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:18.303----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":241,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:21.328----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":242,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:24.358----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":243,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:27.374----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":244,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:30.401----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":245,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:33.437----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":246,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:36.484----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":247,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:39.519----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":248,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:42.542----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":249,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:45.570----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":250,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:48.602----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":251,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:51.642----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":252,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:54.677----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":253,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:10:57.703----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":254,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:00.746----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":255,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:03.782----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":256,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:06.810----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":257,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:09.837----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":258,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:12.881----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":259,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:15.919----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":260,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:18.942----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":261,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:21.983----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":262,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:25.008----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":263,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:28.027----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":264,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:31.061----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":265,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:34.101----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":266,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:37.131----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":267,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:40.158----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":268,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:43.196----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":269,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:46.234----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":270,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:49.270----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":271,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:52.311----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":272,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:55.340----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":273,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:11:58.371----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":274,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:01.409----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":275,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:04.436----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":276,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:07.458----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":277,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:10.493----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":278,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:13.524----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":279,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:16.561----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":280,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:19.594----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":281,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:22.631----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":282,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:25.660----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":283,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:28.704----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":284,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:31.742----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":285,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:34.786----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":286,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:37.813----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":287,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:40.837----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":288,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:43.870----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":289,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:46.897----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":290,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:49.923----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":291,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:52.947----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":292,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:55.976----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":293,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:12:59.015----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":294,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:02.032----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":295,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:05.071----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":296,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:08.102----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":297,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:11.132----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":298,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:14.172----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":299,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:17.185----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":300,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:20.206----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":301,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:23.224----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":302,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:26.265----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":303,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:29.281----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":304,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:32.304----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":305,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:35.354----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":306,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:38.381----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":307,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:41.427----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":308,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:44.461----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":309,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:47.483----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":310,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:50.522----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":311,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:53.555----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":312,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:56.589----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":313,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:13:59.632----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":314,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:02.656----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":315,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:05.686----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":316,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:08.721----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":317,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:11.747----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":318,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:14.789----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":319,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:17.816----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":320,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:20.854----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":321,"dev_count":0,"dev_info":[{"dev_id":2001,"status":1,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:20.990----->>>wcs接收wms的json数据>>>>:10003{"cmd":102,"seq":12,"task_id":1172,"src_station":0,"dest_station":200,"src_rack":1,"src_col":6,"src_row":1,"dest_rack":0,"dest_col":0,"dest_row":0,"weight":0.0,"barcode":null}
+20210507 20:14:21.638----->>>读取到状态：2
+20210507 20:14:21.640----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":22,"task_id":1172,"task_status":1,"task_info":null,"cmd":201}
+20210507 20:14:23.881----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":322,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:26.909----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":323,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:29.938----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":324,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:30.351----->>>读取到状态：3
+20210507 20:14:32.971----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":325,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:34.695----->>>读取到状态：4
+20210507 20:14:35.767----->>>读取到状态：5
+20210507 20:14:36.004----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":326,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:39.038----->>>wcservice1 log handler 695511235>>WMS>>>WCS====>>>{"seq":327,"dev_count":0,"dev_info":[{"dev_id":2001,"status":2,"error_code":0,"error_msg":""}],"cmd":202}
+20210507 20:14:39.563----->>>读取到状态：6

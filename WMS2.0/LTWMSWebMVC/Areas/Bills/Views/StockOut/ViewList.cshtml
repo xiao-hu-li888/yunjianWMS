@@ -1,0 +1,140 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.Bills.Data.StockOutModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            @*<th style="width:44px;">明细</th>*@
+            <th>序号</th>
+            <th>
+                @Html.DisplayNameFor(model => model.odd_numbers)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.stockout_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.out_date)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.bill_status)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.createdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.memo)
+            </th>
+            <th style="width:280px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            @*<td class="center">
+                <div class="action-buttons" data-guid="@item.guid">
+                    <a href="#" class="green bigger-200 show-details-btn" title="Show Details">
+                        <i class="ace-icon fa fa-angle-double-up"></i>
+                        <span class="sr-only">Details</span>
+                    </a>
+                </div>
+            </td>*@
+            <td style="font-weight:bold;font-size:14px;color:#D15B47;">@item.Id</td>
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.odd_numbers)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.stockout_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.out_date)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.bill_status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.memo)
+            </td>
+            <td>
+                @Html.ActionLink("查看明细", "DetailIndex", new { billstockout_guid = item.guid }, new { @class = "icos ico_search" })
+                <span style="margin-right:5px;"></span>
+                @Html.ActionLink("导出PDF", "ExportPDF", new { billstockout_guid = item.guid, exp_date = DBNull.Value }, new { @class = "icos ico_download2", target = "_blank" })
+
+            </td>
+        </tr>
+            if (item.List_StockOutDetailModel != null && item.List_StockOutDetailModel.Count > 0)
+            {
+                <tr data-guid="@item.guid"  class="@_cname">
+                    
+                    <td colspan="8">
+                        <table class="border table table-bordered table-hover lt-box-table" style="margin-bottom:0px;font-size: 10px;">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_StockOutDetailModel.FirstOrDefault().matter_code)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_StockOutDetailModel.FirstOrDefault().matter_name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_StockOutDetailModel.FirstOrDefault().lot_number)
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_StockOutDetailModel.FirstOrDefault().out_number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_StockOutDetailModel.FirstOrDefault().createdate)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_StockOutDetailModel.FirstOrDefault().memo)
+                                    </th>
+                                </tr>
+                            </thead>
+                            @foreach (var sub_item in item.List_StockOutDetailModel)
+                            {
+                                <tbody>
+                                    <tr>
+                                        <td class="tr-sps_tit">
+                                            @Html.DisplayFor(modelItem => sub_item.matter_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.matter_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.lot_number)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.out_number)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.createdate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.memo)
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            }
+                        </table>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,91 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.BasicData.Data.ShelvesModel>
+
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.warehouse_guid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.wcs_srv_guid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rack_of_wcs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.columns_reversal_wcs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.columns_offset_wcs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rows_offset_wcs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.out_logic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stock_distribute)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.warehouse_guid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wcs_srv_guid)
+            </td>
+            <td class="tr-sps_tit" style="color:#D15B47;">
+                @Html.DisplayFor(modelItem => item.rack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rack_of_wcs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.columns_reversal_wcs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.columns_offset_wcs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rows_offset_wcs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.out_logic)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.stock_distribute)
+            </td>
+            <td>
+                @Html.ActionLink("设备绑定", "DeviceBindView", new { guid = item.guid }, new { @class = "btn btn-mini btn-info" })
+            </td>
+        </tr>
+        <tr>
+            <td>设备绑定>>></td>
+            <td colspan="9">
+                @if (item.WcsSrvModel!=null)
+                {
+                    Html.RenderPartial("DeviceList", item.WcsSrvModel.List_wcsDeviceModel);
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

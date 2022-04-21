@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/voicehandler.ashx" hash="e291beb" filehash="ffffefe8f6502d7a" flags="130000" assembly="LTWMSWebMVC" type="LTWMSWebMVC.voicehandler">
+    <filedeps>
+        <filedep name="/voicehandler.ashx" />
+    </filedeps>
+</preserve>

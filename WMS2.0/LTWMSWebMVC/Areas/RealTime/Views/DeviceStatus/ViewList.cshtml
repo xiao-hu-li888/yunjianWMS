@@ -1,0 +1,105 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.Setting.Data.WcsSrvModel>
+
+@{
+    Layout = null;
+}
+
+@if (Model != null && Model.Count() > 0)
+{
+    foreach (var item in Model)
+    {
+        <div class="widget-box">
+            <div class="widget-header">
+                <h5 class="pink" style="display:inline-block;margin-right:15px;">
+                    <i class="ace-icon fa fa-caret-right red"></i>
+                    <a href="#modal-table" role="button" class="green" data-toggle="modal">@item.name  </a>
+                </h5>
+                <span class="tc"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i>ip:@item.ip</span>
+                <span class="tc"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i>端口:@item.port</span>
+            </div>
+            <table class="border table table-bordered table-hover" selectedcssclass="sele">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().number)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().DevPlcModel.run_status)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().device_type)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().DevPlcModel.updatedate)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (item.List_wcsDeviceModel != null&& item.List_wcsDeviceModel.Count>0)
+                    {
+                        var orderedDeviceList=item.List_wcsDeviceModel.OrderByDescending(o => o.device_type).ThenBy(o => o.number).ToList();
+                        int _index = 0;
+                        foreach (var devItem in orderedDeviceList)
+                        {
+
+                            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+                            _index++;
+                            <tr class="@_cname">
+                                <td class="tr-sps_tit">
+
+                                    @Html.DisplayFor(modelItem => devItem.number)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => devItem.name)
+                                </td>
+                                <td>
+
+                                    @if (devItem.DevPlcModel != null)
+                                    {
+                                        if (devItem.DevPlcModel.type == LTWMSEFModel.Warehouse.DeviceTypeEnum.Stacker)
+                                        {
+                                            @Html.DisplayFor(modelItem => devItem.DevPlcModel.run_status)
+                                        }
+                                        else
+                                        {
+                                            if (devItem.DevPlcModel.run_status == LTWMSEFModel.Hardware.PLCRunStatus.Ready)
+                                            {
+                                                <span style="color:green;font-weight:bold;">出库准备好</span>
+                                            }
+                                            else
+                                            {
+                                                <span>无</span>
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <span>无</span>
+                                    }
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => devItem.device_type)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => devItem.DevPlcModel.updatedate)
+                                </td>
+
+                            </tr>
+
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+}
+else
+{
+    <div>暂无数据/未配置...</div>
+}

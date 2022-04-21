@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.RealTime.Data.AlarmLogModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.log_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.remark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.log_from)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+            <tr class="@_cname">
+                <td class="tr-sps_tit">
+                    <input class="current_Data" value="@item.guid" type="hidden" />
+                    @Html.DisplayFor(modelItem => item.log_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.remark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.log_from)
+                </td>
+                <td>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+ 

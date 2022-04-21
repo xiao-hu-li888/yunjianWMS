@@ -1,0 +1,26 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.BasicData.Data.ShelvesSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+      //  var speech = new LT_Speech();
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+           // speech.speek("查询成功");
+        });
+    </script>
+}
+<section class="btn_div"> 
+    <a href="#" class="icos ico_refresh">刷新</a>
+</section>
+<section class="btn_div btn_div2">
+    <a href="@Url.Action("Update")/{0}" data-dialog-title="修改货架/WCS/设备绑定关系" data-dialog-width="650" class="icos ico_edit needsele">编辑</a> 
+</section>
+<section id="LTContent">
+    @Html.Partial("ViewList", Model.PageCont)
+</section>
+

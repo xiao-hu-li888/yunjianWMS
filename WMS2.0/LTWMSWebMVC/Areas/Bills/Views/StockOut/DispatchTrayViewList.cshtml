@@ -1,0 +1,82 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.BasicData.Data.TrayMatterModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th style="width:60px;">
+                <input type="checkbox" id="checkAll" data-chkid="checkAll1" onclick="CheckAllFunc(this);" />&nbsp;<label for="checkAll">全选</label>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.traybarcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.x_barcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name_list)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lot_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.test_status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            <td>
+                <input type="checkbox" name="traymatter_chk_guids" value="@item.guid" data-chk="checkAll1" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.traybarcode)
+            </td>
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.x_barcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name_list)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lot_number)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.number)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.test_status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createdate)
+            </td>
+            <td>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<script type="text/javascript">
+    function CheckAllFunc(t) {
+        var _checkedV = $(t).get(0).checked;
+        $("input[type=checkbox][data-chk=" + $(t).data("chkid") + "]").each(function () {
+            $(this).get(0).checked = _checkedV;
+        }); 
+    }
+</script>

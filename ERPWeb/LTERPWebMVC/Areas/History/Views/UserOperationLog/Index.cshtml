@@ -1,0 +1,31 @@
+﻿@using LTERPWebMVC.App_Start.WebMvCEx;
+@model LTERPWebMVC.Areas.History.Data.UserOperationLogSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+        });
+    </script>
+}
+<section class="btn_div">
+    <a href="#" class="icos ico_refresh">刷新</a>
+</section> 
+<section class="searchbg">
+    @using (Html.BeginForm("Index", "UserOperationLog", FormMethod.Post, new { name = "paging_search_form" }))
+    {
+        <div>
+            @Html.LabelFor(a => a.s_keywords)：@Html.TextBoxFor(a => a.s_keywords, new { @class = "ac_input", placeholder = "请输入" + Html.DisplayNameFor(a => a.s_keywords) })
+            <input type="submit" value="搜索" />
+        </div>
+
+    }
+</section>
+<section id="LTContent">
+    @Html.Partial("ViewList", Model.PageCont)
+</section>
+@Html.Partial("Paging", @Model.Paging)

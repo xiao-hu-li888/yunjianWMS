@@ -1,0 +1,117 @@
+﻿.table-bordered,
+td,
+th {
+    border-radius: 0 !important;
+}
+
+.table > thead > tr {
+    color: #707070;
+    font-weight: 400;
+    background: repeat-x #F2F2F2;
+    background-image: -webkit-linear-gradient(top,#F8F8F8 0,#ECECEC 100%);
+    background-image: -o-linear-gradient(top,#F8F8F8 0,#ECECEC 100%);
+    background-image: linear-gradient(to bottom,#F8F8F8 0,#ECECEC 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff8f8f8', endColorstr='#ffececec', GradientType=0)
+}
+
+    .table > thead > tr > th {
+        border-color: #ddd;
+        font-weight: 700
+    }
+
+        .table > thead > tr > th .ace-icon:first-child {
+            margin-right: 2px
+        }
+
+        .table > thead > tr > th:first-child {
+            border-left-color: #F1F1F1
+        }
+
+        .table > thead > tr > th:last-child {
+            border-right-color: #F1F1F1
+        }
+
+.table.table-bordered > thead > tr > th {
+    vertical-align: middle
+}
+
+    .table.table-bordered > thead > tr > th:first-child {
+        border-left-color: #ddd
+    }
+
+td.center,
+th.center {
+    text-align: center
+}
+
+td .lbl,
+th .lbl {
+    margin-bottom: 0
+}
+
+    td .lbl:only-child,
+    th .lbl:only-child {
+        vertical-align: top
+    }
+
+.table-header {
+    background-color: #307ECC;
+    color: #FFF;
+    font-size: 14px;
+    line-height: 38px;
+    padding-left: 12px;
+    margin-bottom: 1px
+}
+
+    .table-header .close {
+        margin-right: 8px;
+        margin-top: 0;
+        opacity: .45;
+        filter: alpha(opacity=45)
+    }
+
+        .table-header .close:hover {
+            opacity: .75;
+            filter: alpha(opacity=75)
+        }
+
+th.detail-col {
+    width: 48px;
+    text-align: center
+}
+
+tr.detail-row {
+    display: none
+}
+
+    tr.detail-row.open {
+        display: block;
+        display: table-row
+    }
+
+    tr.detail-row > td {
+        background-color: #f1f6f8;
+        border-top: 3px solid #d1e1ea !important
+    }
+
+.table-detail {
+    background-color: #fff;
+    border: 1px solid #dcebf7;
+    width: 100%;
+    padding: 12px
+}
+
+    .table-detail td > .profile-user-info {
+        width: 100%
+    }
+
+.tr-odd {
+   
+}
+.tr-even {
+    background-color: #f9f9f9;
+}
+.tr-sps_tit {
+    color: #23527c;
+    font-weight: bold;
+}

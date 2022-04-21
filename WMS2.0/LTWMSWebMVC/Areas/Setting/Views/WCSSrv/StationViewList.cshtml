@@ -1,0 +1,77 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.Setting.Data.WcsDeviceModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.wcs_srv_guid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.warehouse_guid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.device_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.station_mode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.default_out)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.need_scan_bind)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+            <tr class="@_cname">
+                <td class="tr-sps_tit">
+                    <input class="current_Data" value="@item.guid" type="hidden" />
+                    @Html.DisplayFor(modelItem => item.wcs_srv_guid)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.warehouse_guid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.device_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td> 
+                <td>
+                    @Html.DisplayFor(modelItem => item.station_mode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.default_out)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.need_scan_bind)
+                </td>
+                <td>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+

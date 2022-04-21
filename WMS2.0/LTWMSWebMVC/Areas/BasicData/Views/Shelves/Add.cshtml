@@ -1,0 +1,156 @@
+﻿@model LTWMSWebMVC.Areas.BasicData.Data.ShelvesModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+        @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+        {
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+        }
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span class="necessary">*</span> @Html.LabelFor(model => model.warehouse_guid)</label>
+            <div class="col-sm-9">
+                @if (Model.isinitialized)
+                {
+                    @Html.DisplayFor(model => model.warehouse_guid)
+                    @Html.HiddenFor(model => model.warehouse_guid)
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.warehouse_guid)
+                    @Html.ValidationMessageFor(model => model.warehouse_guid)
+                }
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  <span class="necessary">*</span>   @Html.LabelFor(model => model.rack)  </label>
+            <div class="col-sm-9">
+                @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+                {
+
+                    @Html.DisplayFor(model => model.rack)
+                    @Html.HiddenFor(model => model.rack)
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.rack)
+                    @Html.ValidationMessageFor(model => model.rack)
+                }
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  <span class="necessary">*</span>   @Html.LabelFor(model => model.columns_specs)  </label>
+            <div class="col-sm-9">
+                @if (Model.isinitialized)
+                {
+
+                    @Html.DisplayFor(model => model.columns_specs)
+                    @Html.HiddenFor(model => model.columns_specs)
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.columns_specs)
+                    @Html.ValidationMessageFor(model => model.columns_specs)
+                }
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  <span class="necessary">*</span>   @Html.LabelFor(model => model.rows_specs)  </label>
+            <div class="col-sm-9">
+                @if (Model.isinitialized)
+                {
+
+                    @Html.DisplayFor(model => model.rows_specs)
+                    @Html.HiddenFor(model => model.rows_specs)
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.rows_specs)
+                    @Html.ValidationMessageFor(model => model.rows_specs)
+                }
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  <span class="necessary">*</span>   @Html.LabelFor(model => model.depth)  </label>
+            <div class="col-sm-9">
+                @if (Model.isinitialized)
+                {
+
+                    @Html.DisplayFor(model => model.depth)
+                    @Html.HiddenFor(model => model.depth)
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.depth)
+                    @Html.ValidationMessageFor(model => model.depth)
+                }(靠近堆垛机为0依次往两侧递增)
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  <span class="necessary">*</span>   @Html.LabelFor(model => model.same_side_mark)  </label>
+            <div class="col-sm-9">
+                @if (Model.isinitialized)
+                {
+
+                    @Html.DisplayFor(model => model.same_side_mark)
+                    @Html.HiddenFor(model => model.same_side_mark)
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.same_side_mark)
+                    @Html.ValidationMessageFor(model => model.same_side_mark)
+                }
+            </div>
+            <div class="clear"></div>
+        </div>
+        <p>
+            @if (!Model.isinitialized)
+            {
+                @Html.HiddenFor(model => model.submit_type)
+
+                <button class="btn btn-sm btn-info" type="submit" onclick="return sethiddenv(1);">
+                    <i class="ace-icon fa fa-check bigger-110"></i>
+                    @ViewBag.SubmitText
+                </button>
+                if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+                {
+                    <button class="btn btn-sm btn-info" type="submit" onclick="return sethiddenv(2);">
+                        <i class="ace-icon fa fa-check bigger-110"></i>
+                        修改并初始化数据
+                    </button>
+
+                }
+                else
+                {
+                    <button class="btn btn-sm btn-info" type="submit" onclick="return sethiddenv(3);">
+                        <i class="ace-icon fa fa-check bigger-110"></i>
+                        保存并初始化数据
+                    </button>
+
+                }
+                <script type="text/javascript">
+                    function sethiddenv(vt) {
+                        $("#submit_type").val(vt);
+                        return true;
+                    }
+                </script>
+            }
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

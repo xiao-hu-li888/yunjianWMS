@@ -1,0 +1,36 @@
+﻿@model ICollection<LTWMSWebMVC.Areas.Setting.Data.WarehouseTypeModel>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <li>
+        <a class="lt-tree-tit" data-guid="@item.guid">@item.name</a>
+        <div class="clear"></div>
+        @if (item.ListWareHouse != null && item.ListWareHouse.Count > 0)
+        {
+            <ul class="lt-tree-sub-box">
+                @foreach (var itm_warehouse in item.ListWareHouse)
+                {
+                    string checkStr = "";
+                    if (itm_warehouse.Checked)
+                    {
+                        checkStr = " checked=checked ";
+                    }
+                    <li>
+                        <input style="position: relative; top: -4px;" name="permissionWarehouseText" type="checkbox" value="@itm_warehouse.guid" id="@itm_warehouse.guid" @checkStr>
+                        <label for="@itm_warehouse.guid">@itm_warehouse.name</label>
+                        <div class="clear"></div>
+                    </li>
+                }
+            </ul>
+        }
+        @if (item.SubItems != null && item.SubItems.Count > 0)
+        {
+            <ul class="lt-tree-sub-box">
+                @Html.Partial("PermWareHouseType", item.SubItems)
+            </ul>
+        }
+    </li>
+} 

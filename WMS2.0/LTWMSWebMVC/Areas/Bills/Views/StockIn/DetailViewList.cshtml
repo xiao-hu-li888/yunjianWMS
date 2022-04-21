@@ -1,0 +1,153 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.Bills.Data.StockInDetailModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.matter_code)
+            </th>
+            <th>托盘明细</th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lot_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.in_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.producedate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.effective_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.test_status)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+            <tr class="@_cname">
+                <td class="tr-sps_tit">
+                    <input class="current_Data" value="@item.guid" type="hidden" />
+                    @Html.DisplayFor(modelItem => item.matter_code)
+                </td>
+                <td class="center">
+                    <div class="action-buttons" data-guid="@item.guid">
+                        <a href="#" class="green bigger-200 show-details-btn" title="Show Details">
+                            <i class="ace-icon fa fa-angle-double-up"></i>
+                            <span class="sr-only">Details</span>
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td class="tr-sps_tit" style="color: #D15B47;">
+                    @Html.DisplayFor(modelItem => item.lot_number)
+                </td>
+
+                <td style="color: #D15B47;font-weight:bold;">
+                    @Html.DisplayFor(modelItem => item.in_number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.producedate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.effective_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.test_status)
+                </td>
+            </tr>
+            if (item.List_bill_stockin_detail_traymatterModel != null && item.List_bill_stockin_detail_traymatterModel.Count > 0)
+            {
+                <tr class="detail-row open" data-guid="@item.guid">
+                    <td colspan="14">
+                        <table class="border table table-bordered table-hover" style="margin-bottom:0px;font-size: 10px;">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_bill_stockin_detail_traymatterModel.FirstOrDefault().traybarcode)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_bill_stockin_detail_traymatterModel.FirstOrDefault().number)
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_bill_stockin_detail_traymatterModel.FirstOrDefault().dest_shelfunits_pos)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_bill_stockin_detail_traymatterModel.FirstOrDefault().tray_status)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_bill_stockin_detail_traymatterModel.FirstOrDefault().tray_in_date)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_bill_stockin_detail_traymatterModel.FirstOrDefault().memo)
+                                    </th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            @foreach (var sub_item in item.List_bill_stockin_detail_traymatterModel)
+                            {
+                                <tbody>
+                                    <tr>
+                                        <td class="tr-sps_tit">
+                                            @Html.DisplayFor(modelItem => sub_item.traybarcode)
+                                        </td>
+                                        <td style="color: #D15B47;font-weight:bold;">
+                                            @Html.DisplayFor(modelItem => sub_item.number)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.dest_shelfunits_pos)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.tray_status)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.tray_in_date)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.memo)
+                                        </td>
+                                        <td>
+                                            <section class="btn_div">
+                                                <a href="@Url.Action("UpdateDetail")/@sub_item.guid" data-dialog-title="修改" class="icos ico_edit needsele">编辑</a>
+                                                <a href="@Url.Action("DeleteDetailPost")/@sub_item.guid" data-ltext-ajax-delete="true" data-ajax-confirm="确认删除？" class="icos ico_dele needsele">删除</a>
+
+                                            </section>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            }
+                            @if (item.List_bill_stockin_detail_traymatterModel!=null&& item.List_bill_stockin_detail_traymatterModel.Count()>0)
+                            {
+                                <tr>
+                                    <td class="tr-sps_tit">
+                                        总计：
+                                    </td>
+                                    <td colspan="5" style="color: #D15B47;font-weight:bold;">
+                                        @item.List_bill_stockin_detail_traymatterModel.Where(w=>w.tray_status!= LTWMSEFModel.Bills.TrayInStockStatusEnum.Canceled).Sum(m => m.number)
+                                    </td>
+                                     
+                                </tr>
+                            }
+                        </table>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

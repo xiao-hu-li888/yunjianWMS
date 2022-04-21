@@ -1,0 +1,78 @@
+﻿@model LTWMSWebMVC.Areas.RealTime.Data.RgvListStatusData
+@{
+    Layout = null;
+}
+
+<span class="tc">
+    <i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i>
+    <a href="@Url.Action("WaiteOutIndex")" title="点击查看待发送任务"> <span style="font-size:14px;">出库任务：</span><span style="color:red;">@Model.WaitOutTaskCount</span></a>
+</span>
+&nbsp;&nbsp; <span class="tc"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i><span style="font-size:14px;">入库任务：</span><span style="color:red;">@Model.WaitInTaskCount</span></span>
+<span style="padding:0 30px;"></span>
+@if (Model.ListDeviceModel != null && Model.ListDeviceModel.Count > 0)
+            {
+                var orderDeviceList= Model.ListDeviceModel.OrderByDescending(o => o.device_type).ThenBy(o => o.number).ToList();
+                foreach (var item in orderDeviceList)
+                {
+                    if(item.device_type== LTWMSEFModel.Warehouse.DeviceTypeEnum.Station&&(
+                         item.station_mode == LTWMSEFModel.Warehouse.StationModeEnum.InOnly
+                        ))
+                    {//入库站台不显示
+                        continue;
+                    }
+        <span class="tc">
+            <i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i>
+            <span style="font-size:14px;">@item.name</span>
+            @{
+                if (item.device_type == LTWMSEFModel.Warehouse.DeviceTypeEnum.Stacker)
+                {//堆垛机
+                    if (item.DevPlcModel != null)
+                    {
+                        if (item.DevPlcModel.run_status == LTWMSEFModel.Hardware.PLCRunStatus.Ready)
+                        {
+                            <span style='color:green;'>准备好</span>
+                        }
+                        else if (item.DevPlcModel.run_status == LTWMSEFModel.Hardware.PLCRunStatus.Running)
+                        {
+                            <span style='color:blue;'>运行中</span>
+                        }
+                        else if (item.DevPlcModel.run_status == LTWMSEFModel.Hardware.PLCRunStatus.Warning)
+{
+                            <span style='color:red;'>报警</span>
+                        }
+else if (item.DevPlcModel.run_status == LTWMSEFModel.Hardware.PLCRunStatus.DisConnected)
+{
+                            <span style='color: gray;'>与PLC断开连接</span>
+                        }
+else
+{
+                            <span style='color:gray;'>无</span>
+                        }
+                    }
+                    else
+{
+                        <span style='color:gray;'>无</span>
+                    }
+
+                }
+                else
+{
+    if (item.DevPlcModel != null && item.DevPlcModel.run_status == LTWMSEFModel.Hardware.PLCRunStatus.Ready)
+    {
+                        <span style='color:green;'>出库准备好</span>
+                    }
+    else
+    {
+                        <span style='color:gray;'>无</span>
+                    }
+}
+
+            }
+        </span>
+    }
+
+}
+@*<span class="tc"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i><span style="font-size:14px;">堆垛机：</span>@{WriteLiteral(Model.StackerStatus);} </span>
+    <span class="tc"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i><span style="font-size:14px;">站台1：</span>@{WriteLiteral(Model.TransportStatus1);} </span>
+    <span class="tc"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i><span style="font-size:14px;">站台2：</span>@{WriteLiteral(Model.TransportStatus2);}</span>*@
+

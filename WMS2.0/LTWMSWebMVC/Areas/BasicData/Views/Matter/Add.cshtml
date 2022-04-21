@@ -1,0 +1,151 @@
+﻿@model LTWMSWebMVC.Areas.BasicData.Data.MatterModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend></legend>
+    @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+    {
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+    }
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span class="necessary">*</span> @Html.LabelFor(model => model.code)  </label>
+        <div class="col-sm-9">
+            @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+            {
+
+                @Html.DisplayFor(model => model.code)
+                @Html.HiddenFor(model => model.code)
+            }
+            else
+            {
+                @Html.EditorFor(model => model.code)
+                @Html.ValidationMessageFor(model => model.code)
+            }
+            @*<button style="margin-left:30px;" class="btn btn-sm btn-warning" type="button" onclick="LocalPrintMatterBarcode('@Model.name','@Model.code','@LTWMSWebMVC.WMSFactory.Config.PrintServerURL');">
+                    <i class="ace-icon fa fa-print bigger-110"></i>
+                    打印条码
+                </button>*@
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span class="necessary">*</span> @Html.LabelFor(model => model.name)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.mattertype_name)  </label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.mattertype_name)
+        </div>
+        <div class="clear"></div>
+    </div>
+    @*<div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.brand_name)  </label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.brand_name)
+            </div>
+            <div class="clear"></div>
+        </div>*@
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.specs)  </label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.specs)
+            @Html.ValidationMessageFor(model => model.specs)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.description)  </label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.description)
+            @Html.ValidationMessageFor(model => model.description)
+        </div>
+        <div class="clear"></div>
+    </div>
+    @*<div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.unit_measurement)  </label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.unit_measurement)
+            @Html.ValidationMessageFor(model => model.unit_measurement)
+        </div>
+        <div class="clear"></div>
+    </div>*@
+
+    @*<div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.stock_max)  </label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.stock_max)
+            @Html.ValidationMessageFor(model => model.stock_max)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.stock_min)  </label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.stock_min)
+            @Html.ValidationMessageFor(model => model.stock_min)
+        </div>
+        <div class="clear"></div>
+    </div>*@
+
+
+
+    @*<div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.unit_convert)  </label>
+            <div class="col-sm-9">
+                @Html.EditorFor(model => model.unit_convert)
+                @Html.ValidationMessageFor(model => model.unit_convert)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.convert_ratio)  </label>
+            <div class="col-sm-9">
+                @Html.EditorFor(model => model.convert_ratio)
+                @Html.ValidationMessageFor(model => model.convert_ratio)
+            </div>
+            <div class="clear"></div>
+        </div>*@
+
+    @*<div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.effective_date)  </label>
+            <div class="col-sm-9">
+                @Html.EditorFor(model => model.effective_date)
+                @Html.ValidationMessageFor(model => model.effective_date)
+            </div>
+            <div class="clear"></div>
+        </div>*@
+
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> @Html.LabelFor(model => model.memo)  </label>
+        <div class="col-sm-9">
+            @Html.TextAreaFor(model => model.memo)
+            @Html.ValidationMessageFor(model => model.memo)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <p>
+        <button class="btn btn-sm btn-info" type="submit">
+            <i class="ace-icon fa fa-check bigger-110"></i>
+            @ViewBag.SubmitText
+        </button>
+    </p>
+</fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

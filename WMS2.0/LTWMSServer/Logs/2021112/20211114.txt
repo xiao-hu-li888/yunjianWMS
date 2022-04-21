@@ -1,0 +1,8 @@
+20211114 10:08:02.023----->>>WMS服务：监视线程已启动
+20211114 10:08:02.023----->>>正在重启关闭的线程 ==>>WCS服务
+20211114 10:08:02.044----->>>启动线程：【WCS服务】 socket 客户端>> ip：127.0.0.1，端口：20001
+20211114 10:08:02.104----->>>正在连接wcs... ...
+20211114 10:08:04.180----->>>wmservice1 loghandler13555543>>【连接超时：System.Net.Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。 127.0.0.1:20001
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 108】

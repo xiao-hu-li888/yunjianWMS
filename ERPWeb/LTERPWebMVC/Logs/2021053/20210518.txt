@@ -1,0 +1,24 @@
+20210518 16:57:17.538----->>>System.InvalidOperationException: The model backing the 'LTModel' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+   在 System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   在 System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 LTERPEFModel.ComDao`1.AddIfNotExists[TKey](T Entity, Func`2 predicate) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\ERPWeb\LTERPEFModel\ComDao.cs:行号 49
+   在 LTERPService.Basic.sys_loginBLL.AddLogin(sys_login login, String password) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\ERPWeb\LTERPService\Basic\sys_loginBLL.cs:行号 158
+   在 LTERPWebMVC.App_Start.AutoMap.InitData.AddLoginAdmin() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\ERPWeb\LTERPWebMVC\App_Start\AutoMap\InitData.cs:行号 25
+   在 LTERPWebMVC.Areas.Admin.Controllers.LoginController.Index() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\ERPWeb\LTERPWebMVC\Areas\Admin\Controllers\LoginController.cs:行号 27
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)

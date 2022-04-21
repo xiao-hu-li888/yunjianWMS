@@ -1,0 +1,50 @@
+﻿@model IEnumerable<LTERPWebMVC.Areas.Stock.Data.MatterTypeModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sort)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.memo)
+            </th> 
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+            <tr class="@_cname">
+                <td class="tr-sps_tit">
+                    <input class="current_Data" value="@item.guid" type="hidden" />
+                    @Html.DisplayFor(modelItem => item.code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sort)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.memo)
+                </td> 
+                <td>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+

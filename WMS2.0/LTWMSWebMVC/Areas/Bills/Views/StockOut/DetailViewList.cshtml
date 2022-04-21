@@ -1,0 +1,124 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.Bills.Data.StockOutDetailModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.matter_code)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.matter_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lot_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.out_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.matter_code)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.matter_name)
+            </td>
+            <td class="tr-sps_tit" style="color: #D15B47;">
+                @Html.DisplayFor(modelItem => item.lot_number)
+            </td>
+
+            <td style="color: #D15B47;font-weight:bold;">
+                @Html.DisplayFor(modelItem => item.out_number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createdate)
+            </td>
+            <td>  
+            </td>
+        </tr>
+            if (item.List_bill_stockout_detail_traymatterModel != null && item.List_bill_stockout_detail_traymatterModel.Count > 0)
+            {
+                <tr class="detail-row open">
+                    <td colspan="14">
+                        <table class="border table table-bordered table-hover" style="margin-bottom:0px;font-size: 10px;">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_bill_stockout_detail_traymatterModel.FirstOrDefault().traybarcode)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_bill_stockout_detail_traymatterModel.FirstOrDefault().out_shelfunits_pos)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_bill_stockout_detail_traymatterModel.FirstOrDefault().number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_bill_stockout_detail_traymatterModel.FirstOrDefault().tray_status)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_bill_stockout_detail_traymatterModel.FirstOrDefault().test_status)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_bill_stockout_detail_traymatterModel.FirstOrDefault().memo)
+                                    </th>
+                                </tr>
+                            </thead>
+                            @foreach (var sub_item in item.List_bill_stockout_detail_traymatterModel)
+                            {
+                                <tbody>
+                                    <tr class="@_cname">
+                                        <td class="tr-sps_tit">
+                                            @Html.DisplayFor(modelItem => sub_item.traybarcode)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.out_shelfunits_pos)
+                                        </td>
+                                        <td style="color: #D15B47;font-weight:bold;">
+                                            @Html.DisplayFor(modelItem => sub_item.number)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.tray_status)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.test_status)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.memo)
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            }@if (item.List_bill_stockout_detail_traymatterModel != null && item.List_bill_stockout_detail_traymatterModel.Count() > 0)
+                            {
+                                <tr>
+                                    <td class="tr-sps_tit" colspan="2">
+                                        总计：
+                                    </td>
+                                    <td colspan="4" style="color: #D15B47;font-weight:bold;">
+                                        @item.List_bill_stockout_detail_traymatterModel.Sum(m => m.number)
+                                    </td>
+
+                                </tr>
+                            }
+                        </table>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,55 @@
+﻿@model LTWMSWebMVC.Areas.RealTime.Data.StackerTaskQueueSearch
+@{
+    Layout = null;
+    string txt1 = "下发任务至堆垛机！";
+    string txt2 = "提示：已停止下发任务至堆垛机，下发任务前请检查入库任务跟实际入库口是否一致";
+}
+
+<span class="task-ops">操作：</span>
+<label>
+    @{ string _chkStr = @Model.IsSendToStacker ? " checked=checked " : "";}
+    <input name="swt_sendtaskcmd" class="ace ace-switch ace-switch-4" type="checkbox" @_chkStr>
+    <span class="lbl"></span>
+</label>
+<span class="swt-txt">
+    @if (@Model.IsSendToStacker)
+    {
+        <span>@txt1</span>
+    }
+    else
+    {
+        <span class='txt-alarm'>@txt2</span>
+    }
+</span>
+
+ 
+    <script type="text/javascript"> 
+        $("input[name=swt_sendtaskcmd]").change(function () { 
+                        var _issend = 0;
+                        if ($(this).prop("checked")) {
+                          //发送post下发任务
+                            $(".swt-txt").html("<span>@txt1</span>");
+                            _issend = 1;
+                        } else {
+                            //发送post 取消下发任务
+                            $(".swt-txt").html("<span class='txt-alarm'>@txt2</span>");
+                            _issend = 0;
+                    }
+                   // alert(_issend);
+                        $.post("@Url.Action("SetSendToStacker")?r=" + Math.random(), { issend: _issend}, function (data) {
+                            if (data.success) {
+                                // alert("设置成功！");
+                                if (_issend == 1) {
+                                    speech.speek("下发任务设置成功");
+                                } else {
+                                    speech.speek("已取消下发任务");
+                                }
+                            } else {
+                                alert(json.errors);
+                            }
+                        }).fail(function () {
+                            alert("设置失败");
+                        });
+                });    
+    </script>
+ 

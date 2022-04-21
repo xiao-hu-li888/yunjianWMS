@@ -1,0 +1,87 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.Bills.Data.BillsGatherModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>序号</th>
+            <th>
+                @Html.DisplayNameFor(model => model.bills_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.odd_numbers)
+            </th>
+            <th>
+                类型
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.inout_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.matter_code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lot_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.in_out_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.test_status)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            <td style="font-weight:bold;font-size:14px;color:#D15B47;">@item.Id</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bills_type)
+            </td>
+            <td class="tr-sps_tit">
+                @*<input class="current_Data" value="@item.guid" type="hidden" />*@
+                @Html.DisplayFor(modelItem => item.odd_numbers)
+            </td>
+            <td>
+                @if (item.bills_type == LTWMSEFModel.query_model.BillsInOutEnum.BillsIn)
+                {
+                    @Html.DisplayFor(modelItem => item.stockin_type)
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.stockout_type)
+                } 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.inout_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.matter_code)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lot_number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.in_out_number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.test_status)
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>
+

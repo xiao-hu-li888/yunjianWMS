@@ -1,0 +1,7 @@
+﻿@model DateTime?
+@if (Model == null)
+{
+    <span class="none">暂无</span>
+}else{
+    <span>@Model.Value.ToString("yyyy-MM-dd")</span>
+}

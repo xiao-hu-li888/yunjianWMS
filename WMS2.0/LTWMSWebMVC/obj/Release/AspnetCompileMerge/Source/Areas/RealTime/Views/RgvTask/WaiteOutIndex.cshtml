@@ -1,0 +1,95 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.RealTime.Data.WaiteOutSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+
+<section class="btn_div" style="margin-top:5px;">
+    <a href="@Url.Action("Index")" class="icos ico_back">返回列表</a>
+    <a href="#" class="icos ico_refresh">刷新</a>
+   
+    <a href="javascript:void(0);" class="icos ico_dele" onclick="Task_CancelList();">批量取消任务</a>
+    <a href="javascript:void(0);" class="icos ico_move" onclick="Task_SetPriorityList();">批量优先执行</a>
+</section>
+<section class="searchbg">
+    @using (Html.BeginForm("WaiteOutIndex", "RgvTask", FormMethod.Post, new { name = "paging_search_form" }))
+    {
+        <div>
+            @Html.LabelFor(a => a.s_keywords)：@Html.TextBoxFor(a => a.s_keywords, new { @class = "ac_input", placeholder = "请输入" + Html.DisplayNameFor(a => a.s_keywords) })
+
+            <input type="submit" value="搜索" />
+        </div>
+    }
+</section>
+<section id="LTContent">
+    @Html.Partial("WaiteOutViewList", Model.PageCont)
+</section>
+@Html.Partial("Paging", @Model.Paging)
+@section scripts{
+    <script type="text/javascript">
+        var speech = new LT_Speech();
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+            speech.speek("查询成功");
+        });
+        function Task_CancelList() { 
+            var _v = GetALLCheckedValue("checkAll1");
+            if (_v == "") {
+                speech.speek("未选择任何项");
+                alert("未选择任何项！");
+                return;
+            }
+            speech.speek("确定要批量取消任务");
+            if (!confirm("确定要批量取消任务？")) {
+                return;
+            }
+            $.post("@Url.Action("CancelTaskList")", { guidstr: _v}, function (json) {
+                json = json || {};
+                if (json.success) {
+                    speech.speek("操作成功");
+                    alert("操作成功！");
+                } else {
+                    alert(json.errors);
+                }
+                if (typeof (goto_page) == "function") {
+                    goto_page(-1);
+                } else {
+                    reload();
+                }
+            }).fail(function () {
+                alert("操作失败！");
+            });
+        }
+        function Task_SetPriorityList() { 
+            var _v = GetALLCheckedValue("checkAll1");
+            if (_v == "") {
+                speech.speek("未选择任何项");
+                alert("未选择任何项！");
+                return;
+            }
+            speech.speek("确定要设置批量优先执行");
+            if (!confirm("确定要设置批量优先执行？")) {
+                return;
+            }
+            $.post("@Url.Action("SetPriorityTaskList")", { guidstr: _v}, function (json) {
+                json = json || {};
+                if (json.success) {
+                    speech.speek("操作成功");
+                    alert("操作成功！");
+                } else {
+                    alert(json.errors);
+                }
+                if (typeof (goto_page) == "function") {
+                    goto_page(-1);
+                } else {
+                    reload();
+                }
+            }).fail(function () {
+                alert("操作失败！");
+            });  
+        }
+
+    </script>
+}
