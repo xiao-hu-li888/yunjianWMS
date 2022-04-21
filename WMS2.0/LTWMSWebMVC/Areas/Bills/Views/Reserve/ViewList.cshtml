@@ -1,0 +1,61 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.Bills.Data.ReservedOrderModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th style="width:140px;">
+                @Html.DisplayNameFor(model => model.yl_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total_record)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total_success)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bill_out_status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.memo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.yl_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_record)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_success)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bill_out_status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.memo)
+            </td>
+            <td>
+                @Html.ActionLink("预留单明细", "ReserveDetailsIndex", new { reserve_guid = item.guid }, new { @class = "btn btn-mini btn-info" })
+            </td>
+        </tr> 
+        }
+    </tbody>
+</table>
+

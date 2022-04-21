@@ -1,0 +1,74 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.System.Data.sysloginModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.loginname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.username)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.issuperadmin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ex_role) 
+            </th>  
+            <th>
+                @Html.DisplayNameFor(model => model.state)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.loginname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.issuperadmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+           <td>
+                @Html.DisplayFor(modelItem => item.ex_role)
+            </td>   
+            <td>
+                @Html.DisplayFor(modelItem => item.state) 
+            </td>
+            <td>
+            </td>
+        </tr>
+
+        }</tbody>
+</table>
+

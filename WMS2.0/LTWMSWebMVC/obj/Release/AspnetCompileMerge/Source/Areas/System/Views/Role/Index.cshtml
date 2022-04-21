@@ -1,0 +1,29 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.System.Data.sysRoleSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+        var speech = new LT_Speech();
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+            speech.speek("查询成功");
+        });
+    </script>
+}
+<section class="btn_div">
+    <a href="@Url.Action("Add")" data-dialog-title="添加角色" class="icos ico_add">添加</a>
+    <a href="#" class="icos ico_refresh">刷新</a>
+</section>
+<section class="btn_div btn_div2">
+    <a href="@Url.Action("Update")/{0}" data-dialog-title="修改角色信息" class="icos ico_edit needsele">编辑</a>
+    <a href="@Url.Action("DeletePost")/{0}" data-ltext-ajax-delete="true" data-ajax-confirm="确认删除？" class="icos ico_dele needsele">删除</a>
+</section>
+ 
+<section id="LTContent">
+    @Html.Partial("ViewList", Model.PageCont)
+</section>
+ 

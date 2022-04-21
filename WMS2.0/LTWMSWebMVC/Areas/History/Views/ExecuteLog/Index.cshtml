@@ -1,0 +1,36 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.History.Data.ExecuteLogSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+        var speech = new LT_Speech();
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+            speech.speek("查询成功");
+        });
+    </script>
+}
+<section class="btn_div">
+    <a href="#" class="icos ico_refresh">刷新</a>
+    <a href="@Url.Action("DelHalfYearData")" class="icos ico_dele" data-ltext-ajax-delete="true" data-ajax-confirm="确认删除？">删除并保留1周历史记录</a>
+</section>  
+<section class="searchbg">
+    @using (Html.BeginForm("Index", "ExecuteLog", FormMethod.Post, new { name = "paging_search_form" }))
+    {
+    <div>
+        @Html.LabelFor(a => a.s_keywords)：@Html.TextBoxFor(a => a.s_keywords, new { @class = "ac_input", placeholder = "请输入" + Html.DisplayNameFor(a => a.s_keywords) })
+        @Html.LabelFor(a => a.s_out_date_begin)：@Html.EditorFor(a => a.s_out_date_begin)
+        @Html.LabelFor(a => a.s_out_date_end)：@Html.EditorFor(a => a.s_out_date_end)
+        <input type="submit" value="搜索" />
+    </div>
+
+    }
+</section>
+<section id="LTContent">
+    @Html.Partial("ViewList", Model.PageCont)
+</section>
+@Html.Partial("Paging", @Model.Paging)

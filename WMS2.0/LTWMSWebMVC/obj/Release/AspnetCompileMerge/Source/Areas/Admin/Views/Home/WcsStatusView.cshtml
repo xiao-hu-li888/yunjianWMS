@@ -1,0 +1,132 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.Admin.Models.ServiceStatusModel>
+@{
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+    if (item.wcstype == LTWMSEFModel.Warehouse.WCSType.Stacker)
+    {
+        string _col = " red";
+        string _conn = "未连接";
+        if (item.wcs_status == LTWMSEFModel.Warehouse.WcsStatus.Connected)
+        {
+            _col = "green";
+            _conn = "连接成功";
+        }
+        <div class="col-sm-3" style="line-height:normal;">
+            <div><div style="padding-left:5px;">WCS系统(@item.ip:@item.port)</div> <i class="ace-icon fa fa-circle @_col" style="margin-left:5px;">&nbsp;@_conn</i></div>
+        </div>
+    }
+    else if (item.wcstype == LTWMSEFModel.Warehouse.WCSType.Pcs)
+    {
+        string _col = " red";
+        //if (item.wcs_status == LTWMSEFModel.Warehouse.WcsStatus.Connected)
+        //{
+
+        //}
+        string _mmm = "等待远程连接...";
+        if (!string.IsNullOrWhiteSpace(item.memo))
+        {
+            _col = "green";
+            _mmm = item.memo;
+        }
+        <div class="col-sm-3" style="line-height:normal;">
+            <div><div style="padding-left:5px;">WCS服务</div> <i class="ace-icon fa fa-circle @_col" style="margin-left:5px;">&nbsp;@_mmm</i>  @*远程：@item.ip:@item.port*@</div>
+        </div>
+    }
+    else if (item.wcstype == LTWMSEFModel.Warehouse.WCSType.Agv)
+    {
+        string _col = " red";
+        string _conn = "未连接";
+        if (item.wcs_status == LTWMSEFModel.Warehouse.WcsStatus.Connected)
+        {
+            _col = "green";
+            _conn = "连接成功";
+        }
+        <div class="col-sm-3" style="line-height: normal;">
+            <div><div style="padding-left:5px;">@item.desc (@item.ip)</div> <i class="ace-icon fa fa-circle @_col" style="margin-left:5px;">&nbsp;@_conn</i></div>
+        </div>
+    }
+    else if (item.wcstype == LTWMSEFModel.Warehouse.WCSType.WMSWinServer)
+    {
+        string _col = " red";
+        string _conn = "未启动";
+        if (item.wcs_status == LTWMSEFModel.Warehouse.WcsStatus.Connected)
+        {
+            _col = "green";
+            _conn = "运行中";
+        }
+        // else
+        //{//未连接，自动启动iis服务？？？
+        // }
+        <div class="col-sm-3" style="line-height:normal;">
+            <div><div style="padding-left:5px;">WMS服务</div> <i class="ace-icon fa fa-circle @_col" style="margin-left:5px;">&nbsp;@_conn</i></div>
+        </div>
+    }
+    else if (item.wcstype == LTWMSEFModel.Warehouse.WCSType.WCSServer && item.WcsSrvModel != null)
+    {
+        string _con1 = " red";
+        string _con2 = " red";
+        string _con3 = " red";
+        var Obj1 = Model.FirstOrDefault(w => w.wcstype == LTWMSEFModel.Warehouse.WCSType.SRV_DealReceive);
+        var Obj2 = Model.FirstOrDefault(w => w.wcstype == LTWMSEFModel.Warehouse.WCSType.SRV_DealSend);
+        var Obj3 = Model.FirstOrDefault(w => w.wcstype == LTWMSEFModel.Warehouse.WCSType.SRV_DealToHistory);
+        if (Obj1 != null && Obj1.wcs_status == LTWMSEFModel.Warehouse.WcsStatus.Connected)
+        {//消费处理服务
+            _con1 = " green";
+        }
+        if (Obj2 != null && Obj2.wcs_status == LTWMSEFModel.Warehouse.WcsStatus.Connected)
+        {//生产处理服务
+            _con2 = " green";
+        }
+        if (Obj3 != null && Obj3.wcs_status == LTWMSEFModel.Warehouse.WcsStatus.Connected)
+        {
+            _con3 = " green";
+        }
+
+        if (item.WcsSrvModel.srv_type == LTWMSEFModel.Warehouse.WcsServerType.Client)
+        {//客户端
+            string _col = " red";
+            string _conn = "未连接";
+            if (item.wcs_status == LTWMSEFModel.Warehouse.WcsStatus.Connected)
+            {
+                _col = "green";
+                _conn = "连接成功";
+            }
+            <div class="col-sm-3" style="line-height: normal;">
+                <div>
+                    <div style="padding-left:5px;">@item.desc (@item.ip:@item.port)</div>
+                    <i class="ace-icon fa fa-circle @_col" style="margin-left:5px;">&nbsp;@_conn</i>
+                    (<i class="ace-icon fa fa-circle @_con1">消费</i>)
+                    (<i class="ace-icon fa fa-circle @_con2">生产</i>)
+                    (<i class="ace-icon fa fa-circle @_con3">归档</i>)
+                </div>
+            </div>
+        }
+        else
+        {//服务端
+            string _col = " red";
+            //if (item.wcs_status == LTWMSEFModel.Warehouse.WcsStatus.Connected)
+            //{
+
+            //}
+            string _mmm = "等待远程连接...";
+            if (!string.IsNullOrWhiteSpace(item.memo))
+            {
+                _col = "green";
+                _mmm = item.memo;
+            }
+            <div class="col-sm-3" style="line-height:normal;">
+                <div>
+                    <div style="padding-left:5px;">@item.desc  (@item.ip:@item.port)</div>
+                    <i class="ace-icon fa fa-circle @_col" style="margin-left:5px;">&nbsp;@_mmm</i>
+                    (<i class="ace-icon fa fa-circle @_con1">消费</i>)
+                    (<i class="ace-icon fa fa-circle @_con2">生产</i>)
+                    (<i class="ace-icon fa fa-circle @_con3">归档</i>)
+                </div>
+            </div>
+        }
+    }
+}
+@*<img src="@WMSFactory.Config.WmsServerWebUrl" style="display:none;width:10px;height:10px;" />*@ 
+<div class="clear"></div>

@@ -1,0 +1,78 @@
+﻿@model LTWMSWebMVC.Areas.Bills.Data.ReservedOrderModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>登录用户</legend>
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.yl_id)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.yl_id)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.total_record)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.total_record)
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.total_success)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.total_success)
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.bill_out_status)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.bill_out_status)
+            </div>
+            <div class="clear"></div>
+        </div>
+    </fieldset>
+}
+@if (Model.bill_out_status != LTWMSEFModel.BillsAihua.ReserveBillOutStatus.Finished)
+{
+<div class="form-nowidth">
+    <span class="tit"><i class="ace-icon fa fa-hand-o-right bigger-110 red"></i>&nbsp;操作:</span>
+    @if (Model.bill_out_status == LTWMSEFModel.BillsAihua.ReserveBillOutStatus.None)
+    {
+        using (Html.BeginForm("StartOut", "Reserve"))
+        {
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+            <button class="btn btn-sm btn-primary" type="submit" onclick="return confirm('确定要开始出库？');">
+                <i class="ace-icon fa fa-sign-out bigger-110"></i>
+                开始出库
+            </button>
+        }
+    }
+    else
+    {
+        using (Html.BeginForm("TerminateBill", "Reserve"))
+        {
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+            <button class="btn btn-sm btn-warning" type="submit" onclick="return confirm('确定要强制结束预留单？');">
+                <i class="ace-icon fa fa-repeat bigger-110"></i>
+                强制结束预留单
+            </button>
+        }
+    }
+</div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

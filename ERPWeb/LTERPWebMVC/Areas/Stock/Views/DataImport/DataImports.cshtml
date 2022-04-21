@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm("DataImports2", "DataImport"))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend> 
+        <p>
+            <button class="btn btn-sm btn-info" type="submit">
+                <i class="ace-icon fa fa-check bigger-110"></i>
+                物料信息/物料类型数据导入
+            </button>
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

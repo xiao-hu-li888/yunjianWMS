@@ -1,0 +1,62 @@
+﻿@model LTWMSWebMVC.Areas.BasicData.Data.ShelvesModel
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Permission";
+}
+<section class="btn_div">
+    <a href="@Url.Action("Index")" class="icos ico_back">返回列表</a>
+    <a href="#" class="icos ico_refresh">刷新</a>
+</section>
+<fieldset>
+    <legend style="display:none;">设备绑定</legend>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <table class="border table table-bordered table-hover">
+            <tr>
+                <td style="width: 120px;">@Html.DisplayNameFor(model => model.warehouse_guid)：</td>
+                <td>
+                    @Html.HiddenFor(model => model.guid)
+                    @Html.HiddenFor(model => model.OldRowVersion)
+                    @Html.DisplayFor(model => model.warehouse_guid)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.rack)：</td>
+                <td>@Html.DisplayFor(model => model.rack)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.WcsSrvModel.name)：</td>
+                <td>@Html.DisplayFor(model => model.WcsSrvModel.name)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.WcsSrvModel.srv_type)：</td>
+                <td>@Html.DisplayFor(model => model.WcsSrvModel.srv_type)</td>
+            </tr>
+            <tr>
+                <td>货架关联设备：</td>
+                <td>
+                    @if (Model.WcsSrvModel != null)
+                    {
+                        Html.RenderPartial("DeviceBindChecks", Model.WcsSrvModel.List_wcsDeviceModel);
+                    }
+                </td>
+            </tr>
+        </table>
+        <p>
+            <button class="btn btn-sm btn-info" type="submit">
+                <i class="ace-icon fa fa-check bigger-110"></i>
+                保存
+            </button>
+
+        </p>
+
+    }
+</fieldset>
+@if (!string.IsNullOrWhiteSpace(Convert.ToString(@ViewBag.Mess)))
+{
+    <script type="text/javascript">
+    alert("@ViewBag.Mess")
+    </script>
+}

@@ -1,0 +1,44 @@
+20220114 16:15:21.387----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":204,"seq":1,"num":1,"barcode":"T1001"}】
+20220114 16:15:21.388----->>>wms接收wcs的json数据>>>>:10003{"cmd":204,"seq":1,"num":1,"barcode":"T1001"}
+20220114 16:15:23.704----->>>LED显示异常>>> 网络连接失败。
+20220114 16:15:24.698----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"barcode":"T1001","station":2,"num":1,"cmd":107,"seq":2}
+20220114 16:18:12.577----->>>wmservice1 loghandler13555543>>onErrorRestart[133101]：RecMsg接收数据出现未知异常，终止连接：远程主机强迫关闭了一个现有的连接。
+20220114 16:18:12.585----->>>RecMsg接收数据出现未知异常，终止连接：远程主机强迫关闭了一个现有的连接。
+20220114 16:18:12.585----->>>与wcs断开连接，修改堆垛机的状态！ 
+20220114 16:18:14.163----->>>正在连接wcs... ...
+20220114 16:18:16.185----->>>wmservice1 loghandler13555543>>【连接超时：System.Net.Sockets.SocketException (0x80004005): 由于目标计算机积极拒绝，无法连接。 127.0.0.1:20001
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 108】
+20220114 16:19:07.222----->>>正在停止WMS服务...
+20220114 16:19:07.238----->>>正在关闭所有线程...
+20220114 16:19:07.267----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.WMSServiceServer.MonitorHandler() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\WMSServiceServer.cs:行号 357
+20220114 16:19:07.268----->>>[WCS服务]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTProtocol.Tcp.Socket_Client_New.Connect() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\LTProtocol\Tcp\Socket_Client_New.cs:行号 119
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 97
+20220114 16:19:07.268----->>>[WCS服务]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 240
+20220114 16:19:07.278----->>>[WCS服务>>WMS生产消息]异常12336:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealSend.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealSend.cs:行号 119
+20220114 16:19:07.278----->>>[WCS服务>>WMS生产消息]异常211d7:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealSend.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealSend.cs:行号 141
+20220114 16:19:07.293----->>>[WCS服务>>WMS消费消息]异常ddd12336:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealReceive.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealReceive.cs:行号 117
+20220114 16:19:07.293----->>>[WCS服务>>WMS消费消息]异常212222222222221d7:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealReceive.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealReceive.cs:行号 139
+20220114 16:19:07.309----->>>[WMS历史处理线程]异常12336:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealToHistory.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealToHistory.cs:行号 109
+20220114 16:19:07.309----->>>[WMS历史处理线程]异常211d7:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealToHistory.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealToHistory.cs:行号 132
+20220114 16:19:07.324----->>>WMS服务已停止...

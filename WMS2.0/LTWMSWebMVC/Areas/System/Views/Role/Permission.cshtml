@@ -1,0 +1,90 @@
+﻿@model LTWMSWebMVC.Areas.System.Data.sysRoleModel
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Permission";
+}
+<section class="btn_div">
+    <a href="@Url.Action("Index")" class="icos ico_back">返回列表</a>
+    <a href="#" class="icos ico_refresh">刷新</a>
+</section>
+<fieldset>
+    <legend style="display:none;">权限分配</legend>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+<table class="border table table-bordered table-hover">
+    <tr>
+        <td style="width: 120px;">@Html.DisplayNameFor(model => model.rolename)：</td>
+        <td>
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+            @Html.DisplayFor(model => model.rolename)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.remark)：</td>
+        <td>@Html.DisplayFor(model => model.remark)</td>
+    </tr>
+    <tr>
+        <td>仓库权限：</td>
+        <td>@Html.Partial("WareHousePermission", Model)</td>
+    </tr>
+    <tr>
+        <td>菜单权限：</td>
+        <td>@Html.Partial("PremValue", LTWMSWebMVC.App_Start.AppCode.MenuHelper.CurrentRole(Model.permissiontext))</td>
+    </tr>
+</table>
+        <p>
+            <button class="btn btn-sm btn-info" type="submit">
+                <i class="ace-icon fa fa-check bigger-110"></i>
+                保存
+            </button>
+             
+            @section scripts{
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("input[name=permissiontext]").click(function () {
+                            ////选中所有子项
+                            if ($(this).prop("checked")) { 
+                                $(this).parent().parent().find(" > dd").find("input[name=permissiontext]").each(function () {
+                                    $(this).get(0).checked = true;
+                                });
+                            } else { 
+                                $(this).parent().parent().find(" > dd").find("input[name=permissiontext]").each(function () {
+                                    $(this).get(0).checked = false;
+                                });
+                            }
+                            CheckParent($(this));
+                        });
+                        function CheckParent(t) {
+                            if (!$(t).parent().parent().parent().is("dd")) {
+                                return;
+                            }
+                            ////选中或删除所有父项
+                            var allcount = 0;
+                            var checkedcount = 0;
+                            $(t).parent().parent().parent().find(" > dl").each(function () {
+                                allcount++;
+                                if ($(this).find(" dt > input[name='permissiontext']").attr("checked") == "checked") {
+                                    checkedcount++;
+                                }
+                            });
+                            if (allcount == checkedcount) {
+                                try {
+                                    // $(this).parent().parent().parent().parent().find("dt > input[name='permissiontext']").attr("checked","checked");
+                                    $(t).parent().parent().parent().parent().find("dt > input[name=permissiontext]").get(0).checked = true;
+                                } catch (ex) { alert(ex); }
+                            } else {
+                                $(t).parent().parent().parent().parent().find("dt > input[name=permissiontext]").get(0).checked = false;
+                            }
+                            CheckParent($($(t).parent().parent().parent().parent().find("dt > input[name=permissiontext]").get(0)));
+                        }
+                    });
+                </script>
+            }
+        </p>
+
+    }
+</fieldset>
+

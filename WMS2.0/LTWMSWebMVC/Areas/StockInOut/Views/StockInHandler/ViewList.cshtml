@@ -1,0 +1,120 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.StockInOut.Data.StockInHandlerModel>
+@{
+    string _message = Convert.ToString(ViewData["message"]);
+}
+<table class="border table table-bordered table-hover" selectedcssclass="sele" style="margin-bottom: 7px;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.x_barcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatterModel.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatterModel.brand_name)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatterModel.mattertype_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatterModel.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatterModel.specs)
+            </th>
+            <th style="width:225px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+            <tr class="@_cname">
+                <td class="tr-sps_tit">
+                    <input class="current_Data" value="@item.x_barcode" type="hidden" />
+                    @Html.DisplayFor(modelItem => item.x_barcode)
+                </td>
+                <td class="tr-sps_tit">
+                    @Html.DisplayFor(modelItem => item.MatterModel.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MatterModel.brand_name)
+                </td>
+                <td class="tr-sps_tit">
+                    @*@Html.DisplayFor(modelItem => item.number)*@
+                    @Html.TextBoxFor(modelItem => item.number, new
+                         {
+                             style = "width:60px;",
+                             onpropertychange = "OnblurReSetValue(this,'" +
+                        item.x_barcode + "');",
+                             oninput = "OnblurReSetValue(this,'" + item.x_barcode + "');"
+                         }) / @Html.DisplayFor(modelItem => item.MatterModel.unit_measurement)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatterModel.mattertype_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatterModel.description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatterModel.specs)
+                    </td>
+
+                    <td>
+                        <a class="btn btn-mini btn-info" href="javascript:void(0);" onclick="editMatterInfo('@item.x_barcode', this);">编辑</a>
+                        | <a class="btn btn-mini btn-danger" href="javascript:delMatterInfo('@item.x_barcode');">删除</a> |
+                        <button style="margin-left:5px;display:none;" class="btn btn-mini btn-warning" type="button"
+                                onclick="LocalPrintMatterBarcode('@item.MatterModel.name','@item.x_barcode','@LTWMSWebMVC.WMSFactory.Config.PrintServerURL');">
+                            <i class="ace-icon fa fa-print bigger-110"></i>
+                            打印条码
+                        </button>
+                    </td>
+                </tr>
+
+                <tr style="background-color: #F6FAFF;display:none;">
+                    <td colspan="7" style="padding:3px;">
+                        <table class="border table" selectedcssclass="sele" style="margin-bottom:0px;background-color: #F6FAFF;color:#23527c;border-top:none;">
+                            <tr>
+                                <td width="8%" style="border-top:none;"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i> @Html.DisplayNameFor(model => model.project_name)</td>
+                                <td width="46%" style="border-top: none;color:#a94442;">
+                                    @Html.DisplayFor(modelItem => item.project_name)
+                                </td>
+                                <td width="8%" style="border-top:none;"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i> @Html.DisplayNameFor(model => model.project_no)</td>
+                                <td width="10%" style="border-top: none;color:#a94442;">
+                                    @Html.DisplayFor(modelItem => item.project_no)
+                                </td>
+                                <td width="8%" style="border-top:none;"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i> @Html.DisplayNameFor(model => model.customer_name)</td>
+                                <td width="20%" style="border-top: none;color:#a94442;">
+                                    @Html.DisplayFor(modelItem => item.customer_name)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="8%" style="border-top:none;"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i> @Html.DisplayNameFor(model => model.memo)</td>
+                                <td width="92%" colspan="5" style="border-top: none;color:#a94442;">
+                                    @Html.DisplayFor(modelItem => item.memo)
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+            }
+    </tbody>
+</table>
+@if (!string.IsNullOrWhiteSpace(_message))
+{
+    <script type="text/javascript">
+
+        if (typeof (speech)) {
+            speech.speek("@_message");
+        }
+    </script>
+}

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/page")
+    <!-- 引入 ECharts 文件 -->
+    <style type="text/css">
+        .ec-body {
+        }
+
+            .ec-body .ec-title {
+                font-size: 14px;
+                height: 25px;
+                line-height: 25px;
+                padding: 10px 3px;
+                border-bottom: 1px solid #ccc;
+            }
+            .ec-body .ec-title .tt {
+                color:#333;
+            }
+            .ec-body .ec-title .tf{
+                color:red;
+                font-weight:bold; 
+                margin-right:10px;
+            }
+            .ec-body .ec-cont {
+                margin-top:7px;
+            }
+                .ec-body .ec-cont .ec-t {
+                    font-size: 14px;
+                    font-weight: bold;
+                    padding: 3px 5px; 
+                    height:30px;
+                    line-height:30px; 
+                    margin-bottom:7px;
+                }
+            .ec-body .ec-cont .ltt{border-left:4px solid red;}
+            .ec-body .ec-cont .ec-left {
+                float: left;
+                width: 49%;
+                box-sizing: border-box;
+            }
+
+                .ec-body .ec-cont .ec-right {
+                    float: right;
+                    width: 49%;
+                    box-sizing: border-box;  
+                }
+    </style>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/echarts/echarts.min.js"></script>
+</head>
+<body>
+    
+    <div class="body-content">
+        @RenderBody()
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.BasicData.Data.MatterTypeModel>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <li>
+        <a class="lt-tree-tit" data-guid="@item.guid">(@item.code)@item.name</a>
+        <div style="float:right;">
+            <a href="javascript:void(0);" onclick="AddSubTree('@item.code');"><i class="ace-icon fa fa-plus red"></i>添 加</a>
+            <a href="javascript:void(0);" onclick="DeleteTreeItem('@item.guid');"><i class="ace-icon fa fa-remove red"></i>删 除</a>
+        </div>
+        <div class="clear"></div>
+        @if (item.SubItems != null && item.SubItems.Count > 0)
+        {
+            <ul class="lt-tree-sub-box">
+                @Html.Partial("TreeView_Details", item.SubItems)
+            </ul>
+        }
+    </li>
+}

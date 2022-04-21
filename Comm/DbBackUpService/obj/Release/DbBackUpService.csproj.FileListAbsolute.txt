@@ -1,0 +1,12 @@
+C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\DbBackUpService\bin\Release\DbBackUpService.dll.config
+C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\DbBackUpService\bin\Release\DbBackUpService.dll
+C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\DbBackUpService\bin\Release\DbBackUpService.pdb
+C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\DbBackUpService\bin\Release\EntityFramework.dll
+C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\DbBackUpService\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\DbBackUpService\bin\Release\EntityFramework.xml
+C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\DbBackUpService\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\DbBackUpService\obj\Release\DbBackUpService.csproj.CoreCompileInputs.cache
+C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\DbBackUpService\obj\Release\DbBackUpService.csproj.CopyComplete
+C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\DbBackUpService\obj\Release\DbBackUpService.dll
+C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\DbBackUpService\obj\Release\DbBackUpService.pdb
+C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\Comm\DbBackUpService\obj\Release\DbBackUpService.csprojAssemblyReference.cache

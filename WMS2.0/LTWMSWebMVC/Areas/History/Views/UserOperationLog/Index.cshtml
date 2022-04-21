@@ -1,0 +1,42 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.History.Data.UserOperationLogSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+        var speech = new LT_Speech();
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+            speech.speek("查询成功");
+
+        });
+        function exportPdf(t) { 
+            var _hf = '@Url.Action("ExportPDF")'
+                + "?keywords=" + $("#s_keywords").val() + "&dt_begin=" + $("#s_out_date_begin").val() + "&dt_end=" + $("#s_out_date_end").val() +"&exp_date=";
+            t.href=_hf; 
+        }
+    </script>
+}
+<section class="btn_div">
+    <a href="#" class="icos ico_refresh">刷新</a> 
+</section> 
+<section class="searchbg">
+    @using (Html.BeginForm("Index", "UserOperationLog", FormMethod.Post, new { name = "paging_search_form" }))
+    {
+    <div>
+        @Html.LabelFor(a => a.s_keywords)：@Html.TextBoxFor(a => a.s_keywords, new { @class = "ac_input", placeholder = "请输入" + Html.DisplayNameFor(a => a.s_keywords) })
+        @Html.LabelFor(a => a.s_out_date_begin)：@Html.EditorFor(a => a.s_out_date_begin)
+        @Html.LabelFor(a => a.s_out_date_end)：@Html.EditorFor(a => a.s_out_date_end)
+        <input type="submit" value="搜索" />
+        <a style="margin-left:10px;" href="javascript:void(0);" class="icos ico_download2" target="_blank" onclick="exportPdf(this);">按条件导出全部</a> 
+    </div>
+
+    }
+</section>
+<section id="LTContent">
+    @Html.Partial("ViewList", Model.PageCont)
+</section>
+@Html.Partial("Paging", @Model.Paging)

@@ -1,0 +1,51 @@
+20210507 17:31:14.993----->>>与wms连接成功...
+20210507 17:31:14.993----->>>与wms已建立连接
+20210507 17:35:01.003----->>>wcs接收wms的json数据>>>>:10003{"seq":1,"task_id":1154,"type":0,"cmd":105}
+20210507 17:41:42.627----->>>wcs接收wms的json数据>>>>:10003{"seq":2,"task_id":1155,"type":1,"cmd":105}
+20210507 17:43:02.200----->>>wcs接收wms的json数据>>>>:10003{"seq":3,"task_id":1156,"type":0,"cmd":105}
+20210507 17:48:17.132----->>>远程连接已关闭
+20210507 17:48:17.133----->>>与wms断开连接，修改堆垛机的状态！ 
+20210507 17:48:18.626----->>>与wms断开连接...
+20210507 17:48:18.626----->>>正在连接wms... ...
+20210507 17:48:27.727----->>>与wms连接成功...
+20210507 17:48:27.728----->>>与wms已建立连接
+20210507 17:49:16.622----->>>wcs接收wms的json数据>>>>:10003{"seq":1,"task_id":1157,"type":0,"cmd":105}
+20210507 18:08:47.069----->>>StackerSrv Logs>>>PLC[192.168.1.111]:连接成功
+20210507 18:13:28.464----->>>正在停止WCS服务...
+20210507 18:13:28.465----->>>Wcs 服务已停止...
+20210507 18:13:28.467----->>>与wms断开连接...
+20210507 18:13:28.467----->>>正在关闭所有线程...
+20210507 18:13:28.470----->>>StackerSrv Logs>>>PLC[192.168.1.111]:连接已关闭
+20210507 18:13:28.521----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWCSModule.WCSServiceClient.MonitorHandler() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 486
+20210507 18:13:28.527----->>>[WCS tcp Socket 客户端线程]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 218
+20210507 18:13:28.530----->>>[WCS tcp Socket 客户端线程]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 240
+20210507 18:13:28.548----->>>WCS服务已停止...
+20210507 18:13:48.363----->>>WCS服务：监视线程已启动
+20210507 18:13:48.367----->>>正在重启关闭的线程 ==>>WCS tcp Socket 客户端线程
+20210507 18:13:48.374----->>>正在重启关闭的线程 ==>>PLC连接线程
+20210507 18:13:48.391----->>>启动线程：WCS tcp Socket 客户端线程
+20210507 18:13:48.392----->>>启动线程：PLC连接线程
+20210507 18:13:48.395----->>>Wcs 服务已启动...
+20210507 18:13:48.396----->>>与wms断开连接...
+20210507 18:13:48.397----->>>正在连接wms... ...
+20210507 18:13:48.434----->>>与wms连接成功...
+20210507 18:13:48.435----->>>与wms已建立连接
+20210507 18:13:48.558----->>>StackerSrv Logs>>>PLC[192.168.1.111]:连接成功
+20210507 18:15:06.694----->>>wcs接收wms的json数据>>>>:10003{"cmd":102,"seq":2,"task_id":1158,"src_station":0,"dest_station":200,"src_rack":1,"src_col":6,"src_row":1,"dest_rack":0,"dest_col":0,"dest_row":0,"weight":0.0,"barcode":null}
+20210507 18:15:07.572----->>>读取到状态：2
+20210507 18:15:17.028----->>>读取到状态：3
+20210507 18:15:21.488----->>>读取到状态：4
+20210507 18:15:22.623----->>>读取到状态：5
+20210507 18:15:26.515----->>>读取到状态：6
+20210507 18:15:36.034----->>>读取到状态：7
+20210507 18:15:40.445----->>>读取到状态：8
+20210507 18:15:41.562----->>>读取到状态：9
+20210507 18:15:46.026----->>>读取到状态：999
+20210507 18:15:46.027----->>>退出循环1133123

@@ -1,0 +1,789 @@
+﻿@model LTWMSWebMVC.Areas.Admin.Models.HomeModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>@WMSFactory.Config.WebSiteTitle</title>
+    <meta name="description" content="overview &amp; stats" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="~/Content/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/Content/assets/css/jquery-ui.min.css" />
+    <!-- page specific plugin styles -->
+    <!-- text fonts -->
+    <link rel="stylesheet" href="~/Content/assets/css/fonts.googleapis.com.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="~/Content/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+    <![endif]-->
+    <link rel="stylesheet" href="~/Content/assets/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="~/Content/assets/css/ace-rtl.min.css" />
+    <link href="~/Content/home.css" rel="stylesheet" />
+    <!--[if lte IE 9]>
+      <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <![endif]-->
+    <!-- inline styles related to this page -->
+    <!-- ace settings handler -->
+    <script src="~/Content/assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+    <!--[if lte IE 8]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        html, body {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="no-skin">
+    <div id="navbar" class="navbar navbar-default          ace-save-state">
+        <div class="navbar-container ace-save-state" id="navbar-container">
+            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+                <span class="sr-only">Toggle sidebar</span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="navbar-header pull-left">
+                <a href="javascript:void(0);" class="navbar-brand default-cursor" onfocus="this.blur();">
+                    <small>
+                        <i class="fa fa-leaf"></i>
+                        @WMSFactory.Config.WebSiteTitle
+                    </small>
+                </a> 
+                <a href="~/Content/app/1.apk" target="_blank" style="color: #fff;margin-left: 20px;line-height: 45px;font-size: 12px;font-weight: bold;text-decoration:underline;">[智能仓储App] http://192.168.0.250/content/app/1.apk</a>
+            </div>
+
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav"> 
+                    <li style="border-left: 1px solid #E1E1E1;padding:0 5px;color:#fff;font-weight:bold;">
+                        下发任务至所有堆垛机：<label>
+                            @{ string _chkStr = @Model.SendTaskToAllStackers ? " checked=checked " : "";}
+                            <input name="swt_sendtasktoallcmd" class="ace ace-switch ace-switch-6" type="checkbox" @_chkStr>
+                            <span class="lbl" style="top:8px;"></span>
+                        </label>
+                    </li>
+                    <li style="border-left: 1px solid #E1E1E1;padding:0 5px;color:#fff;font-weight:bold;">选择仓库：@Html.EditorFor(model => model.warehouse_guid)</li>
+                    <li style="border-left: 1px solid #E1E1E1;"><a href="javascript:void(0);" onclick="showfullscreen();" style="background-color:transparent !important;"><i class="fa fa-2x  fa-arrows-alt" style="vertical-align: middle;"></i></a></li>
+                    <li class="grey dropdown-modal" style="display:none;">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="ace-icon fa fa-tasks"></i>
+                            <span class="badge badge-grey">4</span>
+                        </a>
+
+                        <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-header">
+                                <i class="ace-icon fa fa-check"></i>
+                                4 Tasks to complete
+                            </li>
+
+                            <li class="dropdown-content">
+                                <ul class="dropdown-menu dropdown-navbar">
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">Software Update</span>
+                                                <span class="pull-right">65%</span>
+                                            </div>
+
+                                            <div class="progress progress-mini">
+                                                <div style="width:65%" class="progress-bar"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">Hardware Upgrade</span>
+                                                <span class="pull-right">35%</span>
+                                            </div>
+
+                                            <div class="progress progress-mini">
+                                                <div style="width:35%" class="progress-bar progress-bar-danger"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">Unit Testing</span>
+                                                <span class="pull-right">15%</span>
+                                            </div>
+
+                                            <div class="progress progress-mini">
+                                                <div style="width:15%" class="progress-bar progress-bar-warning"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">Bug Fixes</span>
+                                                <span class="pull-right">90%</span>
+                                            </div>
+
+                                            <div class="progress progress-mini progress-striped active">
+                                                <div style="width:90%" class="progress-bar progress-bar-success"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-footer">
+                                <a href="#">
+                                    See tasks with details
+                                    <i class="ace-icon fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="purple dropdown-modal" style="display:none;">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="ace-icon fa fa-bell icon-animated-bell"></i>
+                            <span class="badge badge-important">8</span>
+                        </a>
+
+                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-header">
+                                <i class="ace-icon fa fa-exclamation-triangle"></i>
+                                8 Notifications
+                            </li>
+
+                            <li class="dropdown-content">
+                                <ul class="dropdown-menu dropdown-navbar navbar-pink">
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                    <i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+                                                    New Comments
+                                                </span>
+                                                <span class="pull-right badge badge-info">+12</span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <i class="btn btn-xs btn-primary fa fa-user"></i>
+                                            Bob just signed up as an editor ...
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                    <i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+                                                    New Orders
+                                                </span>
+                                                <span class="pull-right badge badge-success">+8</span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">
+                                                    <i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+                                                    Followers
+                                                </span>
+                                                <span class="pull-right badge badge-info">+11</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-footer">
+                                <a href="#">
+                                    See all notifications
+                                    <i class="ace-icon fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="green dropdown-modal" style="display:none;">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+                            <span class="badge badge-success">5</span>
+                        </a>
+
+                        <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-header">
+                                <i class="ace-icon fa fa-envelope-o"></i>
+                                5 Messages
+                            </li>
+
+                            <li class="dropdown-content">
+                                <ul class="dropdown-menu dropdown-navbar">
+                                    <li>
+                                        <a href="#" class="clearfix"> 
+                                            <span class="msg-body">
+                                                <span class="msg-title">
+                                                    <span class="blue">Alex:</span>
+                                                    Ciao sociis natoque penatibus et auctor ...
+                                                </span>
+
+                                                <span class="msg-time">
+                                                    <i class="ace-icon fa fa-clock-o"></i>
+                                                    <span>a moment ago</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="clearfix"> 
+                                            <span class="msg-body">
+                                                <span class="msg-title">
+                                                    <span class="blue">Susan:</span>
+                                                    Vestibulum id ligula porta felis euismod ...
+                                                </span>
+
+                                                <span class="msg-time">
+                                                    <i class="ace-icon fa fa-clock-o"></i>
+                                                    <span>20 minutes ago</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="clearfix"> 
+                                            <span class="msg-body">
+                                                <span class="msg-title">
+                                                    <span class="blue">Bob:</span>
+                                                    Nullam quis risus eget urna mollis ornare ...
+                                                </span>
+
+                                                <span class="msg-time">
+                                                    <i class="ace-icon fa fa-clock-o"></i>
+                                                    <span>3:15 pm</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="clearfix"> 
+                                            <span class="msg-body">
+                                                <span class="msg-title">
+                                                    <span class="blue">Kate:</span>
+                                                    Ciao sociis natoque eget urna mollis ornare ...
+                                                </span>
+
+                                                <span class="msg-time">
+                                                    <i class="ace-icon fa fa-clock-o"></i>
+                                                    <span>1:33 pm</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="clearfix"> 
+                                            <span class="msg-body">
+                                                <span class="msg-title">
+                                                    <span class="blue">Fred:</span>
+                                                    Vestibulum id penatibus et auctor  ...
+                                                </span>
+
+                                                <span class="msg-time">
+                                                    <i class="ace-icon fa fa-clock-o"></i>
+                                                    <span>10:09 am</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-footer">
+                                <a href="inbox.html">
+                                    See all messages
+                                    <i class="ace-icon fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="light-blue dropdown-modal">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img class="nav-user-photo" src="~/Images/admin.png" alt="Jason's Photo" />
+                            <span class="user-info">
+                                <small>欢迎,</small>
+                                @LTWMSWebMVC.App_Start.AppCode.CurrentUser.UserName
+                            </span>
+                            <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="#" id="id-btn-dialog1">
+                                    <i class="ace-icon fa fa-user"></i>
+                                    修改密码
+                                </a>
+                            </li>
+
+                            <li class="divider"></li>
+
+                            <li>
+                                <a href="@Url.Action("LoginOut","Login")">
+                                    <i class="ace-icon fa fa-power-off"></i>
+                                    退出登录
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- /.navbar-container -->
+    </div>
+
+    <div class="main-container ace-save-state" id="main-container">
+        <script type="text/javascript">
+            try { ace.settings.loadState('main-container') } catch (e) { }
+        </script>
+
+        <div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+            <script type="text/javascript">
+                try { ace.settings.loadState('sidebar') } catch (e) { }
+            </script>
+
+            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                    <button class="btn btn-success">
+                        <i class="ace-icon fa fa-signal"></i>
+                    </button>
+
+                    <button class="btn btn-info">
+                        <i class="ace-icon fa fa-pencil"></i>
+                    </button>
+
+                    <button class="btn btn-warning">
+                        <i class="ace-icon fa fa-users"></i>
+                    </button>
+
+                    <button class="btn btn-danger">
+                        <i class="ace-icon fa fa-cogs"></i>
+                    </button>
+                </div>
+
+                <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                    <span class="btn btn-success"></span>
+
+                    <span class="btn btn-info"></span>
+
+                    <span class="btn btn-warning"></span>
+
+                    <span class="btn btn-danger"></span>
+                </div>
+            </div><!-- /.sidebar-shortcuts -->
+
+            @if (Model != null && Model.Menu != null)
+            {
+                <ul class="nav nav-list">
+                    @{
+                        int dataid = 0;
+                    }
+                    @foreach (var item in Model.Menu.ChildItem)
+                    {
+                        if (!item.ShowOnMenu || (!item.Checked && item.Code.ToLower() != "none"))
+                        {//过滤不展示和无权限菜单
+                            continue;
+                        }
+                        dataid++;
+                        <li>
+                            @if (item.ChildItem.Count > 0)
+                            {
+                                <a href="javascript:void(0);" class="dropdown-toggle">
+                                    <i class="menu-icon fa @item.Class"></i>
+                                    <span class="menu-text">@item.Name</span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+                                <b class="arrow"></b>
+                                <ul class="submenu">
+                                    @foreach (var subitem in item.ChildItem)
+                                    {
+                                        if (!subitem.ShowOnMenu)
+                                        {
+                                            continue;
+                                        }
+                                        dataid++;
+                                        <li>
+                                            <a href="javascript:void(0);"
+                                               data-url="@Url.Action(subitem.Action,subitem.Controller, new { area =subitem.AreaName })" data-id="@dataid" data-text="@subitem.Name">
+                                               @subitem.Name
+                                            </a>
+                                            <b class="arrow"></b>
+                                        </li>
+
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <a href="javascript:void(0);" data-url="@Url.Action(item.Action,item.Controller, new { area =item.AreaName })" data-id="@dataid" data-text="@item.Name">
+                                    <i class="menu-icon fa @item.Class"></i>
+                                    <span class="menu-text">@item.Name</span>
+                                </a>
+                                <b class="arrow"></b>
+                            }
+                        </li>
+                    }
+                </ul>
+            }
+            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="main-content-inner"> 
+                <div class="page-content page-content2" style="position:relative;">
+                    <div id="tabContainer" class="tabcontainer"></div>
+                    <div class="loader" style="display:none;"></div> 
+                </div>
+                <!-- /.page-content -->
+            </div>
+        </div><!-- /.main-content -->
+
+        <div class="footer" style="padding-top:0;">
+            <div class="footer-inner">
+                <div class="footer-content" style="text-align:left;padding:5px 0;line-height:unset;left:8px;">
+                    <div class="form-group form-border" id="wcsstatusview" style="line-height:unset;">
+                    </div>
+                    <div style="position:absolute;right:40px;bottom:0;color:#444;font-weight:bold;">WMS版本v2.0</div>
+                </div>
+            </div>
+        </div>
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+        </a>
+    </div>
+
+
+
+    <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable"
+         style="display: none;"
+         tabindex="-1" role="dialog" aria-describedby="dialog-message" aria-labelledby="ui-id-32">
+        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle">
+            <div id="ui-id-32" class="ui-dialog-title">
+                <div class="widget-header widget-header-small">
+                    <h4 class="smaller"><i class="ace-icon fa fa-check"></i>修改密码</h4>
+                </div>
+            </div>
+            <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close"
+                    role="button" title="Close">
+                <span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span>
+                <span class="ui-button-text">Close</span>
+            </button>
+        </div>
+        <div id="dialog-message" class="ui-dialog-content ui-widget-content">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">登录名：</label>
+                    <div class="col-sm-9" style="padding-top:8px;"> 
+                        管理员
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2">原密码：</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="edit_pwdold" name="edit_pwdold" placeholder="请输入原密码" class="col-xs-10">
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2">新密码：</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="edit_pwdnew" name="edit_pwdnew" placeholder="请输入新密码" class="col-xs-10">
+                    </div>
+                </div>
+                <div class="space-4"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2">确认新密码：</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="edit_pwdnew2" name="edit_pwdnew2" placeholder="请输入确认新密码" class="col-xs-10">
+                    </div>
+                </div>
+            </form>
+
+        </div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+        <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+        <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+        <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+        <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div>
+        <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+        <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+        <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <div class="ui-dialog-buttonset">
+                <button type="button" class="btn btn-minier ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+                    <span class="ui-button-text">Cancel</span>
+                </button>
+                <button type="button" class="btn btn-primary btn-minier ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+                    <span class="ui-button-text">OK</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/Content/assets/js/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/open-tabs.js"></script>
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+    <!-- page specific plugin scripts -->
+    <script src="~/Content/assets/js/jquery-ui.min.js"></script>
+    <script src="~/Content/assets/js/jquery.ui.touch-punch.min.js"></script>
+
+    <script src="~/Content/assets/js/ace-elements.min.js"></script>
+    <script src="~/Content/assets/js/ace.min.js"></script>
+    <!-- inline scripts related to this page -->
+    <script type="text/javascript">
+        jQuery(function ($) {
+            /////////////////////////
+            var passwordexpire =@Model.PassWordExpiration;
+            if (passwordexpire==1) {
+                alert("密码已过期，请及时修改密码！");
+            }
+            var iframe;
+            //初始化第一个菜单
+            $(".nav-list a").each(function (i, ele) {
+                if ($(ele).attr("data-url")) {
+                    iframe = $("#tabContainer").iframes({
+                        height: getIframeHeight(),
+                        data: [{
+                            id: $(ele).attr("data-id"),
+                            text: $(ele).attr("data-text"),
+                            url: $(ele).attr("data-url"),
+                            closeable: false
+                        }],
+                        //showIndex: 1,
+                        loadAll: false
+                    });
+                    return;
+                }
+            });
+            //绑定菜单点击事件
+            $(".nav-list a").each(function (i, ele) {
+                if ($(ele).attr("data-url")) {
+                    $(ele).click(function () {
+                        iframe.addIframe({
+                            id: $(this).attr("data-id"),
+                            text: $(this).attr("data-text"),
+                            url: $(this).attr("data-url")
+                            , closeable: true
+                        });
+                    });
+                }
+            });
+            //计算iframe 高度
+            // var _iframeH =  - $(".content-tabs").height() - $(".footer-content").height();
+            RefreshWcsStatus();
+            //修改密码
+            $("#id-btn-dialog1").on('click', function (e) {
+                e.preventDefault();
+                var dialog = $("#dialog-message").removeClass('hide').dialog({
+                    modal: true,
+                    width: 400,
+                    title: "<div class='widget-header widget-header-small'><h4 class='smaller'><i class='ace-icon fa fa-group'></i> 修改密码</h4></div>",
+                    buttons: [
+                        {
+                            text: "取消",
+                            "class": "btn btn-minier",
+                            click: function () {
+                                $(this).dialog("close");
+                            }
+                        },
+                        {
+                            text: "修改密码",
+                            "class": "btn btn-primary btn-minier",
+                            click: function () {
+                                var _updateurl = "@Url.Action("UpdateUserPwd", "Login")";
+                                var _oldpwd = $("#edit_pwdold").val();
+                                var _newpwd = $("#edit_pwdnew").val();
+                                var _newpwd2 = $("#edit_pwdnew2").val();
+
+                                if (_oldpwd == "" || _newpwd == "" || _newpwd2 == "") {
+                                    alert("密码不能为空！");
+                                    return;
+                                }
+                                var upBtn = $(this);
+                                $.post(_updateurl, { old: _oldpwd, new1: _newpwd, new2: _newpwd2 }, function (result) {
+                                    if (result.success) {
+                                        alert("修改成功！");
+                                        //清空数据
+                                        $("#edit_pwdold").val("");
+                                        $("#edit_pwdnew").val("");
+                                        $("#edit_pwdnew2").val("");
+                                        upBtn.dialog("close");
+                                    } else {
+                                        alert(result.errors);
+                                    }
+                                });
+
+                            }
+                        }
+                    ]
+                });
+            });
+            //$(window).resize(function () {
+            //    // 变化后需要做的事
+            //   // if (iframe) {
+            //    iframe.ReSetHeight(getIframeHeight());
+            //   // }
+            //})
+            window.onresize = function () {
+                iframe.ReSetHeight(getIframeHeight());
+            }
+            //绑定下拉框事件
+            var _old_warehouse_guid = $("#warehouse_guid").val();
+            // console.log(_old_warehouse_guid);
+            $("#warehouse_guid").change(function () {
+                var _curr_v = $(this).val();
+                if (_curr_v == _old_warehouse_guid) {
+                    // console.log("直接返回....");
+                    return;
+                }
+                //设置当前登录用户的默认选择库
+                if (confirm("确定切换仓库？页面将重新加载")) {
+                    var d = $.post("@Url.Action("SetCurrUserWareHouse")?r=" + Math.random(), { warehouse_guid: _curr_v }, function success(json) {
+                        json = json || {};
+                        if (json.success) {
+                            alert("切换成功！");
+                            location.href = location.href;
+                            _old_warehouse_guid = _curr_v;
+                        } else {
+                            alert(json.errors);
+                            $("#warehouse_guid").val(_old_warehouse_guid);
+                        }
+                    }).fail(function () {
+                        //加载失败，10秒后再试
+                        alert("提交数据失败。。。");
+                        $("#warehouse_guid").val(_old_warehouse_guid);
+                    });
+                } else {
+                    $("#warehouse_guid").val(_old_warehouse_guid);
+                }
+            });
+        });
+        function getIframeHeight() {
+            return $(window).height() - $("#navbar").height() - 100;
+        }
+       function RefreshWcsStatus()
+       {
+           var d = $.get("@Url.Action("GetSystemStatus")?r=" + Math.random(), {}, function success(data, text, j) {
+            $("#wcsstatusview").html(data);
+            //   ltJS.TableClick();
+            setTimeout("RefreshWcsStatus();", 2000);
+            }).fail(function () {
+                //加载失败，10秒后再试
+                setTimeout("RefreshWcsStatus();", 10000);
+            });
+        }
+
+        // 根据浏览器可视区域高度与屏幕实际高度差值判断页面是否为全屏状态
+        // 取值17是为了处理页面内容出现滚动条的情况
+        window.isFull=function() {
+            return Math.abs(window.screen.height - window.document.documentElement.clientHeight) <= 17
+        }
+        // 阻止F11键默认事件，用HTML5全屏API代替
+        window.addEventListener('keydown', function (e) {
+            e = e || window.event
+            if (e.keyCode === 122 && !isFull()) {
+                e.preventDefault()
+                enterFullScreen()
+            }
+        })
+        function showfullscreen()
+        {
+            if (isFull()) {
+                exitFullScreen();
+            } else {
+                enterFullScreen();
+            }
+        }
+
+        // 打开浏览器全屏模式
+        function enterFullScreen() {
+            let el = document.documentElement;
+            let rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
+            if (rfs) { // typeof rfs != "undefined" && rfs
+                rfs.call(el);
+            } else if (typeof window.ActiveXObject !== 'undefined') {
+                // for IE，这里其实就是模拟了按下键盘的F11，使浏览器全屏
+                let wscript = new ActiveXObject('WScript.Shell');
+                if (wscript != null) {
+                    wscript.SendKeys('{F11}');
+                }
+            }
+        }
+
+        // 退出全屏
+        function exitFullScreen() {
+            let el = document;
+            let cfs = el.cancelFullScreen || el.mozCancelFullScreen || el.msExitFullscreen || el.webkitExitFullscreen || el.exitFullscreen;
+            if (cfs) { // typeof cfs != "undefined" && cfs
+                cfs.call(el);
+            } else if (typeof window.ActiveXObject !== 'undefined') {
+                // for IE，这里和fullScreen相同，模拟按下F11键退出全屏
+                let wscript = new ActiveXObject('WScript.Shell');
+                if (wscript != null) {
+                    wscript.SendKeys('{F11}');
+                }
+            }
+        }
+         $("input[name=swt_sendtasktoallcmd]").change(function () {
+                        var _issend = 0;
+                        if ($(this).prop("checked")) {
+                            _issend = 1;
+                        } else {
+                            _issend = 0;
+                        }
+                        $.post("@Url.Action("SetSendToALLStacker")?r=" + Math.random(), { issend: _issend}, function (data) {
+                            if (data.success) {
+                                if (_issend == 1) {
+                                    // speech.speek("下发任务设置成功");
+                                    alert("下发任务至所有堆垛机设置成功");
+                                } else {
+                                    //  speech.speek("已取消下发任务");
+                                    alert("已取消下发任务至所有堆垛机");
+                                }
+                            } else {
+                                alert(json.errors);
+                            }
+                        }).fail(function () {
+                            alert("设置失败");
+                        });
+                });
+    </script>
+
+</body>
+</html>
+

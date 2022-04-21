@@ -1,0 +1,133 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.Setting.Data.WcsSrvModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.port)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.srv_type)
+            </th>
+
+            <th style="width:200px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.port)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.srv_type)
+            </td>
+
+            <td>
+                @Html.ActionLink("站台/堆垛机管理", "StationIndex", new { wcssrv_guid = item.guid }, new { @class = "btn btn-mini btn-info" })
+            </td>
+        </tr>
+            if (item.List_wcsDeviceModel != null && item.List_wcsDeviceModel.Count > 0)
+            {
+                <tr class="no-editor">
+                    <td colspan="6">
+                        <table class="table table-bordered table-hover table-small">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().warehouse_guid)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().wcs_srv_guid)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().device_type)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().station_mode)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().default_out)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.List_wcsDeviceModel.FirstOrDefault().need_scan_bind)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{ int _index2 = 0;}
+                                @foreach (var item2 in item.List_wcsDeviceModel)
+                                {
+
+                                    string _cname2 = (_index2 % 2) == 0 ? "tr-odd" : "tr-even";
+                                    _index2++;
+
+                                <tr class="@_cname2">
+                                    <td class="tr-sps_tit">
+
+                                        @Html.DisplayFor(modelItem => item2.warehouse_guid)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item2.wcs_srv_guid)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item2.number)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item2.name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item2.device_type)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item2.station_mode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item2.default_out)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item2.need_scan_bind)
+                                    </td>
+                                </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

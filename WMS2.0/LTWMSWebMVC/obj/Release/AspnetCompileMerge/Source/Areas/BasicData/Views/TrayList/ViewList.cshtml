@@ -1,0 +1,166 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.BasicData.Data.TrayModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.traybarcode)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.emptypallet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.warehouse_guid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isscan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.scandate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.shelfunits_pos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dispatch_shelfunits_pos)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.traybarcode)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.emptypallet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.warehouse_guid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isscan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.scandate)
+            </td>
+            <td class="tr-sps_tit">
+                @Html.DisplayFor(modelItem => item.shelfunits_pos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dispatch_shelfunits_pos)
+            </td>
+        </tr>
+            if (item.traymatterList != null && item.traymatterList.Count > 0)
+            {
+                <tr>
+                    @*<td> >>></td>*@ 
+                    <td colspan="8">
+                        <table class="border table table-bordered table-hover" style="margin-bottom:0px;font-size: 10px;">
+                            <thead>
+                                <tr>
+                                    <th style="padding: 2px 8px;">
+                                        @Html.DisplayNameFor(model => model.traymatterList.FirstOrDefault().x_barcode)
+                                    </th>
+                                    <th style="padding: 2px 8px;">
+                                        @Html.DisplayNameFor(model => model.traymatterList.FirstOrDefault().lot_number)
+                                    </th>
+                                    <th  style="padding: 2px 8px;">
+                                        @Html.DisplayNameFor(model => model.traymatterList.FirstOrDefault().MatterModel.name)
+                                    </th>
+                                    <th  style="padding: 2px 8px;">
+                                        @Html.DisplayNameFor(model => model.traymatterList.FirstOrDefault().MatterModel.mattertype_name)
+                                    </th>
+                                    <th  style="padding: 2px 8px;">
+                                        @Html.DisplayNameFor(model => model.traymatterList.FirstOrDefault().producedate)
+                                    </th>
+                                    <th  style="padding: 2px 8px;">
+                                        @Html.DisplayNameFor(model => model.traymatterList.FirstOrDefault().effective_date)
+                                    </th>
+                                    <th  style="padding: 2px 8px;">
+                                        @Html.DisplayNameFor(model => model.traymatterList.FirstOrDefault().test_status)
+                                    </th>
+                                    <th  style="padding: 2px 8px;">
+                                        @Html.DisplayNameFor(model => model.traymatterList.FirstOrDefault().number)
+                                    </th>
+                                    <th  style="padding: 2px 8px;">
+                                        @Html.DisplayNameFor(model => model.traymatterList.FirstOrDefault().MatterModel.description)
+                                    </th>
+                                    @*<th style="padding: 2px 8px;">
+                                        @Html.DisplayNameFor(model => model.traymatterList.FirstOrDefault().MatterModel.unit_measurement)
+                                    </th>*@
+                                    <th style="padding: 2px 8px;">
+                                        @Html.DisplayNameFor(model => model.traymatterList.FirstOrDefault().MatterModel.specs)
+                                    </th>
+                                    @*<th  style="padding: 2px 8px;">
+            @Html.DisplayNameFor(model => model.traymatterList.FirstOrDefault().memo)
+        </th>*@
+                                </tr>
+                            </thead>
+                            @foreach (var sub_item in item.traymatterList)
+                            {  
+                                <tbody>
+                                    <tr class="@_cname">
+                                        <td class="tr-sps_tit" style="padding: 2px 8px;vertical-align: middle;">
+                                           
+                                            @Html.DisplayFor(modelItem => sub_item.x_barcode)
+                                        </td>
+                                        <td class="tr-sps_tit" style="padding: 2px 8px;vertical-align: middle;">
+                                            @Html.DisplayFor(modelItem => sub_item.lot_number)
+                                        </td>
+                                        <td class="tr-sps_tit" style="padding: 2px 8px;vertical-align: middle;">
+                                            @Html.DisplayFor(modelItem => sub_item.MatterModel.name)
+                                        </td>
+                                        <td class="tr-sps_tit" style="padding: 2px 8px;vertical-align: middle;">
+                                            @Html.DisplayFor(modelItem => sub_item.MatterModel.mattertype_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.producedate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.effective_date)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => sub_item.test_status)
+                                        </td>
+                                        <td style="padding: 2px 8px;vertical-align: middle;font-weight:bold;font-size:14px;color:#D15B47;">
+                                            @Html.DisplayFor(modelItem => sub_item.number) 
+                                            @*/ @Html.DisplayFor(modelItem => sub_item.MatterModel.unit_measurement)*@
+                                        </td>
+                                        <td style="padding: 2px 8px;vertical-align: middle;">
+                                            @Html.DisplayFor(modelItem => sub_item.MatterModel.description)
+                                        </td>
+                                        @*<td style="padding: 2px 8px;vertical-align: middle;">
+                                            @Html.DisplayFor(modelItem => sub_item.MatterModel.unit_measurement)
+                                        </td>*@
+                                        <td style="padding: 2px 8px;vertical-align: middle;">
+                                            @Html.DisplayFor(modelItem => sub_item.MatterModel.specs)
+                                        </td>
+                                        @*<td style="padding: 2px 8px;vertical-align: middle;">
+            @Html.DisplayFor(modelItem => sub_item.memo)
+        </td>*@
+                                    </tr>
+                                </tbody> 
+                            }
+                        </table>
+                    </td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

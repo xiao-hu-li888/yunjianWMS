@@ -1,0 +1,26 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.Bills.Data.DispatchTraySearch
+@{
+    ViewBag.Title = "ViewList";
+}
+<fieldset>
+    <legend style="display:none;">设备绑定</legend>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.billstkout_guid)
+        @Html.HiddenFor(model => model.billstockout_detail_guid)
+        <div style="height:300px;overflow-y:scroll;">
+            @if (Model.PageCont != null)
+            {
+            Html.RenderPartial("DispatchTrayViewList", Model.PageCont);
+            }
+        </div>
+        <p>
+            <button class="btn btn-sm btn-info" type="submit">
+                <i class="ace-icon fa fa-check bigger-110"></i>
+                下架选中的托盘
+            </button>
+        </p>
+    }
+</fieldset>

@@ -1,0 +1,156 @@
+﻿@model LTWMSWebMVC.Areas.RealTime.Data.ShelfUnitsModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@if (Model != null && Model.state == LTWMSEFModel.EntityStatus.Deleted)
+{
+    <div>库位已删除</div>
+}
+else
+{
+    using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend></legend>
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+
+            <div class="form-group form-border">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.shelfunits_pos)</label>
+                <div class="col-sm-9">
+                    @Html.DisplayFor(model => model.shelfunits_pos)
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="form-group form-border">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">托盘条码</label>
+                <div class="col-sm-9">
+                    @Html.DisplayFor(model => model.depth1_traybarcode)
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="form-group form-border">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.cellstate)</label>
+                <div class="col-sm-9">
+                    @Html.DisplayFor(model => model.cellstate)
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="form-group form-border">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.locktype)</label>
+                <div class="col-sm-9">
+                    @Html.DisplayFor(model => model.locktype)
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="form-group form-border">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.state)</label>
+                <div class="col-sm-9">
+                    @Html.DisplayFor(model => model.state)
+                </div>
+                <div class="clear"></div>
+            </div>
+            <p style="display:none;">
+                @Html.HiddenFor(model => model.submit_type)
+                <button class="btn btn-sm btn-info" type="submit">
+                    <i class="ace-icon fa fa-check bigger-110"></i>
+                    保存修改
+                </button>
+            </p>
+        </fieldset>
+    }
+<div class="form-nowidth">
+    <span class="tit"><i class="ace-icon fa fa-hand-o-right bigger-110 red"></i>&nbsp;其它操作:</span>
+    @using (Html.BeginForm("Disable", "ShelfUnits"))
+    {
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+
+        if (Model.state == LTWMSEFModel.EntityStatus.Normal)
+        {
+            <button class="btn btn-sm btn-grey" type="submit" onclick="return confirm('确定要禁用库位？');">
+                <i class="ace-icon fa fa-check bigger-110 fa-toggle-off"></i>
+                禁用库位
+            </button>
+        }
+        else
+        {
+            <button class="btn btn-sm  btn-primary" type="submit" onclick="return confirm('确定要启用库位？');">
+                <i class="ace-icon fa fa-check bigger-110 fa-toggle-on"></i>
+                启用库位
+            </button>
+        }
+
+    }
+    @if (Model.locktype != LTWMSEFModel.Warehouse.ShelfLockType.SysLock)
+    {//非系统锁状态才能执行操作
+        using (Html.BeginForm("Lock", "ShelfUnits"))
+        {
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+
+            if (Model.locktype == LTWMSEFModel.Warehouse.ShelfLockType.Normal)
+            {
+                <button class="btn btn-sm btn-info btn-danger" type="submit" onclick="return confirm('确定要锁定库位？');">
+                    <i class="ace-icon fa fa-check bigger-110 fa-lock"></i>
+                    锁定库位
+                </button>
+            }
+            else if (Model.locktype == LTWMSEFModel.Warehouse.ShelfLockType.ManLock)
+            {
+                <button class="btn btn-sm btn-info btn-danger" type="submit" onclick="return confirm('确定要解锁库位？请确保对应库位没有托盘。');">
+                    <i class="ace-icon fa fa-check bigger-110 fa-unlock"></i>
+                    解锁库位
+                </button>
+            }
+
+        }
+    }
+    @using (Html.BeginForm("Reset", "ShelfUnits"))
+    {
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+
+        <button class="btn btn-sm" type="submit" onclick="return confirm('确定要重置库位？托盘与电池条码将自动解除绑定关系');">
+            <i class="ace-icon fa fa-repeat bigger-110"></i>
+            重置库位
+        </button>
+    }
+    @if (Model.special_lock_type == LTWMSEFModel.Warehouse.SpecialLockTypeEnum.DispatchLock)
+    {
+        using (Html.BeginForm("ResetDispatchLock", "ShelfUnits"))
+        {
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+
+            <button class="btn btn-sm" type="submit" onclick="return confirm('确定要清除指定入库标记？清除后托盘将自动分配库位');">
+                <i class="ace-icon fa fa-repeat bigger-110"></i>
+                清除指定入库标记
+            </button>
+        }
+    }
+    @if (Model.special_lock_type == LTWMSEFModel.Warehouse.SpecialLockTypeEnum.StockOutLock)
+    {
+        using (Html.BeginForm("ResetStockOutLock", "ShelfUnits"))
+        {
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+
+            <button class="btn btn-sm" type="submit" onclick="return confirm('确定要清除出库锁定标记？清除后对应托盘可出库');">
+                <i class="ace-icon fa fa-repeat bigger-110"></i>
+                清除出库锁定标记
+            </button>
+        }
+    }
+</div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+}

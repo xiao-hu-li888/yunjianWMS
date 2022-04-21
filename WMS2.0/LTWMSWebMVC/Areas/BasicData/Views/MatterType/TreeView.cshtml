@@ -1,0 +1,25 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.BasicData.Data.MatterTypeModel>
+@{
+    Layout = null;
+}
+
+<div class="widget-box">
+    <div class="widget-header">
+        <h4 class="widget-title"><i class="ace-icon fa fa-caret-right red"></i>分类结构</h4>
+        <div class="widget-toolbar">
+            <a href="javascript:void(0);" class="btn btn-mini btn-info" onclick="RefAddView('');">
+                <i class="ace-icon fa fa-plus bigger"></i> 添加一级菜单
+            </a> 
+        </div> 
+    </div>
+    <div class="widget-body">
+        <div class="widget-main"> 
+            <ul class="lt-tree-box">
+                @if (Model != null && Model.Count() > 0)
+                {
+                    @Html.Partial("TreeView_Details", Model)
+                }
+            </ul> 
+        </div>
+    </div>
+</div>

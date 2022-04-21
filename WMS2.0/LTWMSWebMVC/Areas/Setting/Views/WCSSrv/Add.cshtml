@@ -1,0 +1,69 @@
+﻿@model LTWMSWebMVC.Areas.Setting.Data.WcsSrvModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend></legend>
+    @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+    {
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+    }
+
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  <span class="necessary">*</span> @Html.LabelFor(model => model.name)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.code)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.code)
+            @Html.ValidationMessageFor(model => model.code)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.ip)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.ip)
+            @Html.ValidationMessageFor(model => model.ip)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.port)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.port)
+            @Html.ValidationMessageFor(model => model.port)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.srv_type)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.srv_type)
+            @Html.ValidationMessageFor(model => model.srv_type)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <p>
+        <button class="btn btn-sm btn-info" type="submit">
+            <i class="ace-icon fa fa-check bigger-110"></i>
+            @ViewBag.SubmitText
+        </button>
+    </p>
+</fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

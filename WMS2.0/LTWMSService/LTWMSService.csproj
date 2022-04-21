@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8789AB7-340F-45F6-B686-320D13E4CDEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LTWMSService</RootNamespace>
+    <AssemblyName>LTWMSService</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.11\Assemblies\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF5, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.11\Assemblies\v4.5\MySql.Data.Entity.EF5.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.11\Assemblies\v4.5\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Fabric.Plugin, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.11\Assemblies\v4.5\MySql.Fabric.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.11\Assemblies\v4.5\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationService\BaseService.cs" />
+    <Compile Include="ApplicationService\Basic\CodeHelperService.cs" />
+    <Compile Include="ApplicationService\Basic\ComBLLService.cs" />
+    <Compile Include="ApplicationService\ComServiceReturn.cs" />
+    <Compile Include="ApplicationService\Model\MatterBarcode.cs" />
+    <Compile Include="ApplicationService\BillsAiHua\ReservedOrderService.cs" />
+    <Compile Include="ApplicationService\StockInOut\StockInService.cs" />
+    <Compile Include="ApplicationService\StockInOut\StockOutService.cs" />
+    <Compile Include="ApplicationService\StockInOut\TaskQueueService.cs" />
+    <Compile Include="ApplicationService\WmsServer\LEDDisplay.cs" />
+    <Compile Include="ApplicationService\WmsServer\Model\ReceiveBarcodeOfEnd.cs" />
+    <Compile Include="ApplicationService\WmsServer\Model\ReceiveDisplayLedTaskid.cs" />
+    <Compile Include="ApplicationService\WmsServer\Model\ReceiveMachineStatus.cs" />
+    <Compile Include="ApplicationService\WmsServer\Model\ReceiveStockIn.cs" />
+    <Compile Include="ApplicationService\WmsServer\Model\ReceiveTaskStatus.cs" />
+    <Compile Include="ApplicationService\WmsServer\Model\SendCMDLINE.cs" />
+    <Compile Include="ApplicationService\WmsServer\Model\SendForceCancelCMD.cs" />
+    <Compile Include="ApplicationService\WmsServer\Model\SendInStationCMD.cs" />
+    <Compile Include="ApplicationService\WmsServer\Model\SendTaskCMD.cs" />
+    <Compile Include="ApplicationService\WmsServer\WCSService.cs" />
+    <Compile Include="BillsAihua\billah_reserved_orderBLL.cs" />
+    <Compile Include="BillsAihua\billah_reserved_order_detailBLL.cs" />
+    <Compile Include="Bills\bill_stockin_detail_traymatterBLL.cs" />
+    <Compile Include="Bills\bill_stockout_detail_traymatterBLL.cs" />
+    <Compile Include="Bills\bill_task_tray_relationBLL.cs" />
+    <Compile Include="Hardware\hdw_message_receivedBLL.cs" />
+    <Compile Include="Hardware\hdw_message_received_hisBLL.cs" />
+    <Compile Include="Hardware\hdw_message_waitedsendBLL.cs" />
+    <Compile Include="Hardware\hdw_message_waitedsend_hisBLL.cs" />
+    <Compile Include="Logs\log_sys_alarmBLL.cs" />
+    <Compile Include="Basic\sys_annexBLL.cs" />
+    <Compile Include="Basic\sys_control_dicBLL.cs" />
+    <Compile Include="Basic\sys_dictionaryBLL.cs" />
+    <Compile Include="Logs\log_sys_executeBLL.cs" />
+    <Compile Include="Basic\sys_loginBLL.cs" />
+    <Compile Include="Basic\sys_loginroleBLL.cs" />
+    <Compile Include="Basic\sys_number_ruleBLL.cs" />
+    <Compile Include="Basic\sys_roleBLL.cs" />
+    <Compile Include="Basic\sys_table_idBLL.cs" />
+    <Compile Include="Logs\log_sys_useroperationBLL.cs" />
+    <Compile Include="Bills\bill_stockcheckBLL.cs" />
+    <Compile Include="Bills\bill_stockcheck_detailBLL.cs" />
+    <Compile Include="Bills\bill_stockinBLL.cs" />
+    <Compile Include="Bills\bill_stockin_detailBLL.cs" />
+    <Compile Include="Bills\bill_stockin_printBLL.cs" />
+    <Compile Include="Bills\bill_stockoutBLL.cs" />
+    <Compile Include="Bills\bill_stockout_detailBLL.cs" />
+    <Compile Include="Bills\bill_stockout_taskBLL.cs" />
+    <Compile Include="Hardware\hdw_plcBLL.cs" />
+    <Compile Include="Logs\log_hdw_plcBLL.cs" />
+    <Compile Include="Hardware\hdw_stacker_taskqueueBLL.cs" />
+    <Compile Include="Hardware\hdw_stacker_taskqueue_hisBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stock\stk_inout_recodBLL.cs" />
+    <Compile Include="Stock\stk_inout_recod_hisBLL.cs" />
+    <Compile Include="Stock\stk_matterBLL.cs" />
+    <Compile Include="Stock\stk_mattertypeBLL.cs" />
+    <Compile Include="Logs\log_stk_matter_shelfunitsBLL.cs" />
+    <Compile Include="Stock\stk_stockBLL.cs" />
+    <Compile Include="Logs\log_stk_stock_accountBLL.cs" />
+    <Compile Include="Warehouse\wh_shelfunitsBLL.cs" />
+    <Compile Include="Warehouse\wh_shelfunits_areaBLL.cs" />
+    <Compile Include="Warehouse\wh_shelfunits_area_mattersBLL.cs" />
+    <Compile Include="Warehouse\wh_shelvesBLL.cs" />
+    <Compile Include="Warehouse\wh_shelves_devBLL.cs" />
+    <Compile Include="Warehouse\wh_trayBLL.cs" />
+    <Compile Include="Warehouse\wh_traymatterBLL.cs" />
+    <Compile Include="Logs\log_wh_traymatterBLL.cs" />
+    <Compile Include="Warehouse\wh_warehouseBLL.cs" />
+    <Compile Include="Warehouse\wh_service_statusBLL.cs" />
+    <Compile Include="Logs\log_wh_wcsBLL.cs" />
+    <Compile Include="Warehouse\wh_warehouse_typeBLL.cs" />
+    <Compile Include="Warehouse\wh_wcs_deviceBLL.cs" />
+    <Compile Include="Warehouse\wh_wcs_srvBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Comm\LTLibrary\LTLibrary.csproj">
+      <Project>{c478c464-25a1-4ce8-bd16-d22118cd2e88}</Project>
+      <Name>LTLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LTWMSEFModel\LTWMSEFModel.csproj">
+      <Project>{9702c3f1-885f-4ae7-a521-07e7ab1dbe98}</Project>
+      <Name>LTWMSEFModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

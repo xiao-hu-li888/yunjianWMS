@@ -1,0 +1,47 @@
+﻿@model LTWMSWebMVC.Areas.Bills.Data.StockOutAddModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend> </legend>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.odd_numbers)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.odd_numbers)
+                @Html.HiddenFor(model => model.odd_numbers)
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.odd_numbers_in)</label>
+            <div class="col-sm-9">
+                @Html.EditorFor(model => model.odd_numbers_in)
+                @Html.ValidationMessageFor(model => model.odd_numbers_in)
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.destination)</label>
+            <div class="col-sm-9">
+                @Html.EditorFor(model => model.destination) 
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <p>
+            
+            <button class="btn btn-sm btn-info" type="submit">
+                <i class="ace-icon fa fa-check bigger-110"></i>
+                生成出库单
+            </button>
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

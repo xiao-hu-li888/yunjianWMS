@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/StockInOut/Views/StockOutHandler/Index.cshtml" hash="e291beb" filehash="1bcb7426c1fc" flags="110000" assembly="App_Web_bed1zmze" type="ASP._Page_Areas_StockInOut_Views_StockOutHandler_Index_cshtml">
+    <filedeps>
+        <filedep name="/Areas/StockInOut/Views/StockOutHandler/Index.cshtml" />
+    </filedeps>
+</preserve>

@@ -1,0 +1,88 @@
+﻿@model LTWMSWebMVC.Areas.RealTime.Data.ShelfUnitsModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.shelfunits_pos)</label>
+            <div class="col-sm-3">
+                @Html.DisplayFor(model => model.shelfunits_pos)
+            </div>
+            <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.cellstate)</label>
+            <div class="col-sm-4">
+                @Html.DisplayFor(model => model.cellstate)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.locktype)</label>
+            <div class="col-sm-3">
+                @Html.DisplayFor(model => model.locktype)
+            </div>
+            <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.state)</label>
+            <div class="col-sm-4">
+                @Html.DisplayFor(model => model.state)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">@Html.LabelFor(model => model.trayModel.emptypallet)</label>
+            <div class="col-sm-3">
+                @Html.DisplayFor(model => model.trayModel.emptypallet)
+            </div>
+            <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1">托盘条码</label>
+            <div class="col-sm-4">
+                @Html.DisplayFor(model => model.depth1_traybarcode)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">物料</label>
+            <div class="col-sm-9">
+                @if (Model.trayModel != null && Model.trayModel.traymatterList != null && Model.trayModel.traymatterList.Count > 0)
+                {
+                    for (int i = 0; i < Model.trayModel.traymatterList.Count; i++)
+                    {
+                        if (i > 0)
+                        {
+                            WriteLiteral(" / ");
+                        }
+                        WriteLiteral("(");
+                        @Html.DisplayFor(modelItem => Model.trayModel.traymatterList[i].x_barcode)
+                        WriteLiteral(")");
+                        @Html.DisplayFor(modelItem => Model.trayModel.traymatterList[i].MatterModel.name)
+                        WriteLiteral(" ");
+                        @Html.DisplayFor(modelItem => Model.trayModel.traymatterList[i].number) 
+                        @Html.DisplayFor(modelItem => Model.trayModel.traymatterList[i].MatterModel.unit_measurement)
+}
+                }
+            </div>
+            <div class="clear"></div>
+        </div>
+        <p>
+            @if (Model.state == LTWMSEFModel.EntityStatus.Normal)
+            {
+                @Html.HiddenFor(model => model.submit_type)
+                <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('确定要强制出库？');">
+                    <i class="ace-icon fa fa-check bigger-110"></i>
+                    强制出库
+                </button>
+            }
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

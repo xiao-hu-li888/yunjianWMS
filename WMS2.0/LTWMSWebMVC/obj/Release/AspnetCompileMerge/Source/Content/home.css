@@ -1,0 +1,125 @@
+﻿.tabcontainer {
+}
+
+    /*    .tabcontainer .row {
+    }*/
+    .tabcontainer .content-tabs {
+    }
+
+    .tabcontainer .J_mainContent {
+    }
+
+.content-tabs .page-tabs {
+}
+
+.content-tabs .J_menuTabs {
+    border-bottom: 1px solid #ddd;
+}
+
+.content-tabs .page-tabs-content {
+    position: relative;
+    bottom: -1px;
+}
+
+.J_menuTabs .J_menuTab {
+    padding: 5px 12px;
+    display: inline-block;
+    border: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+    min-width: 60px;
+    text-align:center;
+}
+    .J_menuTabs .J_menuTab i{
+        position:relative;
+        right:-5px;
+    }
+    .J_menuTabs .active {
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-top: 3px solid #438EB9;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom: 1px solid #fff;
+        color: #555;
+    }
+.default-cursor {
+    cursor: default;
+}
+.page-content2{
+    padding-bottom:5px;
+}
+/****加载动画****/
+.loader {
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+    transform: rotate(165deg);
+}
+
+    .loader:before, .loader:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 0.25em;
+        transform: translate(-50%, -50%);
+    }
+
+    .loader:before {
+        animation: before 2s infinite;
+    }
+
+    .loader:after {
+        animation: after 2s infinite;
+    }
+
+@keyframes before {
+    0% {
+        width: 0.5em;
+        box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+
+    35% {
+        width: 2.5em;
+        box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+    }
+
+    70% {
+        width: 0.5em;
+        box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+
+    100% {
+        box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+}
+
+@keyframes after {
+    0% {
+        height: 0.5em;
+        box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+
+    35% {
+        height: 2.5em;
+        box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+    }
+
+    70% {
+        height: 0.5em;
+        box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+    }
+
+    100% {
+        box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+}
+
+.loader {
+    position: absolute;
+    top: calc(50% - 1.25em);
+    left: calc(50% - 1.25em);
+}

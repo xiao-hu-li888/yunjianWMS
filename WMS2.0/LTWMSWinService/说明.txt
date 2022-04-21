@@ -1,0 +1,32 @@
+﻿注册启动服务:
+
+1、Windows服务器注册 
+打开CMD窗口(管理员身份)--开始--运行--输入CMD,回车 
+注册服务命令 
+cd C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319 
+InstallUtil.exe D:\HardWareServerService.exe （HardWareServerService为工程的名字）
+net start ComputerService   (ComputerService是服务的名字)
+
+2、在视图状态 右键添加ServiceInstaller及ServiceProcessInstaller两个控件; 
+
+3、将serviceProcessInstaller类的Account属性改为 LocalSystem 
+
+4、取消注册服务 
+cd C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319
+InstallUtil.exe /u d:\HardWareServerService.exe 
+从您的C# 解决方案下拷贝HardWareServerService.exe文件到D盘HardWareServerService.exe 
+InstallUtil.exe D:\HardWareServerService.exe 
+net start ComputerService 
+
+其中D:\HardWareServerService.exe可以修改成"您当前的解决方案目录\项目名称\bin\Debug\HardWareServerService.exe" 
+
+启动刚注册服务: 显示桌面-在桌面上右击“我的电脑”，选择“管理”就可以打计算机管理控制台,
+选择“服务和应用程序”里面的“服务”,在右侧的服务列表中找到刚注册的ComputerService服务(默认状态为停止),选择该服务右击启动所选择的ComputerService服务就完成了所有的操作,以后每次开机后就自动启动运行该服务。
+访问项目中的已编译可执行文件所在的目录。
+用项目的输出作为参数，从命令行运行 InstallUtil.exe。在命令行中输入下列代码：
+installutil LTWindowsServer.exe
+卸载服务
+
+用项目的输出作为参数，从命令行运行 InstallUtil.exe。
+
+installutil /u LTWindowsServer.exe

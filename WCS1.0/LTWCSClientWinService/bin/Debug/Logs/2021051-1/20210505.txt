@@ -1,0 +1,515 @@
+20210505 10:59:12.173----->>>WCS服务：监视线程已启动
+20210505 10:59:12.175----->>>正在重启关闭的线程 ==>>WCS tcp Socket 客户端线程
+20210505 10:59:12.187----->>>正在重启关闭的线程 ==>>PLC连接线程
+20210505 10:59:12.248----->>>启动线程：PLC连接线程
+20210505 10:59:12.250----->>>启动线程：WCS tcp Socket 客户端线程
+20210505 10:59:12.254----->>>Wcs 服务已启动...
+20210505 10:59:12.256----->>>与wms断开连接...
+20210505 10:59:12.256----->>>正在连接wms... ...
+20210505 10:59:12.295----->>>与wms连接成功...
+20210505 10:59:12.296----->>>与wms已建立连接
+20210505 10:59:12.341----->>>StackerSrv Logs>>>PLC[192.168.1.111]:连接成功
+20210505 11:00:16.858----->>>wcs接收wms的json数据>>>>:10003{"cmd":102,"seq":1,"task_id":1113,"src_station":0,"dest_station":200,"src_rack":1,"src_col":3,"src_row":1,"dest_rack":0,"dest_col":0,"dest_row":0,"weight":0.0,"barcode":null}
+20210505 11:00:17.914----->>>读取到状态：2
+20210505 11:00:19.613----->>>StackerSrv Logs>>>获取堆垛机执行结果异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 81
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetTaskExecuteResult() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 139
+20210505 11:00:19.614----->>>读取到状态：0
+20210505 11:00:19.624----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 110
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:00:20.179----->>>读取到状态：2
+20210505 11:00:24.584----->>>读取到状态：3
+20210505 11:00:29.013----->>>读取到状态：4
+20210505 11:00:29.584----->>>读取到状态：5
+20210505 11:00:31.806----->>>StackerSrv Logs>>>获取堆垛机执行结果异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetTaskExecuteResult() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 142
+20210505 11:00:31.807----->>>读取到状态：0
+20210505 11:00:31.826----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:00:32.361----->>>读取到状态：5
+20210505 11:00:34.031----->>>读取到状态：6
+20210505 11:00:36.279----->>>读取到状态：7
+20210505 11:00:40.666----->>>读取到状态：8
+20210505 11:00:41.773----->>>读取到状态：9
+20210505 11:00:46.217----->>>读取到状态：999
+20210505 11:00:46.218----->>>退出循环1133123
+20210505 11:00:56.169----->>>wcs接收wms的json数据>>>>:10003{"cmd":102,"seq":2,"task_id":1114,"src_station":0,"dest_station":200,"src_rack":1,"src_col":5,"src_row":1,"dest_rack":0,"dest_col":0,"dest_row":0,"weight":0.0,"barcode":null}
+20210505 11:00:56.177----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:00:56.187----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:00:56.268----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:00:56.292----->>>StackerSrv Logs>>>WriteDBW 异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.WriteBytesWithASingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] value) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 419
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.WriteBytesWithASingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] value) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 427
+   在 S7.Net.Plc.WriteBytes(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] value) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 234
+   在 S7.Net.Plc.Write(DataType dataType, Int32 db, Int32 startByteAdr, Object value, Int32 bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 304
+   在 S7.Net.Plc.Write(String variable, Object value) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 316
+   在 LTWCSService.ApplicationService.WcsServer.S7BaseService.WriteDBD(String dbcmd, Int32 val) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\S7BaseService.cs:行号 152
+20210505 11:00:56.294----->>>StackerSrv Logs>>>写入DB80.DBD52:1114失败.第1次
+20210505 11:00:56.341----->>>StackerSrv Logs>>>WriteDBW 异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.WriteBytesWithASingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] value) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 419
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.WriteBytesWithASingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] value) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 427
+   在 S7.Net.Plc.WriteBytes(DataType dataType, Int32 db, Int32 startByteAdr, Byte[] value) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 234
+   在 S7.Net.Plc.Write(DataType dataType, Int32 db, Int32 startByteAdr, Object value, Int32 bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 304
+   在 S7.Net.Plc.Write(String variable, Object value) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 316
+   在 LTWCSService.ApplicationService.WcsServer.S7BaseService.WriteDBD(String dbcmd, Int32 val) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\S7BaseService.cs:行号 152
+20210505 11:00:56.341----->>>StackerSrv Logs>>>写入DB80.DBD52:1114失败.第2次
+20210505 11:00:56.354----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:00:57.072----->>>读取到状态：2
+20210505 11:01:04.808----->>>读取到状态：3
+20210505 11:01:08.722----->>>读取到状态：4
+20210505 11:01:09.829----->>>读取到状态：5
+20210505 11:01:14.246----->>>读取到状态：6
+20210505 11:01:21.459----->>>读取到状态：7
+20210505 11:01:25.898----->>>读取到状态：8
+20210505 11:01:27.000----->>>读取到状态：9
+20210505 11:01:31.457----->>>读取到状态：999
+20210505 11:01:31.459----->>>退出循环1133123
+20210505 11:02:35.363----->>>wcs接收wms的json数据>>>>:10003{"cmd":102,"seq":3,"task_id":1115,"src_station":0,"dest_station":200,"src_rack":1,"src_col":6,"src_row":1,"dest_rack":0,"dest_col":0,"dest_row":0,"weight":0.0,"barcode":null}
+20210505 11:02:36.102----->>>读取到状态：2
+20210505 11:02:42.660----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:02:42.669----->>>StackerSrv Logs>>>获取堆垛机执行结果异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetTaskExecuteResult() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 139
+20210505 11:02:42.670----->>>读取到状态：0
+20210505 11:02:43.224----->>>读取到状态：2
+20210505 11:02:45.952----->>>读取到状态：3
+20210505 11:02:49.818----->>>读取到状态：4
+20210505 11:02:50.934----->>>读取到状态：5
+20210505 11:02:55.351----->>>读取到状态：6
+20210505 11:03:00.959----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:03:00.970----->>>StackerSrv Logs>>>获取堆垛机执行结果异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetTaskExecuteResult() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 152
+20210505 11:03:00.971----->>>读取到状态：0
+20210505 11:03:01.517----->>>读取到状态：6
+20210505 11:03:04.869----->>>读取到状态：7
+20210505 11:03:09.357----->>>读取到状态：8
+20210505 11:03:10.468----->>>读取到状态：9
+20210505 11:03:14.938----->>>读取到状态：999
+20210505 11:03:14.940----->>>退出循环1133123
+20210505 11:03:19.597----->>>wcs接收wms的json数据>>>>:10003{"cmd":101,"seq":4,"task_id":1116,"src_station":100,"dest_station":0,"src_rack":0,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":6,"dest_row":1,"weight":0.0,"barcode":null}
+20210505 11:03:20.341----->>>读取到状态：2
+20210505 11:03:24.748----->>>读取到状态：3
+20210505 11:03:29.213----->>>读取到状态：4
+20210505 11:03:29.779----->>>读取到状态：5
+20210505 11:03:31.427----->>>StackerSrv Logs>>>获取堆垛机执行结果异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetTaskExecuteResult() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 152
+20210505 11:03:31.428----->>>读取到状态：0
+20210505 11:03:31.443----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:03:31.983----->>>读取到状态：5
+20210505 11:03:34.184----->>>读取到状态：6
+20210505 11:03:46.381----->>>读取到状态：7
+20210505 11:03:49.732----->>>StackerSrv Logs>>>获取堆垛机执行结果异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetTaskExecuteResult() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 152
+20210505 11:03:49.734----->>>读取到状态：0
+20210505 11:03:49.749----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:03:50.295----->>>读取到状态：7
+20210505 11:03:51.415----->>>读取到状态：8
+20210505 11:03:51.968----->>>读取到状态：9
+20210505 11:03:56.395----->>>读取到状态：999
+20210505 11:03:56.396----->>>退出循环1133123
+20210505 11:03:59.828----->>>wcs接收wms的json数据>>>>:10003{"cmd":102,"seq":5,"task_id":1117,"src_station":0,"dest_station":200,"src_rack":1,"src_col":4,"src_row":1,"dest_rack":0,"dest_col":0,"dest_row":0,"weight":0.0,"barcode":null}
+20210505 11:04:00.579----->>>读取到状态：2
+20210505 11:04:05.014----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:04:05.044----->>>StackerSrv Logs>>>获取堆垛机执行结果异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetTaskExecuteResult() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 139
+20210505 11:04:05.045----->>>读取到状态：0
+20210505 11:04:05.588----->>>读取到状态：2
+20210505 11:04:06.691----->>>读取到状态：3
+20210505 11:04:10.582----->>>读取到状态：4
+20210505 11:04:11.699----->>>读取到状态：5
+20210505 11:04:16.112----->>>读取到状态：6
+20210505 11:04:21.095----->>>读取到状态：7
+20210505 11:04:23.320----->>>StackerSrv Logs>>>获取堆垛机执行结果异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetTaskExecuteResult() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 152
+20210505 11:04:23.322----->>>读取到状态：0
+20210505 11:04:23.341----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:04:23.885----->>>读取到状态：7
+20210505 11:04:25.526----->>>读取到状态：8
+20210505 11:04:26.635----->>>读取到状态：9
+20210505 11:04:31.051----->>>读取到状态：999
+20210505 11:04:31.053----->>>退出循环1133123
+20210505 11:04:33.062----->>>wcs接收wms的json数据>>>>:10003{"cmd":101,"seq":6,"task_id":1118,"src_station":100,"dest_station":0,"src_rack":0,"src_col":0,"src_row":0,"dest_rack":1,"dest_col":5,"dest_row":1,"weight":0.0,"barcode":null}
+20210505 11:04:33.801----->>>读取到状态：2
+20210505 11:04:38.229----->>>读取到状态：3
+20210505 11:04:42.668----->>>读取到状态：4
+20210505 11:04:43.785----->>>读取到状态：5
+20210505 11:04:47.691----->>>StackerSrv Logs>>>获取堆垛机执行结果异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetTaskExecuteResult() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 142
+20210505 11:04:47.692----->>>读取到状态：0
+20210505 11:04:47.709----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: TPKT is incomplete / invalid ---> S7.Net.TPKTInvalidException: TPKT is incomplete / invalid
+   在 S7.Net.TPKT.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\TPKT.cs:行号 39
+   在 S7.Net.COTP.TPDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 56
+   在 S7.Net.COTP.TSDU.Read(Stream stream) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\COTP.cs:行号 100
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 355
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:04:48.245----->>>读取到状态：6
+20210505 11:04:58.217----->>>读取到状态：7
+20210505 11:05:02.675----->>>读取到状态：8
+20210505 11:05:03.754----->>>读取到状态：9
+20210505 11:05:08.180----->>>读取到状态：999
+20210505 11:05:08.182----->>>退出循环1133123
+20210505 11:21:10.446----->>>线程WCS tcp Socket 客户端线程超过设定时间120(秒)没有响应，重新启动线程... ==>>
+20210505 11:21:11.621----->>>正在重启关闭的线程 ==>>WCS tcp Socket 客户端线程
+20210505 11:21:11.660----->>>正在终止意外关闭的线程:WCS tcp Socket 客户端线程
+20210505 11:21:11.684----->>>StackerSrv Logs>>>PLC[192.168.1.111]连接失败:5532071-->>>S7.Net.PlcException: 向一个无法连接的网络尝试了一个套接字操作。 192.168.1.111:102 ---> System.Net.Sockets.SocketException: 向一个无法连接的网络尝试了一个套接字操作。 192.168.1.111:102
+   在 System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+   在 S7.Net.Plc.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 54
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 60
+   在 S7.Net.Plc.Open() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 18
+   在 LTWCSService.ApplicationService.WcsServer.S7BaseService.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\S7BaseService.cs:行号 68
+20210505 11:21:11.774----->>>StackerSrv Logs>>>获取堆垛机实时状态异常>>>S7.Net.PlcException: 无法将数据写入传输连接: 你的主机中的软件中止了一个已建立的连接。。 ---> System.IO.IOException: 无法将数据写入传输连接: 你的主机中的软件中止了一个已建立的连接。。 ---> System.Net.Sockets.SocketException: 你的主机中的软件中止了一个已建立的连接。
+   在 System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   在 System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.Sockets.NetworkStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 353
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.ReadBytesWithSingleRequest(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 366
+   在 S7.Net.Plc.ReadBytes(DataType dataType, Int32 db, Int32 startByteAdr, Int32 count) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 88
+   在 S7.Net.Plc.Read(DataType dataType, Int32 db, Int32 startByteAdr, VarType varType, Int32 varCount, Byte bitAdr) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 112
+   在 S7.Net.Plc.Read(String variable) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 126
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 100
+20210505 11:21:11.801----->>>异常:304131System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSService.ApplicationService.WcsServer.StackerService.GetStatus() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\StackerService.cs:行号 117
+   在 LTWCSModule.Services.WCSDealSendService.SendDeviceStatus(Socket_Client SocketClient, StackerService stackerSrv) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\Services\WCSDealSendService.cs:行号 58
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 164
+20210505 11:21:11.809----->>>[WCS tcp Socket 客户端线程]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 206
+20210505 11:21:11.815----->>>[WCS tcp Socket 客户端线程]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 243
+20210505 11:21:12.489----->>>启动线程：WCS tcp Socket 客户端线程
+20210505 11:21:12.494----->>>Wcs 服务已启动...
+20210505 11:21:12.496----->>>与wms断开连接...
+20210505 11:21:12.498----->>>正在连接wms... ...
+20210505 11:21:13.075----->>>与wms连接成功...
+20210505 11:21:13.077----->>>与wms已建立连接
+20210505 11:21:13.475----->>>远程连接已关闭
+20210505 11:21:13.476----->>>与wms断开连接，修改堆垛机的状态！ 
+20210505 11:23:43.340----->>>远程连接已关闭
+20210505 11:23:43.396----->>>与wms断开连接，修改堆垛机的状态！ 
+20210505 11:23:44.491----->>>与wms断开连接...
+20210505 11:23:44.493----->>>正在连接wms... ...
+20210505 13:45:57.346----->>>正在停止WCS服务...
+20210505 13:45:57.347----->>>Wcs 服务已停止...
+20210505 13:45:57.347----->>>与wms断开连接...
+20210505 13:45:57.348----->>>正在关闭所有线程...
+20210505 13:45:57.348----->>>StackerSrv Logs>>>PLC[192.168.1.111]:连接已关闭
+20210505 13:45:57.353----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWCSModule.WCSServiceClient.MonitorHandler() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 486
+20210505 13:45:57.364----->>>[WCS tcp Socket 客户端线程]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTProtocol.Tcp.Socket_Client.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\Tcp\Socket_Client.cs:行号 111
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 133
+20210505 13:45:57.365----->>>[WCS tcp Socket 客户端线程]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 240
+20210505 13:46:03.396----->>>WCS服务已停止...
+20210505 16:54:56.299----->>>WCS服务：监视线程已启动
+20210505 16:54:56.303----->>>正在重启关闭的线程 ==>>WCS tcp Socket 客户端线程
+20210505 16:54:56.308----->>>正在重启关闭的线程 ==>>PLC连接线程
+20210505 16:54:56.325----->>>启动线程：PLC连接线程
+20210505 16:54:56.325----->>>启动线程：WCS tcp Socket 客户端线程
+20210505 16:54:56.326----->>>Wcs 服务已启动...
+20210505 16:54:56.326----->>>与wms断开连接...
+20210505 16:54:56.327----->>>正在连接wms... ...
+20210505 16:55:17.379----->>>StackerSrv Logs>>>PLC[192.168.1.111]连接失败:5532071-->>>S7.Net.PlcException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.1.111:102 ---> System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.1.111:102
+   在 System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+   在 S7.Net.Plc.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 54
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 60
+   在 S7.Net.Plc.Open() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 18
+   在 LTWCSService.ApplicationService.WcsServer.S7BaseService.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\S7BaseService.cs:行号 68
+20210505 16:59:21.589----->>>与wms连接成功...
+20210505 16:59:21.590----->>>与wms已建立连接
+20210505 16:59:31.836----->>>正在停止WCS服务...
+20210505 16:59:31.836----->>>Wcs 服务已停止...
+20210505 16:59:31.837----->>>与wms断开连接...
+20210505 16:59:31.837----->>>正在关闭所有线程...
+20210505 16:59:31.837----->>>StackerSrv Logs>>>PLC[192.168.1.111]:连接已关闭
+20210505 16:59:31.894----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWCSModule.WCSServiceClient.MonitorHandler() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 486
+20210505 16:59:31.895----->>>[WCS tcp Socket 客户端线程]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 218
+20210505 16:59:31.896----->>>[WCS tcp Socket 客户端线程]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 240
+20210505 16:59:37.958----->>>WCS服务已停止...
+20210505 17:00:01.501----->>>WCS服务：监视线程已启动
+20210505 17:00:01.503----->>>正在重启关闭的线程 ==>>WCS tcp Socket 客户端线程
+20210505 17:00:01.506----->>>正在重启关闭的线程 ==>>PLC连接线程
+20210505 17:00:01.508----->>>启动线程：PLC连接线程
+20210505 17:00:01.508----->>>启动线程：WCS tcp Socket 客户端线程
+20210505 17:00:01.509----->>>Wcs 服务已启动...
+20210505 17:00:01.510----->>>与wms断开连接...
+20210505 17:00:01.510----->>>正在连接wms... ...
+20210505 17:00:01.558----->>>与wms连接成功...
+20210505 17:00:01.558----->>>与wms已建立连接
+20210505 17:00:22.558----->>>StackerSrv Logs>>>PLC[192.168.1.111]连接失败:5532071-->>>S7.Net.PlcException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.1.111:102 ---> System.Net.Sockets.SocketException: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.1.111:102
+   在 System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+   在 S7.Net.Plc.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 54
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 60
+   在 S7.Net.Plc.Open() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 18
+   在 LTWCSService.ApplicationService.WcsServer.S7BaseService.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\S7BaseService.cs:行号 68
+20210505 17:01:38.829----->>>正在停止WCS服务...
+20210505 17:01:38.830----->>>Wcs 服务已停止...
+20210505 17:01:38.831----->>>与wms断开连接...
+20210505 17:01:38.831----->>>正在关闭所有线程...
+20210505 17:01:38.832----->>>StackerSrv Logs>>>PLC[192.168.1.111]:连接已关闭
+20210505 17:01:38.877----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWCSModule.WCSServiceClient.MonitorHandler() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 486
+20210505 17:01:38.879----->>>[WCS tcp Socket 客户端线程]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 218
+20210505 17:01:38.880----->>>[WCS tcp Socket 客户端线程]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 240
+20210505 17:01:40.705----->>>WCS服务已停止...
+20210505 17:02:12.981----->>>WCS服务：监视线程已启动
+20210505 17:02:12.983----->>>正在重启关闭的线程 ==>>WCS tcp Socket 客户端线程
+20210505 17:02:12.986----->>>正在重启关闭的线程 ==>>PLC连接线程
+20210505 17:02:13.002----->>>启动线程：PLC连接线程
+20210505 17:02:13.003----->>>启动线程：WCS tcp Socket 客户端线程
+20210505 17:02:13.004----->>>Wcs 服务已启动...
+20210505 17:02:13.004----->>>与wms断开连接...
+20210505 17:02:13.004----->>>正在连接wms... ...
+20210505 17:02:27.538----->>>正在停止WCS服务...
+20210505 17:02:27.538----->>>Wcs 服务已停止...
+20210505 17:02:27.538----->>>与wms断开连接...
+20210505 17:02:27.538----->>>正在关闭所有线程...
+20210505 17:02:27.539----->>>StackerSrv Logs>>>PLC[192.168.1.111]:连接已关闭
+20210505 17:02:27.554----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWCSModule.WCSServiceClient.MonitorHandler() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 486
+20210505 17:02:29.173----->>>[WCS tcp Socket 客户端线程]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTProtocol.Tcp.Socket_Client.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\Tcp\Socket_Client.cs:行号 110
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 133
+20210505 17:02:29.175----->>>[WCS tcp Socket 客户端线程]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWCSModule.WCSServiceClient.threadWcsClientServiceStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSModule\WCSServiceClient.cs:行号 240
+20210505 17:02:34.064----->>>StackerSrv Logs>>>PLC[192.168.1.111]连接失败:5532071-->>>S7.Net.PlcException: 由于套接字没有连接并且(当使用一个 sendto 调用发送数据报套接字时)没有提供地址，发送或接收数据的请求没有被接受。 ---> System.Net.Sockets.SocketException: 由于套接字没有连接并且(当使用一个 sendto 调用发送数据报套接字时)没有提供地址，发送或接收数据的请求没有被接受。
+   在 System.Net.Sockets.TcpClient.Connect(String hostname, Int32 port)
+   在 S7.Net.Plc.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 54
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 S7.Net.Plc.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 60
+   在 S7.Net.Plc.Open() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\Comm\LTProtocol\S7.Net\PlcSynchronous.cs:行号 18
+   在 LTWCSService.ApplicationService.WcsServer.S7BaseService.Connect() 位置 C:\Users\pzxne\Desktop\公司WMS\WMSERP2024\WCS1.0\LTWCSService\ApplicationService\WcsServer\S7BaseService.cs:行号 68
+20210505 17:02:34.064----->>>WCS服务已停止...

@@ -1,0 +1,86 @@
+﻿
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+ 
+        <div class="col-sm-3 no-padding-left" id="treeView">
+
+        </div>
+        <div class="col-sm-9 no-padding-left" id="treeEditor">
+
+        </div>
+        <div class="clear"></div>
+    
+ 
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            RefTreeView();
+            RefAddView("");
+        });
+        function InitLTTree() {
+            //初始化树
+            $(".lt-tree-box .lt-tree-tit").on("click", function (event) {
+                RefAddView($(this).data("guid"));
+            });
+        }
+        function RefTreeView() {
+             var d = $.get("@Url.Action("GetTreeView")?r=" + Math.random(), { }, function success(data, text, j) {
+                 $("#treeView").html(data);
+                 InitLTTree();
+                }).fail(function () {
+                    //加载失败，10秒后再试
+                    alert("加载失败。。。");
+                });
+        }
+        function RefAddView(gg_guid) {
+            var d = $.get("@Url.Action("GetAddView")?r=" + Math.random(), { gguid:gg_guid }, function success(data, text, j) {
+                 $("#treeEditor").html(data);
+                }).fail(function () {
+                    //加载失败，10秒后再试
+                    alert("加载失败。。。");
+                });
+        }
+        function AddSubTree(p_guid) {
+            var d = $.get("@Url.Action("GetAddView")?r=" + Math.random(), { p_code: p_guid }, function success(data, text, j) {
+                 $("#treeEditor").html(data);
+                }).fail(function () {
+                    //加载失败，10秒后再试
+                    alert("加载失败。。。");
+             });
+        }
+        function DeleteTreeItem(gg_guid) {
+            if (confirm("确认删除？"))
+            {
+                var d = $.post("@Url.Action("DeleteTreeItem")?r=" + Math.random(), { gg_guid: gg_guid }, function success(json) {
+                    json = json || {};
+                    if (json.success) {
+                        alert("操作成功！");
+                        location.href = location.href;
+                    } else {
+                        alert(json.errors);
+                    }
+                }).fail(function () {
+                    //加载失败，10秒后再试
+                    alert("提交数据失败。。。");
+                });
+            }
+        }
+        window.LtPostFormData = function (form1)
+        {
+            var $form = $("#" + form1);
+            $.post($form.attr('action'), $form.serializeArray(), function (json) {
+                json = json || {};
+                if (json.success) {
+                    alert("操作成功！");
+                    location.href = location.href;
+                } else if (json.errors) {
+                    displayErrors($form, json.errors);
+                }
+            }).fail(function () {
+                displayErrors($form, ['An unknown error happened.']);
+            });
+        }
+    </script>
+}

@@ -1,0 +1,16 @@
+﻿@model LTWMSWebMVC.Areas.RealTime.Data.ShelfUnitsTop
+@if (Model != null)
+{
+    double rateF = Math.Round((float)Model.Free * 100 / Model.Total, 2);
+    double rateU = Math.Round(100 - rateF, 2);
+
+    double EmptyCoutF = Math.Round((float)Model.EmptyCout * 100 / Model.Total, 2);
+    double BatteryCountF = Math.Round((float)Model.BatteryCount * 100 / Model.Total, 2);
+    double OtherMatterCoutF = Math.Round((float)Model.OtherMatterCout * 100 / Model.Total, 2);
+    <span class="tc"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i>总库位：@Model.Total</span>
+     
+<span class="tc" style="margin-left:15px;display:none;"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i>空托盘：@Model.EmptyCout 托(<span style="color:red;">@EmptyCoutF%</span>)</span>
+ 
+<span class="tc"><i class="ace-icon fa fa-caret-right red" style="margin-right:4px;"></i>物料：@Model.BatteryCount 托(<span style="color:red;">@BatteryCountF%</span>)</span>
+     
+}

@@ -1,0 +1,25 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.Bills.Data.ReservedOrderDetailSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+@section scripts{
+    <script type="text/javascript">
+      //  var speech = new LT_Speech();
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+         //   speech.speek("查询成功");
+        });
+    </script>
+}
+<section class="btn_div">
+    <a href="@Url.Action("Index")" class="icos ico_back">返回列表</a>
+    @*<a href="@Url.Action("StationAdd")/?wcssrv_guid=@Model.wcssrv_guid" data-dialog-title="添加站台" class="icos ico_add">添加</a>*@
+    <a href="#" class="icos ico_refresh">刷新</a>
+</section> 
+<section id="LTContent">
+    @Html.Partial("ReserveDetailsViewList", Model.PageCont)
+</section>
+

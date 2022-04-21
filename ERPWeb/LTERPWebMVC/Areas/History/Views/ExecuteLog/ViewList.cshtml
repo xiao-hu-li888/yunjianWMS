@@ -1,0 +1,35 @@
+﻿@model IEnumerable<LTERPWebMVC.Areas.History.Data.ExecuteLogModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr> 
+            <th style="width:130px;">
+                @Html.DisplayNameFor(model => model.log_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.remark)
+            </th> 
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+            <tr class="@_cname"> 
+                <td>
+                    <input class="current_Data" value="@item.guid" type="hidden" />
+                    @Html.DisplayFor(modelItem => item.log_date)
+                </td>
+                <td style="word-break:break-all;">
+                    @Html.DisplayFor(modelItem => item.remark)
+                </td> 
+            </tr>
+
+        }
+    </tbody>
+</table>
+

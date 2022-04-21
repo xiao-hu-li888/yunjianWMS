@@ -1,0 +1,86 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.BasicData.Data.ShelvesModel>
+        
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.warehouse_guid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.columns_specs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rows_specs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.depth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.same_side_mark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isinitialized)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.wcs_srv_guid)
+            </th>
+            <th style="width:180px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+
+        <tr class="@_cname">
+            <td class="tr-sps_tit">
+                <input class="current_Data" value="@item.guid" type="hidden" />
+                @Html.DisplayFor(modelItem => item.warehouse_guid)
+            </td>
+            <td class="tr-sps_tit">
+                @Html.DisplayFor(modelItem => item.rack)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.columns_specs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rows_specs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.depth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.same_side_mark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isinitialized)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wcs_srv_guid)
+            </td>
+            <td>
+                @if (item.isinitialized)
+                {
+                    @Html.ActionLink("查看所有库位", "SeeShelfUnits", new { guid = item.guid }, new { @class = "btn btn-mini btn-info" })
+                }
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>
+

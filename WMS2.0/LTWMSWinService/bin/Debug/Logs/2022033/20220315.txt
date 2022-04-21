@@ -1,0 +1,72 @@
+20220315 08:15:06.165----->>>线程WMS历史处理线程超过设定时间180(秒)没有响应，重新启动线程... ==>>
+20220315 08:15:06.656----->>>正在重启关闭的线程 ==>>WMS历史处理线程
+20220315 08:15:06.656----->>>正在终止意外关闭的线程:WMS历史处理线程
+20220315 08:15:07.708----->>>[WMS历史处理线程]异常12336:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealToHistory.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealToHistory.cs:行号 109
+20220315 08:15:07.710----->>>[WMS历史处理线程]异常211d7:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealToHistory.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealToHistory.cs:行号 132
+20220315 08:15:09.565----->>>启动线程：【WMS历史处理线程】
+20220315 09:20:53.128----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":203,"seq":1,station:4,"x_1_barcode":"T03004","x_2_barcode":""}】
+20220315 09:20:53.133----->>>wms接收wcs的json数据>>>>:10003{"cmd":203,"seq":1,station:4,"x_1_barcode":"T03004","x_2_barcode":""}
+20220315 09:20:54.957----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"cmd":101,"seq":11,"task_id":2474,"src_station":4,"dest_station":0,"src_rack":4,"src_col":0,"src_row":0,"dest_rack":4,"dest_col":53,"dest_row":13,"weight":0.0,"barcode":null}
+20220315 09:20:58.982----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":7862,"task_id":2474,"task_status":1,"task_info":"successful"}】
+20220315 09:20:58.983----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":7862,"task_id":2474,"task_status":1,"task_info":"successful"}
+20220315 09:21:04.014----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":7865,"task_id":2474,"task_status":3,"task_info":"successful"}】
+20220315 09:21:04.015----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":7865,"task_id":2474,"task_status":3,"task_info":"successful"}
+20220315 09:21:29.809----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":203,"seq":1,station:4,"x_1_barcode":"T03003","x_2_barcode":""}】
+20220315 09:21:29.809----->>>wms接收wcs的json数据>>>>:10003{"cmd":203,"seq":1,station:4,"x_1_barcode":"T03003","x_2_barcode":""}
+20220315 09:21:32.372----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"cmd":101,"seq":12,"task_id":2475,"src_station":4,"dest_station":0,"src_rack":4,"src_col":0,"src_row":0,"dest_rack":3,"dest_col":53,"dest_row":3,"weight":0.0,"barcode":null}
+20220315 09:21:36.391----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":7877,"task_id":2475,"task_status":1,"task_info":"successful"}】
+20220315 09:21:36.392----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":7877,"task_id":2475,"task_status":1,"task_info":"successful"}
+20220315 09:21:41.396----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":7879,"task_id":2475,"task_status":3,"task_info":"successful"}】
+20220315 09:21:41.396----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":7879,"task_id":2475,"task_status":3,"task_info":"successful"}
+20220315 09:24:56.933----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":203,"seq":1,station:4,"x_1_barcode":"T03001","x_2_barcode":""}】
+20220315 09:24:56.934----->>>wms接收wcs的json数据>>>>:10003{"cmd":203,"seq":1,station:4,"x_1_barcode":"T03001","x_2_barcode":""}
+20220315 09:24:58.470----->>>wmservice1 loghandler13555543>>WMS>>>WCS====>>>{"cmd":101,"seq":13,"task_id":2476,"src_station":4,"dest_station":0,"src_rack":4,"src_col":0,"src_row":0,"dest_rack":2,"dest_col":53,"dest_row":3,"weight":0.0,"barcode":null}
+20220315 09:25:02.489----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":7947,"task_id":2476,"task_status":1,"task_info":"successful"}】
+20220315 09:25:02.490----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":7947,"task_id":2476,"task_status":1,"task_info":"successful"}
+20220315 09:25:07.502----->>>wmservice1 loghandler13555543>>接收数据包>>【{"cmd":201,"seq":7950,"task_id":2476,"task_status":3,"task_info":"successful"}】
+20220315 09:25:07.502----->>>wms接收wcs的json数据>>>>:10003{"cmd":201,"seq":7950,"task_id":2476,"task_status":3,"task_info":"successful"}
+20220315 10:06:06.162----->>>线程WMS历史处理线程超过设定时间180(秒)没有响应，重新启动线程... ==>>
+20220315 10:06:06.260----->>>正在重启关闭的线程 ==>>WMS历史处理线程
+20220315 10:06:06.261----->>>正在终止意外关闭的线程:WMS历史处理线程
+20220315 10:06:07.762----->>>[WMS历史处理线程]异常12336:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealToHistory.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealToHistory.cs:行号 109
+20220315 10:06:07.789----->>>[WMS历史处理线程]异常211d7:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealToHistory.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealToHistory.cs:行号 132
+20220315 10:06:12.482----->>>启动线程：【WMS历史处理线程】
+20220315 10:14:59.560----->>>正在停止WMS服务...
+20220315 10:14:59.735----->>>正在关闭所有线程...
+20220315 10:14:59.760----->>>异常：1111>>>System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.WMSServiceServer.MonitorHandler() 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\WMSServiceServer.cs:行号 357
+20220315 10:14:59.761----->>>[WCS服务]异常16:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 218
+20220315 10:14:59.763----->>>[WCS服务]异常27:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.SocketClient.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\SocketClient.cs:行号 240
+20220315 10:14:59.773----->>>[WCS服务>>WMS生产消息]异常12336:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealSend.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealSend.cs:行号 119
+20220315 10:14:59.775----->>>[WCS服务>>WMS生产消息]异常211d7:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealSend.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealSend.cs:行号 141
+20220315 10:14:59.789----->>>[WCS服务>>WMS消费消息]异常ddd12336:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealReceive.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealReceive.cs:行号 117
+20220315 10:14:59.790----->>>[WCS服务>>WMS消费消息]异常212222222222221d7:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealReceive.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealReceive.cs:行号 139
+20220315 10:14:59.804----->>>[WMS历史处理线程]异常12336:System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.SleepInternal(Int32 millisecondsTimeout)
+   在 System.Threading.Thread.Sleep(Int32 millisecondsTimeout)
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealToHistory.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealToHistory.cs:行号 109
+20220315 10:14:59.806----->>>[WMS历史处理线程]异常211d7:System.Threading.ThreadAbortException: 正在中止线程。
+   在 LTWMSModule.ThreadSrv.WMSSrv_DealToHistory.ThreadStart(Object threadhandler) 位置 C:\Users\pzxne\Desktop\114上生所WMS\WMS2024\WMS2.0\LTWMSModule\ThreadSrv\WMSSrv_DealToHistory.cs:行号 132
+20220315 10:14:59.819----->>>WMS服务已停止...

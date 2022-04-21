@@ -1,0 +1,104 @@
+﻿@model LTWMSWebMVC.Areas.Bills.Data.StockOutModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+        @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+        {
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+        }
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.odd_numbers)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.odd_numbers)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.odd_numbers_in)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.odd_numbers_in)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.bill_status)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.bill_status)
+                @Html.ValidationMessageFor(model => model.bill_status)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">     @Html.LabelFor(model => model.total_matter)</label>
+            <div class="col-sm-9">
+                @Html.EditorFor(model => model.total_matter)
+                @Html.ValidationMessageFor(model => model.total_matter)
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">@Html.LabelFor(model => model.total_out)</label>
+            <div class="col-sm-9">
+                @Html.DisplayFor(model => model.total_out)
+                @Html.ValidationMessageFor(model => model.total_out)
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="form-group form-border">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.memo)</label>
+            <div class="col-sm-9">
+                @Html.TextAreaFor(model => model.memo)
+                @Html.ValidationMessageFor(model => model.memo)
+            </div>
+            <div class="clear"></div>
+        </div>
+        @if (Model.bill_status == LTWMSEFModel.Bills.BillsStatus_Out.None ||
+            Model.bill_status == LTWMSEFModel.Bills.BillsStatus_Out.Running)
+        {
+            <p>
+               
+                <button class="btn btn-sm btn-info" type="submit" onclick="return confirm('确认终止出库单操作？');">
+                    <i class="ace-icon fa fa-check bigger-110"></i>
+                    终止出库单
+                </button>
+            </p>
+        }
+
+    </fieldset>
+}
+
+@if (Model.bill_status == LTWMSEFModel.Bills.BillsStatus_Out.Running)
+{
+    <div class="form-nowidth" style="border-top:unset;">
+        <span class="tit"><i class="ace-icon fa fa-hand-o-right bigger-110 red"></i>&nbsp;谨慎操作:</span>
+        @using (Html.BeginForm("ForceFinishBillStockOut", "StockOut"))
+        {
+            @Html.HiddenFor(model => model.guid)
+            @Html.HiddenFor(model => model.OldRowVersion)
+
+            <p>
+                
+                <button class="btn btn-sm btn-info" type="submit" onclick="return confirm('确认强制结束出库单操作？该操作将强行删除agv搬运任务。');">
+                    <i class="ace-icon fa fa-check bigger-110"></i>
+                    强制结束出库单
+                </button>
+            </p>
+        }
+    </div>
+}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

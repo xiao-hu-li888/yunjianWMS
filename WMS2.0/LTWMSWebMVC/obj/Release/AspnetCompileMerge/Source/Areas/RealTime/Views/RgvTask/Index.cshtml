@@ -1,0 +1,94 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.RealTime.Data.StackerTaskQueueSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList"; 
+}
+<section>
+    <div class="box-task-top" id="LTTopCheckView"> 
+    </div>
+    <div class="stc-top" id="LTStatusDiv">
+    </div>
+    @section scripts{
+        <script type="text/javascript">
+            var speech = new LT_Speech();
+                /*$("input[name=swt_sendtaskcmd]").change(function () {
+                        var _issend = 0;
+                        if ($(this).prop("checked")) {
+                          //发送post下发任务
+                            $(".swt-txt").html("<span>@@ txt1</span>");
+                            _issend = 1;
+                        } else {
+                            //发送post 取消下发任务
+                            $(".swt-txt").html("<span class='txt-alarm'>@@@@ txt2</span>");
+                            _issend = 0;
+                    }
+                   // alert(_issend);
+                        $.post("@@Url.Action("SetSendToStacker")?r=" + Math.random(), { issend: _issend}, function (data) {
+                            if (data.success) {
+                               // alert("设置成功！");
+                            } else {
+                                alert(json.errors);
+                            }
+                        }).fail(function () {
+                            alert("设置失败");
+                        });
+                });*/
+                $(document).ready(function () {
+                    RefreshTopCheckView();
+                    RefreshTaskCount();
+                    RefreshTasks();
+                });
+                function RefreshTopCheckView() {
+                    var d = $.get("@Url.Action("GetTopCheckView")?r=" + Math.random(), {}, function success(data, text, j) { 
+                                $("#LTTopCheckView").html(data);
+                               // ltJS.TableClick();
+                                setTimeout("RefreshTopCheckView();", 10000);
+                            }).fail(function () {
+                                //加载失败，10秒后再试
+                                setTimeout("RefreshTopCheckView();", 10000);
+                            });
+                }
+
+               function RefreshTasks() {
+                        var d = $.get("@Url.Action("StackTaskRealtimeList")?r=" + Math.random(), {}, function success(data, text, j) {
+                            $("#LTContent").html(data);
+                            ltJS.TableClick();
+                            setTimeout("RefreshTasks();", 3000);
+                        }).fail(function () {
+                            //加载失败，10秒后再试
+                            setTimeout("RefreshTasks();", 10000);
+                        });
+                }
+                function RefreshTaskCount() {
+                     var d = $.get("@Url.Action("StatusOfDev")?r=" + Math.random(), {}, function success(data, text, j) {
+                            $("#LTStatusDiv").html(data);
+                          //  ltJS.TableClick();
+                          setTimeout("RefreshTaskCount();", 4000);
+                        }).fail(function () {
+                            //加载失败，10秒后再试
+                            setTimeout("RefreshTaskCount();", 10000);
+                        });
+                }
+                //停止发送任务至堆垛车
+                function DbclickDisableSendCmd() {
+                  /* 取消禁用 $.post("Url.Action("SetSendToStacker")", { issend: 0}, function (data) {
+                        if (data.success) {
+                            $("input[name=swt_sendtaskcmd]").prop("checked", false);
+                             $(".swt-txt").html("<span class='txt-alarm'>txt2</span>");
+                        }
+                    }).fail(function () {
+                        console.log("连接失败");
+                    });*/
+                }
+        </script>
+    }
+</section>
+<section class="btn_div btn_div2">
+    <a href="@Url.Action("Handle")/{0}" data-dialog-title="任务信息" class="icos ico_edit needsele" onclick="DbclickDisableSendCmd();">查看详情</a>
+</section>
+<section id="LTContent">
+     @*@Html.Partial("ViewList", Model.PageCont)*@ 
+</section>
+

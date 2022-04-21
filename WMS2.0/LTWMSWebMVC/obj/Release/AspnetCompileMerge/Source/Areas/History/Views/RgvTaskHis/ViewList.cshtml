@@ -1,0 +1,111 @@
+﻿@model IEnumerable<LTWMSWebMVC.Areas.History.Data.StackerTaskQueueHisModel>
+
+<table class="border table table-bordered table-hover" selectedcssclass="sele">
+    <thead>
+        <tr>
+            <th style="width:60px;">
+                @Html.DisplayNameFor(model => model.taskqueue_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.order)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tray1_barcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tasktype)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.taskstatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.src_shelfunits_pos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dest_shelfunits_pos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.time_long)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.startup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.endup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int _index = 0;}
+        @foreach (var item in Model)
+        {
+            string _cname = (_index % 2) == 0 ? "tr-odd" : "tr-even";
+            _index++;
+            <tr class="@_cname">
+                <td class="tr-sps_tit">
+                    <input class="current_Data" value="@item.guid" type="hidden" />
+                    @Html.DisplayFor(modelItem => item.taskqueue_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.order)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tray1_barcode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tasktype)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.taskstatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.src_shelfunits_pos)
+                    @if (item.tasktype == LTWMSEFModel.Hardware.WcsTaskType.StockIn)
+                    {
+                        <span>站台 @{WriteLiteral(item.src_station);}</span>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dest_shelfunits_pos)
+                    @if (item.tasktype == LTWMSEFModel.Hardware.WcsTaskType.StockOut)
+                    {
+                        <span>站台 @{WriteLiteral(item.dest_station);}</span>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.time_long)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.startup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.endup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.createdate)
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.matterbarcode_list)：
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.matterbarcode_list)
+                </td>
+                <td>
+                    备注：
+                </td>
+                <td colspan="9">
+                    @Html.DisplayTextFor(modelItem => item.memo)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

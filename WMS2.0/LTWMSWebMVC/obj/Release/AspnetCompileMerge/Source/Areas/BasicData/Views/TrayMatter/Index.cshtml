@@ -1,0 +1,72 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+@model LTWMSWebMVC.Areas.BasicData.Data.TrayMatterSearch
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ViewList";
+}
+
+<section class="btn_div">
+    <a href="#" class="icos ico_refresh">刷新</a>
+    <a href="javascript:void(0);" style="display:none;" class="icos ico_move" onclick="MatterStockOut_List();">物料批量出库</a>
+    <a href="@Url.Action("ExportALLData")" class="icos ico_download2" target="_blank">导出全部数据</a>
+    <a href="@Url.Action("UpdateTestStatus")" data-dialog-title="设置检验状态" class="icos ico_edit">设置检验状态</a> 
+</section>
+<section class="searchbg">
+    @using (Html.BeginForm("Index", "TrayMatter", FormMethod.Post, new { name = "paging_search_form" }))
+    {
+    <div>
+        @Html.LabelFor(a => a.s_keywords)：@Html.TextBoxFor(a => a.s_keywords, new { @class = "ac_input", placeholder = "请输入" + Html.DisplayNameFor(a => a.s_keywords) })
+        @Html.LabelFor(a => a.trayInDate_begin)：@Html.EditorFor(a => a.trayInDate_begin)
+        @Html.LabelFor(a => a.trayInDate_end)：@Html.EditorFor(a => a.trayInDate_end)
+        @Html.LabelFor(a => a.test_status)：@Html.EditorFor(a => a.test_status)
+        @Html.LabelFor(a => a.matterOrder)：@Html.EditorFor(a => a.matterOrder)
+        @*@Html.LabelFor(a => a.warehouse_guid)：@Html.EditorFor(a => a.warehouse_guid)*@
+        <input type="submit" value="搜 索" style="margin-left:10px;" />
+    </div>
+    }
+</section> 
+<section id="LTContent">
+    @Html.Partial("ViewList", Model.PageCont)
+</section>
+@Html.Partial("Paging", @Model.Paging)
+@section scripts{
+    <script type="text/javascript">
+        var speech = new LT_Speech();
+        $(function () {
+            //  zealan_d([".ico_add", ".ico_edit"]);
+            speech.speek("查询成功");
+        });
+        function MatterStockOut_List() {
+            var _v = GetALLCheckedValue("checkAll1"); 
+            if (_v == "") {
+              //  alert("未选择任何项！");
+                speech.speek("未选择任何项"); 
+                alert("未选择任何项！");
+                return;
+            }
+            speech.speek("确定要执行批量出库"); 
+            if (!confirm("确定要执行批量出库？")) {
+                return;
+            }
+            $.post("@Url.Action("SetMatterOutList")", { guidstr: _v}, function (json) {
+                json = json || {};
+                if (json.success) { 
+                    speech.speek("操作成功"); 
+                    alert("操作成功！");
+                } else {
+                    speech.speek(json.errors); 
+                    alert(json.errors);
+                }
+                if (typeof (goto_page) == "function") {
+                    goto_page(-1);
+                } else {
+                    reload();
+                }
+            }).fail(function () {
+                alert("操作失败！");
+            });
+        }
+        
+    </script>
+}

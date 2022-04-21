@@ -1,0 +1,75 @@
+﻿@model LTWMSWebMVC.Areas.Bills.Data.StockOutModel
+
+@{
+    ViewBag.Title = "Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend> </legend>
+    @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+    {
+        @Html.HiddenFor(model => model.guid)
+        @Html.HiddenFor(model => model.OldRowVersion)
+    }
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.odd_numbers)</label>
+        <div class="col-sm-9">
+            @if (ViewBag.isUpdate != null && ViewBag.isUpdate)
+            {
+                @Html.DisplayFor(model => model.odd_numbers)
+                @Html.HiddenFor(model => model.odd_numbers)
+            }
+            else
+            {
+                <span>自动生成</span>
+            }
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">  @Html.LabelFor(model => model.bill_status)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.bill_status)
+            @Html.ValidationMessageFor(model => model.bill_status)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"><span class="necessary">*</span>   @Html.LabelFor(model => model.out_date)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.out_date)
+            @Html.ValidationMessageFor(model => model.out_date)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"><span class="necessary">*</span>   @Html.LabelFor(model => model.stockout_type)</label>
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.stockout_type)
+            @Html.ValidationMessageFor(model => model.stockout_type)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="form-group form-border">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"><span class="necessary">*</span>   @Html.LabelFor(model => model.memo)</label>
+        <div class="col-sm-9">
+            @Html.TextAreaFor(model => model.memo)
+            @Html.ValidationMessageFor(model => model.memo)
+        </div>
+        <div class="clear"></div>
+    </div>
+    <p>
+
+        <button class="btn btn-sm btn-info" type="submit">
+            <i class="ace-icon fa fa-check bigger-110"></i>
+            @ViewBag.SubmitText
+        </button>
+    </p>
+</fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

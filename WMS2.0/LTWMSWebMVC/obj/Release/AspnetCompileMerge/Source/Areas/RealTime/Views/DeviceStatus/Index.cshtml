@@ -1,0 +1,28 @@
+﻿@using LTWMSWebMVC.App_Start.WebMvCEx;
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+<section id="LTContent">
+</section>
+
+@section scripts{
+    <script type="text/javascript"> 
+    $(document).ready(function ()
+    { 
+        RefreshAgvTasks(); 
+    });
+    function RefreshAgvTasks()
+    { 
+        var d = $.get("@Url.Action("DeviceStatusRealTime")?r=" + Math.random(), {}, function success(data, text, j) {
+            $("#LTContent").html(data); 
+            //   ltJS.TableClick();
+            setTimeout("RefreshAgvTasks();", 5000);
+        }).fail(function () {
+            //加载失败，10秒后再试 
+            setTimeout("RefreshAgvTasks();", 10000);
+        });
+    }
+    </script>
+}

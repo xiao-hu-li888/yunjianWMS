@@ -1,0 +1,7 @@
+﻿@using LTERPWebMVC.App_Start.WebMvCEx;
+@model object
+@{
+    string listname = (string)ViewData.ModelMetadata.AdditionalValues["listname"];
+    object obj = ViewData.ModelMetadata.AdditionalValues["IsSearch"];
+    @Html.CheckBoxList("", listname, Model,obj);
+}
